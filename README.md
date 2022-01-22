@@ -1,4 +1,4 @@
-# svea-orientalis
+# Svea Orientalis
 ![Svea Orientalis](images/svea_orientalis_dark.png)
 Svea Orientalis - A Victoria 3 Mod (to be made)
 
