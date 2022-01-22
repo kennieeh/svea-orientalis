@@ -1,5 +1,5 @@
 # svea-orientalis
-![Svea Orientalis](images/svea_orientalis.jpg)
+![Svea Orientalis](images/svea_orientalis_dark.png)
 Svea Orientalis - A Victoria 3 Mod (to be made)
 
 ## Svea Orientalis - Östsverige
