@@ -1,0 +1,54 @@
+﻿je_svea_test = {
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	is_shown_when_inactive = {
+		is_player = yes
+	}
+
+	possible = {
+		is_player = yes
+		is_at_war = no
+	}
+
+	complete = {
+		capital = {
+			has_building = building_government_administration
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = so_test_event.1 }
+	}
+	
+	timeout = 3650
+	should_be_pinned_by_default = yes
+}
+
+je_svea_reunion_swe = {
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	is_shown_when_inactive = {
+		owns_entire_state_region = STATE_SVEALAND
+	}
+
+	possible = {
+		has_technology_researched = nationalism
+		c:FIN = {
+			exists = yes
+		}
+	}
+
+	complete = {
+		is_at_war = no
+		c:FIN = {
+			is_subject = no
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = so_test_event.1 }
+	}
+	
+	timeout = 3650
+	should_be_pinned_by_default = yes
+}

@@ -1,0 +1,13 @@
+﻿l_english:
+  # Journal entries
+  je_svea_test:0 "Make good things"
+  je_svea_test_reason:0 "Why not?"
+  so_test_event.1.t:0 "Good things happen"
+  so_test_event.1.d:0 "Don't you like it when good things happen?"
+  so_test_event.1.f:0 "Flavor text"
+  so_test_event.1.a:0 "Less good things"
+   so_test_event.1.b:0 "More good things"
+   
+   # Sweden: Återföreningen
+   je_svea_reunion_swe:0 "Reunion with the East"
+   je_svea_reunion_swe_reason:0 "Finland has broken free, now we can be together again!"
