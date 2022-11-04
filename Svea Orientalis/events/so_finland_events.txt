@@ -1,0 +1,9 @@
+# EVENTS som utgår från att spelaren är Finland
+
+# KALEVALA, NATIONALEPOSET
+# Villkor: om Finland har >1 universitet OCH om Finland har West Karelia(?)
+# Flavor: A young researcher has returned from a field trip in [West Karelia], having transcribed the songs and poems of our forebears. This collection of tales is sure to rival those of Homer's.
+# Alternativ 1: Truly, our proud people has a history as rich as any other. Let us read and rejoice!
+# Effekt 1: Finland gets "National epic poetry, Kalevala", bonus till hur vissa grupper lättare blir radikala/lojala?
+# Alternativ 2: These lies of old gods and heroes must be hidden and forgotten!
+# Effekt 2: Kyrkan +2 approval. Intellectuals -2 approval.
