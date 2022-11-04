@@ -4,6 +4,15 @@
 # Villkor: om Finland har >1 universitet OCH om Finland har West Karelia(?)
 # Flavor: A young researcher has returned from a field trip in [West Karelia], having transcribed the songs and poems of our forebears. This collection of tales is sure to rival those of Homer's.
 # Alternativ 1: Truly, our proud people has a history as rich as any other. Let us read and rejoice!
-# Effekt 1: Finland gets "National epic poetry, Kalevala", bonus till hur vissa grupper lättare blir radikala/lojala?
+# Effekt 1: Finland gets "National epic poetry, Kalevala", bonus till hur vissa grupper lättare blir radikala/lojala? Alt + till Intelligentsia attraction/approval?
 # Alternativ 2: These lies of old gods and heroes must be hidden and forgotten!
-# Effekt 2: Kyrkan +2 approval. Intellectuals -2 approval.
+# Effekt 2: Kyrkan +2 approval. Intellectuals -2 approval. Möjliggöra senare event ALT_SVENSK_HJÄLTEEPOS.
+
+
+# ALT_SVENSK_HJÄLTEEPOS
+# Villkor: Alternativ 2 valt för KALEVALA, NATIONALEPOSET. Svensk attityd till Finland är... något.
+# Flavor: A group of Swedish researchers have found inscriptions of old runes that clearly indicate that the joint history of what we now call Sweden and Finland herald back much further than previously assumed. Clearly, our two peoples' destinies are forever entwined.
+# Alternativ 1: What Providence has once decreed one, shall not remain two for long.
+# Effekt 1:
+# Alternativ 2: What utter nonsense is this? I do think they've been hitting the aquavit a bit too hard.
+# Effekt 2: 
