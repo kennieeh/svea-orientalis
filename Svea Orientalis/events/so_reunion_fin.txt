@@ -1,4 +1,4 @@
-﻿# namespace för återföreningen, Sveriges perspektiv
+﻿# namespace för återföreningen, Finlands perspektiv
 namespace = so_reunion_fin
 
 # Sverige har uttalat att Öst ska förenas med Väst åter. Hur reagerar det självständiga Finland?

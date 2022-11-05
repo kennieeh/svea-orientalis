@@ -10,8 +10,8 @@
    
    # Journal Entries: Återföreningen.
    # Sverige:
-   je_svea_reunion_swe:0 "Reunion with the East"
-   je_svea_reunion_swe_reason:0 "Finland has broken free, now we can be together again!"
+   je_so_reunion_swe:0 "Reunion with the East"
+   je_so_reunion_swe_reason:0 "Finland has broken free, now we can be together again!"
    
    # Events: Återföreningen, Sverige
    so_reunion_swe.1:0 "A choice"

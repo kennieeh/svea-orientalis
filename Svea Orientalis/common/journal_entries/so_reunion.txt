@@ -26,7 +26,7 @@
 
 	# Då JE avklaras triggas det första eventet i Sveriges återföreningssekvens av event
 	on_complete = {
-		trigger_event = { id = so_swe_reunion.1 }
+		trigger_event = { id = so_reunion_swe.1 }
 	}
 	
 	timeout = 3650
