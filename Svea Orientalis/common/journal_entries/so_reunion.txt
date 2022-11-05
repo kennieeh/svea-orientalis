@@ -1,36 +1,14 @@
-﻿je_svea_test = {
+﻿je_so_reunion_swe = { # Sveriges JE för att återförenas med Finland, startar evenemangssekvensen
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 
-	is_shown_when_inactive = {
-		is_player = yes
-	}
-
-	possible = {
-		is_player = yes
-		is_at_war = no
-	}
-
-	complete = {
-		capital = {
-			has_building = building_government_administration
-		}
-	}
-
-	on_complete = {
-		trigger_event = { id = so_test_event.1 }
-	}
-	
-	timeout = 3650
-	should_be_pinned_by_default = yes
-}
-
-je_svea_reunion_swe = {
-	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
-
+	# JE är bara för den som äger hela Svealand
+	# Todo: Ett kriterium ska också vara att den svenska kulturen har majoritetsstatus?
 	is_shown_when_inactive = {
 		owns_entire_state_region = STATE_SVEALAND
 	}
 
+	# För att den ska vara möjlig att uppfylla behöver ägaren till Svealand ha nationalism och Finland måste existera
+	# Todo: Om Finland inte existerar (och inte ägs av ägaren av Svealand), en skild JE där Sverige kan trigga ett finländskt uppror?
 	possible = {
 		has_technology_researched = nationalism
 		c:FIN = {
@@ -38,6 +16,7 @@ je_svea_reunion_swe = {
 		}
 	}
 
+	# JE avklaras om Sverige inte är i krig och Finland är självständigt
 	complete = {
 		is_at_war = no
 		c:FIN = {
@@ -45,8 +24,9 @@ je_svea_reunion_swe = {
 		}
 	}
 
+	# Då JE avklaras triggas det första eventet i Sveriges återföreningssekvens av event
 	on_complete = {
-		trigger_event = { id = so_test_event.1 }
+		trigger_event = { id = so_swe_reunion.1 }
 	}
 	
 	timeout = 3650

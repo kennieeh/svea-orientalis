@@ -1,0 +1,60 @@
+﻿# namespace för återföreningen, Sveriges perspektiv
+namespace = so_reunion_fin
+
+# Sverige har uttalat att Öst ska förenas med Väst åter. Hur reagerar det självständiga Finland?
+so_reunion_fin.1 = {
+	type = country_event
+	placement = root
+	title = so_reunion_fin.1.t
+	desc = so_reunion_fin.1.d
+	flavor = so_reunion_fin.1.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/police_breaking_door"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	
+	duration = 3
+	
+	trigger = {
+		# triggered by event - so_reunion_swe.1.b
+	}
+	
+	option = { # Sverige vill VAD?! Inte en chans. Den finska nationalismen ska ej kuvas igen.
+		name = so_reunion_fin.1.a
+		# Sveriges väg är fred. Fokusera på industri, typ? En modifier för det.
+		add_modifier = {
+			name = so_reunion_fin_mod_rejected
+			months = 120
+		}
+		# Todo: Sverige blir sårat
+	}
+
+	option = { # Finland är Sverige. Vi ska återförenas.
+		name = so_reunion_fin.1.b
+		# Sverige får en modifier i och med återföreningen. Var det så enkelt?
+		c:SWE = {
+				add_modifier = {
+				name = so_reunion_swe_mod_completed
+				months = 120
+			}
+		}
+		# Finland blir en del av Sverige. Spelaren spelar som Sverige.
+		# Todo: 
+		if = {
+			limit = {
+				root = {
+					is_player = yes
+				}
+			}
+			play_as = c:SWE
+		}
+		c:SWE = {
+			annex = c:FIN
+		}
+	}
+}

@@ -1,0 +1,52 @@
+﻿# namespace för återföreningen, Sveriges perspektiv
+namespace = so_reunion_swe
+
+# Första eventet i återföreningssekvensen, ur Sveriges perspektiv:
+# Ska Sverige fokusera på Västsvea eller söka en återförening?
+so_reunion_swe.1 = {
+	type = country_event
+	placement = root
+	title = so_reunion_swe.1.t
+	desc = so_reunion_swe.1.d
+	flavor = so_reunion_swe.1.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/police_breaking_door"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	
+	duration = 3
+	
+	trigger = {
+		# triggered by JE completion - je_so_reunion_swe
+	}
+	
+	option = { # Fokusera på Västsvea. Öst måste välja sitt eget öde.
+		name = so_reunion_swe.1.a
+		# Sveriges väg är fred. Fokusera på industri, typ? En modifier för det.
+		add_modifier = {
+			name = so_reunion_swe_mod_abandoned
+			months = 120
+		}
+	}
+
+	option = { # Östsvea ska än en gång vara blågult. Karoliner!
+		name = so_reunion_swe.1.b
+		# Sverige får en modifier som relaterar till att vilja återförenas. Svensk nationalism?
+		add_modifier = {
+			name = so_reunion_swe_mod_seeking
+			months = 120
+		}
+		# Finland får ett event om återföreningen.
+		# Todo: Vilket? Att acceptera direkt?
+		c:FIN = {
+			trigger_event = {
+				id = so_reunion_fin.1
+			}
+		}
+	}
+}

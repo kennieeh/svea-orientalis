@@ -1,4 +1,5 @@
-# EVENTS som utgår från att spelaren är Finland
+﻿# EVENTS som utgår från att spelaren är Finland
+namespace = so_fin
 
 # KALEVALA, NATIONALEPOSET
 # Villkor: om Finland har >1 universitet OCH om Finland har West Karelia(?)

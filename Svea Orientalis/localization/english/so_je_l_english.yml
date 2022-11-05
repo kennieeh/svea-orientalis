@@ -1,13 +1,36 @@
 ﻿l_english:
   # Journal entries
-  je_svea_test:0 "Make good things"
-  je_svea_test_reason:0 "Why not?"
+  so_test_event:0 "Make good things"
+  so_test_event_reason:0 "Why not?"
   so_test_event.1.t:0 "Good things happen"
   so_test_event.1.d:0 "Don't you like it when good things happen?"
   so_test_event.1.f:0 "Flavor text"
   so_test_event.1.a:0 "Less good things"
-   so_test_event.1.b:0 "More good things"
+  so_test_event.1.b:0 "More good things"
    
-   # Sweden: Återföreningen
+   # Journal Entries: Återföreningen.
+   # Sverige:
    je_svea_reunion_swe:0 "Reunion with the East"
    je_svea_reunion_swe_reason:0 "Finland has broken free, now we can be together again!"
+   
+   # Events: Återföreningen, Sverige
+   so_reunion_swe.1:0 "A choice"
+   so_reunion_swe.1.t:0 "A choice has to be made"
+   so_reunion_swe.1.d:0 "Shall we look to reunite with our eastern half, or focus on building a peaceful west half?"
+   so_reunion_swe.1.f:0 "Flavor text. Men vad?"
+   so_reunion_swe.1.a:0 "The east must choose its own path. Swedens path is that of peaceful prosperity. No more wars!"
+   so_reunion_swe.1.b:0 "Time to undo the wrongs of the shameful 1809 treaty. East and West shall be Sweden once again. Karoliner!"
+   
+   # Events: Återföreningen, Finland
+   so_reunion_fin.1:0 "A proposal"
+   so_reunion_fin.1.t:0 "Sweden. Remember that name?"
+   so_reunion_fin.1.d:0 "Now that we are independent, Sweden has proposed a joint future under the Swedish rule. What shall we do?"
+   so_reunion_fin.1.f:0 "Flavor text"
+   so_reunion_fin.1.a:0 "They proposed WHAT?! We shall carve our own destiny, out of Swedish skulls if God so be damned."
+   so_reunion_fin.1.b:0 "How could we forget our centuries together? Let us undo the treaty of 1809."
+   
+   # Modifiers
+   so_reunion_swe_mod_abandoned:1 "Peace and prosperity"
+   so_reunion_swe_mod_seeking:1 "Seeking reunification"
+   so_reunion_swe_mod_completed:1 "Reunited"
+   so_reunion_fin_mod_rejected:1 "Independence, at last!"

@@ -1,1 +1,3 @@
-# EVENTS som utgår från att spelaren är Sverige
+﻿# EVENTS som utgår från att spelaren är Sverige
+
+namespace = so_swe

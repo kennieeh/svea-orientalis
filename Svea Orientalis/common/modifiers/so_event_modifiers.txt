@@ -1,4 +1,5 @@
-﻿so_test_em = {
+﻿# Den här modifiern är bara så att Ken ska ha det lättare :D
+so_test_em = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
 	state_standard_of_living_add = 10
 	state_poor_standard_of_living_add = 10
@@ -23,4 +24,32 @@
 	country_gold_reserve_limit_mult = 1.5
 	unit_offense_mult = 0.75
 	unit_defense_mult = 1.75
+}
+
+# so_reunion_swe.1 modifiers
+# först, svenska sidan:
+
+# Sverige väljer att fokusera på västra halvan. Öst är bortglömt. Glöm krig.
+so_reunion_swe_mod_abandoned = {
+	building_tooling_workshops_throughput_mult = 0.25
+	building_construction_sector_throughput_mult = 0.20
+	building_arms_industry_throughput_mult = -0.1
+}
+
+# Öst ska bli en del av väst. Återförenas. Krigsmaskinen ska glöda!
+so_reunion_swe_mod_seeking = {
+	building_arms_industry_throughput_mult = 0.15
+	building_munition_plants_throughput_mult = 0.25
+}
+
+# Finland har accepterat. Vi är återförenade!
+so_reunion_swe_mod_completed = {
+	unit_offense_mult = 0.25
+}
+
+# Finska sidan av reunion
+
+# Finland går inte med på att återförenas. Hakkaa päälle!
+so_reunion_fin_mod_rejected = {
+	unit_offense_mult = 0.25
 }
