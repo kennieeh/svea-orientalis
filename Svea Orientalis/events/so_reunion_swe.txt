@@ -1,8 +1,8 @@
 ﻿# namespace för återföreningen, Sveriges perspektiv
 namespace = so_reunion_swe
 
-# Första eventet i återföreningssekvensen, ur Sveriges perspektiv:
-# Ska Sverige fokusera på Västsvea eller söka en återförening?
+
+# SWE:Ev1 - Ska SWE försöka få FIN att slå sig fri från RUS?
 so_reunion_swe.1 = {
 	type = country_event
 	placement = root
@@ -13,40 +13,288 @@ so_reunion_swe.1 = {
 	event_image = {
 		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
 	}
+	
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	on_opened_soundeffect = "event:/SFX/Events/middleeast/police_breaking_door"
-
-	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
 	
-	duration = 3
+	duration = 6
 	
+	# triggas av att spelaren uppnår god relation med Finland
 	trigger = {
-		# triggered by JE completion - je_so_reunion_swe
+		has_technology_researched = nationalism
+		is_subject = no
+		is_at_war = no
+		c:FIN = {
+			relations:root >= relations_threshold:amicable
+		}
 	}
 	
-	option = { # Fokusera på Västsvea. Öst måste välja sitt eget öde.
+	option = { # Option A: Invest in a Svecoman reunification movement
 		name = so_reunion_swe.1.a
-		# Sveriges väg är fred. Fokusera på industri, typ? En modifier för det.
-		add_modifier = {
-			name = so_reunion_swe_mod_abandoned
-			months = 120
+        default_option = yes
+		c:FIN = {
+			set_variable = {
+				name = so_reunion_fin_svecoman_boosted
+				value = yes
+			}
 		}
-	}
-
-	option = { # Östsvea ska än en gång vara blågult. Karoliner!
-		name = so_reunion_swe.1.b
-		# Sverige får en modifier som relaterar till att vilja återförenas. Svensk nationalism?
-		add_modifier = {
-			name = so_reunion_swe_mod_seeking
-			months = 120
-		}
-		# Finland får ett event om återföreningen.
-		# Todo: Vilket? Att acceptera direkt?
+		add_treasury = -10000
 		c:FIN = {
 			trigger_event = {
 				id = so_reunion_fin.1
 			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	option = { # Option B: Invest in a Finnish independence movement
+		name = so_reunion_swe.1.b
+		c:FIN = {
+			set_variable = {
+				name = so_reunion_fin_fennoman_boosted
+				value = yes
+			}
+		}
+		add_treasury = -5000
+		c:FIN = {
+			trigger_event = {
+				id = so_reunion_fin.1
+			}
+		}
+		ai_chance = {
+			base = 30
+		}
+	}
+
+	option = { # Option C: Focus on the West
+		name = so_reunion_swe.1.c
+		set_variable = {
+			name = so_reunion_swe_abandoned_fin
+			value = yes
+		}
+		s:STATE_SOUTHERN_FINLAND = {
+			remove_claim = ROOT
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+}
+
+# SWE:Ev2 - Läget är optimalt för ett krig mot RUS. Dags att ta beslutet.
+so_reunion_swe.2 = {
+	type = country_event
+	placement = root
+	title = so_reunion_swe.2.t
+	desc = so_reunion_swe.2.d
+	flavor = so_reunion_swe.2.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+	
+	duration = 6
+	
+	# triggas av att SWE har en stor armé och att läget i FIN är understödande
+	trigger = {
+		has_technology_researched = nationalism
+		is_subject = no
+		is_at_war = no
+		c:FIN = {
+			relations:root >= relations_threshold:amicable
+		}
+	}
+	
+	option = { # Option A: Återföreningskrig
+		name = so_reunion_swe.2.a
+        default_option = yes
+		c:FIN = {
+			create_diplomatic_play = {
+				target_country = c:RUS
+				war = yes
+				type = dp_independence
+			}
+		}
+		ai_chance = {
+			base = 40
+		}
+	}
+
+	option = { # Option B: Finländskt självständighetskrig
+		name = so_reunion_swe.2.b
+		c:FIN = {
+			set_variable = {
+				name = so_reunion_fin_fennoman_boosted
+				value = yes
+			}
+		}
+		add_treasury = -5000
+		c:FIN = {
+			trigger_event = {
+				id = so_reunion_fin.1
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+
+	option = { # Option C: Sätt dig. Inget krig.
+		name = so_reunion_swe.2.c
+		ai_chance = {
+			base = 40
+		}
+	}
+}
+
+# SWE:Ev3 - Ett självständigt Finland, kan det övertalas till återförening?
+so_reunion_swe.3 = {
+	type = country_event
+	placement = root
+	title = so_reunion_swe.3.t
+	desc = so_reunion_swe.3.d
+	flavor = so_reunion_swe.3.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+	
+	duration = 6
+	
+	# triggas av att SWE har en stor armé och att läget i FIN är understödande
+	trigger = {
+		has_technology_researched = nationalism
+		is_subject = no
+		is_at_war = no
+		c:FIN = {
+			relations:root >= relations_threshold:amicable
+			is_subject = no
+			is_at_war = no
+		}
+	}
+	
+	option = { # Option A: Be om återförening
+		name = so_reunion_swe.3.a
+        default_option = yes
+		# Todo: Hitta hur SWE kan vara allierad i kriget
+		c:FIN = {
+			create_diplomatic_play = {
+				target_country = c:RUS
+				war = yes
+				type = dp_independence
+				friendly = c:SWE
+			}
+		}
+		ai_chance = {
+			base = 40
+		}
+	}
+
+	option = { # Option B: Be inte om återförening
+		name = so_reunion_swe.3.b
+		c:FIN = {
+			set_variable = {
+				name = so_reunion_fin_fennoman_boosted
+				value = yes
+			}
+		}
+		add_treasury = -5000
+		c:FIN = {
+			trigger_event = {
+				id = so_reunion_fin.1
+			}
+		}
+		ai_chance = {
+			base = 30
+		}
+	}
+
+	option = { # Option C: Sätt dig. Inget krig.
+		name = so_reunion_swe.3.c
+		ai_chance = {
+			base = 40
+		}
+	}
+}
+
+# SWE:Ev4 - Finland har återförenats. Sen då?
+so_reunion_swe.4 = {
+	type = country_event
+	placement = root
+	title = so_reunion_swe.4.t
+	desc = so_reunion_swe.4.d
+	flavor = so_reunion_swe.4.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+	
+	duration = 6
+	
+	# triggas av att SWE har återförenats med FIN. Fredligt eller på annat sätt.
+	trigger = {
+		has_technology_researched = nationalism
+		is_subject = no
+		is_at_war = no
+		c:FIN = {
+			relations:root >= relations_threshold:amicable
+			is_subject = no
+			is_at_war = no
+		}
+	}
+	
+	option = { # Option A: Återföreningskrig
+		name = so_reunion_swe.4.a
+        default_option = yes
+		# Todo: Hitta hur SWE kan vara allierad i kriget
+		c:FIN = {
+			create_diplomatic_play = {
+				target_country = c:RUS
+				war = yes
+				type = dp_independence
+				friendly = c:SWE
+			}
+		}
+		ai_chance = {
+			base = 40
+		}
+	}
+
+	option = { # Option B: Finländskt självständighetskrig
+		name = so_reunion_swe.4.b
+		c:FIN = {
+			set_variable = {
+				name = so_reunion_fin_fennoman_boosted
+				value = yes
+			}
+		}
+		add_treasury = -5000
+		c:FIN = {
+			trigger_event = {
+				id = so_reunion_fin.1
+			}
+		}
+		ai_chance = {
+			base = 30
 		}
 	}
 }

@@ -1,4 +1,51 @@
-﻿je_so_reunion_swe = { # Sveriges JE för att återförenas med Finland, startar evenemangssekvensen
+﻿# Återföreningens Journal Entries.
+
+# Sverige
+
+je_so_reunion_swe_provoke = { # SWE:JE1 - uppvigla den finländska nationalismen 
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	# JE är bara för den som äger hela Svealand
+	# Todo: Ett kriterium ska också vara att den svenska kulturen har majoritetsstatus?
+	is_shown_when_inactive = {
+		owns_entire_state_region = STATE_SVEALAND
+	}
+
+	# För att den ska vara möjlig att uppfylla behöver ägaren till Svealand ha nationalism och Finland måste existera och inte vara självständigt
+	# Todo: Om Finland inte existerar (och inte ägs av ägaren av Svealand), en skild JE där Sverige kan trigga ett finländskt uppror?
+	possible = {
+		exists = c:FIN
+		c:FIN = {
+			is_subject = yes
+		}
+	}
+
+	# JE avklaras om Sverige inte är i krig, FIN är inte självständigt eller i krig och relationen till SWE är god
+	complete = {
+		has_technology_researched = nationalism
+		is_at_war = no
+		c:FIN = {
+			is_subject = yes
+			is_at_war = no
+		}
+		c:FIN = {
+			relations:root >= relations_threshold:amicable
+		}
+	}
+
+	# Då JE avklaras triggas SWE:Ev1
+	on_complete = {
+		trigger_event = {
+			id = so_reunion_swe.1
+		}
+	}
+	
+	# Timeout är 100 år... Så att den inte timeoutar :)
+	timeout = 36500
+	should_be_pinned_by_default = yes
+}
+
+je_so_reunion_swe = { # SWE:JE2 - för att återförenas med Finland
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 
 	# JE är bara för den som äger hela Svealand
@@ -10,25 +57,89 @@
 	# För att den ska vara möjlig att uppfylla behöver ägaren till Svealand ha nationalism och Finland måste existera
 	# Todo: Om Finland inte existerar (och inte ägs av ägaren av Svealand), en skild JE där Sverige kan trigga ett finländskt uppror?
 	possible = {
-		has_technology_researched = nationalism
-		c:FIN = {
-			exists = yes
-		}
+		exists = c:FIN
 	}
 
-	# JE avklaras om Sverige inte är i krig och Finland är självständigt
+	# JE avklaras om Sverige inte är i krig och FIN är självständigt, inte är i krig och relationen till SWE är god
 	complete = {
+		has_technology_researched = nationalism
+		is_subject = no
 		is_at_war = no
 		c:FIN = {
 			is_subject = no
+			is_at_war = no
+		}
+		c:FIN = {
+			relations:root >= relations_threshold:amicable
 		}
 	}
 
-	# Då JE avklaras triggas det första eventet i Sveriges återföreningssekvens av event
+	# Då JE avklaras triggas SWE:Ev4
 	on_complete = {
-		trigger_event = { id = so_reunion_swe.1 }
+		trigger_event = { id = so_reunion_swe.4 }
 	}
 	
-	timeout = 3650
+	# Timeout är 100 år... Så att den inte timeoutar :)
+	timeout = 36500
+	should_be_pinned_by_default = yes
+}
+
+# Finland
+
+je_so_reunion_fin_independence = { # FIN:JE1 - nå självständighet
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	# JE är bara för den som har den finska kulturen som huvudkultur
+	is_shown_when_inactive = {
+		country_has_primary_culture = cu:finnish
+	}
+
+	# För att kunna uppfyllas behövs... vad? Nationalism + ?
+	possible = {
+		has_technology_researched = nationalism
+	}
+
+	# JE avklaras om FIN är självständigt
+	complete = {
+		is_subject = no
+	}
+
+	# Då JE avklaras... vad?
+	on_complete = {
+		
+	}
+	
+	# Timeout är 100 år... Så att den inte timeoutar :)
+	timeout = 36500
+	should_be_pinned_by_default = yes
+}
+
+je_so_reunion_fin_reunion = { # FIN:JE2 - återförenas med SWE
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	# JE är bara för den som har den finska kulturen som huvudkultur
+	is_shown_when_inactive = {
+		# Är bara synligt då tackat ja till att återförenas med Sverige (dvs SWE:Ev1 -> FIN:Ev1)
+		has_variable = so_var_reunion_fin_positive
+	}
+
+	# För att kunna uppfyllas behövs... vad? Nationalism + ?
+	possible = {
+		has_technology_researched = nationalism
+	}
+
+	# JE avklaras om FIN är självständigt och har godtagit SWE:Ev2
+	complete = {
+		is_subject = no
+		has_variable = so_var_reunion_fin_war
+	}
+
+	# Då JE avklaras återförenas vi! FIN:Ev4
+	on_complete = {
+		trigger_event = { id = so_reunion_fin.4 }
+	}
+	
+	# Timeout är 100 år... Så att den inte timeoutar :)
+	timeout = 36500
 	should_be_pinned_by_default = yes
 }

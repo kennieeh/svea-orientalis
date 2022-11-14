@@ -1,7 +1,7 @@
 ﻿# namespace för återföreningen, Finlands perspektiv
 namespace = so_reunion_fin
 
-# Sverige har uttalat att Öst ska förenas med Väst åter. Hur reagerar det självständiga Finland?
+# FIN:Ev1 - Triggas av SWE:Ev1 - Sverige har blandat sig i våra interna angelägenheter. Hur känner vi?
 so_reunion_fin.1 = {
 	type = country_event
 	placement = root
@@ -21,30 +21,175 @@ so_reunion_fin.1 = {
 	duration = 3
 	
 	trigger = {
-		# triggered by event - so_reunion_swe.1.b
+		# triggered by event - so_reunion_swe.1
 	}
 	
-	option = { # Sverige vill VAD?! Inte en chans. Den finska nationalismen ska ej kuvas igen.
-		name = so_reunion_fin.1.a
-		# Sveriges väg är fred. Fokusera på industri, typ? En modifier för det.
-		add_modifier = {
-			name = so_reunion_fin_mod_rejected
-			months = 120
+	option = { # Sverige stöder svekomanerna. Vi gillar.
+		name = so_reunion_fin.1.a1
+		trigger = {
+			has_variable = so_reunion_fin_svecoman_boosted
 		}
-		# Todo: Sverige blir sårat
+		change_relations = {
+			country = c:SWE
+			value = 10
+		}
+		set_variable = {
+			name = so_reunion_fin_svecoman_accepted
+			value = 10
+		}
+		ai_chance = {
+			base = 70
+		}
+	}
+	option = { # Sverige stöder svekomanerna. Vi gillar inte.
+		name = so_reunion_fin.1.b1
+		trigger = {
+			has_variable = so_reunion_fin_svecoman_boosted
+		}
+		change_relations = {
+			country = c:SWE
+			value = -50
+		}
+		remove_variable = so_reunion_fin_svecoman_boosted
+		set_variable = {
+			name = so_reunion_fin_svecoman_rejected
+			value = yes
+		}
+		ai_chance = {
+			base = 30
+		}
+	}
+	
+	option = { # Sverige stöder fennomanerna. Vi gillar.
+		name = so_reunion_fin.1.a2
+		trigger = {
+			has_variable = so_reunion_fin_fennoman_boosted
+		}
+		change_relations = {
+			country = c:SWE
+			value = 10
+		}
+		set_variable = {
+			name = so_reunion_fin_fennoman_accepted
+			value = 10
+		}
+		ai_chance = {
+			base = 70
+		}
+	}
+	
+	option = { # Sverige stöder fennomanerna. Vi gillar inte.
+		name = so_reunion_fin.1.b2
+		trigger = {
+			has_variable = so_reunion_fin_fennoman_boosted
+		}
+		change_relations = {
+			country = c:SWE
+			value = -50
+		}
+		remove_variable = so_reunion_fin_fennoman_boosted
+		set_variable = {
+			name = so_reunion_fin_fennoman_rejected
+			value = yes
+		}
+		ai_chance = {
+			base = 30
+		}
+	}
+}
+
+# FIN:Ev2 - Triggas om FIN:Ev1 positivt - (återkommande) - händelser om stöd till svekomaner/fennomaner
+so_reunion_fin.2 = {
+	type = country_event
+	placement = root
+	title = so_reunion_fin.2.t
+	desc = so_reunion_fin.2.d
+	flavor = so_reunion_fin.2.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/police_breaking_door"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	
+	duration = 3
+	
+	trigger = {
+		OR = {
+			AND = {
+				has_variable = so_reunion_fin_svecoman_accepted
+				has_variable = so_reunion_fin_svecoman_boosted
+			}
+			AND = {
+				has_variable = so_reunion_fin_fennoman_accepted
+				has_variable = so_reunion_fin_fennoman_boosted
+			}
+		}
+	}
+	
+	option = { # Sverige stöder svekomanerna. Vi kan understöda det.
+		name = so_reunion_fin.2.a
+        default_option = yes
+		change_variable = {
+			name = so_reunion_fin_svecoman_accepted
+			add = 20
+		}
+		ai_chance = {
+			base = 70
+		}
+	}
+	option = { # Sverige stöder svekomanerna. Vi kan försöka motarbeta det.
+		name = so_reunion_fin.2.b
+		change_variable = {
+			name = so_reunion_fin_svecoman_accepted
+			subtract = 20
+		}
+		add_treasury = -10000
+		s:STATE_SOUTHERN_FINLAND = {
+			add_radicals = {
+				strata = rich
+				culture = cu:swedish
+				value = medium_radicals
+			}
+		}
+		ai_chance = {
+			base = 30
+		}
+	}
+}
+
+# FIN:Ev4 - Triggas av FIN:JE2 är avklarat eller FIN:Ev3
+so_reunion_fin.4 = {
+	type = country_event
+	placement = root
+	title = so_reunion_fin.4.t
+	desc = so_reunion_fin.4.d
+	flavor = so_reunion_fin.4.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/police_breaking_door"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	
+	duration = 3
+	
+	trigger = {
+		# triggered by event - FIN:JE2 eller FIN:Ev3 som sätter en variabel för att kollas när kriget tagit slut
+		is_subject = no
+		is_at_war = no
+		has_variable = so_reunion_reunification_war
 	}
 
 	option = { # Finland är Sverige. Vi ska återförenas.
-		name = so_reunion_fin.1.b
-		# Sverige får en modifier i och med återföreningen. Var det så enkelt?
-		c:SWE = {
-				add_modifier = {
-				name = so_reunion_swe_mod_completed
-				months = 120
-			}
-		}
+		name = so_reunion_fin.4.a
 		# Finland blir en del av Sverige. Spelaren spelar som Sverige.
-		# Todo: 
 		if = {
 			limit = {
 				root = {
@@ -55,6 +200,91 @@ so_reunion_fin.1 = {
 		}
 		c:SWE = {
 			annex = c:FIN
+		}
+		c:SWE = {
+			trigger_event = { id = so_reunion_swe.4 }
+		}
+	}
+}
+
+# FIN:Ev5 - Triggas av SWE:Ev3 - Sverige vill på diplomatisk väg återförenas, nu då självständighet uppnåtts och det är fred.
+so_reunion_fin.5 = {
+	type = country_event
+	placement = root
+	title = so_reunion_fin.5.t
+	desc = so_reunion_fin.5.d
+	flavor = so_reunion_fin.5.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/police_breaking_door"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	
+	duration = 3
+	
+	trigger = {
+		# triggered by event - SWE:Ev3
+	}
+
+	option = { # Finland är Sverige. Vi ska återförenas.
+		name = so_reunion_fin.5.a
+		# Finland blir en del av Sverige. Spelaren spelar som Sverige.
+		if = {
+			limit = {
+				root = {
+					is_player = yes
+				}
+			}
+			play_as = c:SWE
+		}
+		c:SWE = {
+			annex = c:FIN
+		}
+		c:SWE = {
+			trigger_event = { id = so_reunion_swe.4 }
+		}
+		ai_chance = {
+			base = 70
+		}
+	}
+	
+	option = { # Nja, kanske inte ändå. Men då blir det krig.
+		name = so_reunion_fin.5.b
+		change_relations = {
+			country = c:SWE
+			value = -100
+		}
+		c:SWE = {
+			create_diplomatic_play = {
+				target_country = c:FIN
+				war = yes
+				type = dp_conquer_state
+
+				add_war_goal = {
+					holder = c:FIN
+					type = conquer_state
+					target_state = s:STATE_SOUTHERN_FINLAND.region_state:BIC
+				}
+
+				add_war_goal = {
+					holder = c:FIN
+					type = conquer_state
+					target_state = s:STATE_ALAND.region_state:BIC
+				}
+
+				add_war_goal = {
+					holder = c:FIN
+					type = conquer_state
+					target_state = s:STATE_OSTROBOTHNIA.region_state:BIC
+				}
+			}
+		}
+		ai_chance = {
+			base = 30
 		}
 	}
 }
