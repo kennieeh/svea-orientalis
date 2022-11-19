@@ -137,7 +137,7 @@ so_reunion_swe.2 = {
 				value = yes
 			}
 		}
-		add_treasury = -5000
+		add_treasury = -5000 			# residood: Vart tar pengarna vägen?
 		c:FIN = {
 			trigger_event = {
 				id = so_reunion_fin.1
