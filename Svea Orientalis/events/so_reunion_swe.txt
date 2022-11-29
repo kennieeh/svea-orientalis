@@ -21,26 +21,31 @@ so_reunion_swe.1 = {
 	
 	duration = 6
 	
-	# triggas av att spelaren uppnår god relation med Finland
+	# triggas av SWE:JE1
 	trigger = {
-		has_technology_researched = nationalism
-		is_subject = no
-		is_at_war = no
-		c:FIN = {
-			relations:root >= relations_threshold:amicable
-		}
 	}
 	
 	option = { # Option A: Invest in a Svecoman reunification movement
 		name = so_reunion_swe.1.a
         default_option = yes
+		set_variable = {
+			name = so_reunion_svecoman_boosted
+			value = 0
+		}
+		add_modifier = {
+			name = so_reunion_swe_svecoman_boosted
+			multiplier = money_amount_multiplier_medium
+			months = normal_modifier_time
+		}
 		c:FIN = {
 			set_variable = {
-				name = so_reunion_fin_svecoman_boosted
+				name = so_reunion_svecoman_boosted
 				value = yes
 			}
 		}
-		add_treasury = -10000
+		add_journal_entry = {
+			type = je_so_reunion_swe_svecoman
+		}
 		c:FIN = {
 			trigger_event = {
 				id = so_reunion_fin.1
@@ -53,13 +58,24 @@ so_reunion_swe.1 = {
 
 	option = { # Option B: Invest in a Finnish independence movement
 		name = so_reunion_swe.1.b
+		set_variable = {
+			name = so_reunion_fennoman_boosted
+			value = 0
+		}
+		add_modifier = {
+			name = so_reunion_swe_fennoman_boosted
+			multiplier = money_amount_multiplier_small
+			months = normal_modifier_time
+		}
 		c:FIN = {
 			set_variable = {
-				name = so_reunion_fin_fennoman_boosted
+				name = so_reunion_fennoman_boosted
 				value = yes
 			}
 		}
-		add_treasury = -5000
+		add_journal_entry = {
+			type = je_so_reunion_swe_fennoman
+		}
 		c:FIN = {
 			trigger_event = {
 				id = so_reunion_fin.1
@@ -76,7 +92,18 @@ so_reunion_swe.1 = {
 			name = so_reunion_swe_abandoned_fin
 			value = yes
 		}
+		add_modifier = {
+			name = so_reunion_swe_abandoned_fin
+			multiplier = money_amount_multiplier_small
+			months = normal_modifier_time
+		}
 		s:STATE_SOUTHERN_FINLAND = {
+			remove_claim = ROOT
+		}
+		s:STATE_OSTROBOTHNIA = {
+			remove_claim = ROOT
+		}
+		s:STATE_ALAND = {
 			remove_claim = ROOT
 		}
 		ai_chance = {
@@ -104,14 +131,8 @@ so_reunion_swe.2 = {
 	
 	duration = 6
 	
-	# triggas av att SWE har en stor armé och att läget i FIN är understödande
+	# triggas av SWE:JE2
 	trigger = {
-		has_technology_researched = nationalism
-		is_subject = no
-		is_at_war = no
-		c:FIN = {
-			relations:root >= relations_threshold:amicable
-		}
 	}
 	
 	option = { # Option A: Återföreningskrig
@@ -122,25 +143,57 @@ so_reunion_swe.2 = {
 				target_country = c:RUS
 				war = yes
 				type = dp_independence
+				add_initiator_backers =  { c:SWE }
 			}
 		}
+		add_journal_entry = {
+			type = je_so_reunion_reunification_war
+		}
+		ai_chance = {
+			base = 60
+		}
+	}
+
+	option = { # Option B: Sätt dig. Inget krig. TODO: Ett alternativ om att vänta X år
+		name = so_reunion_swe.2.b
+		add_treasury = 500
 		ai_chance = {
 			base = 40
 		}
 	}
+}
 
-	option = { # Option B: Finländskt självständighetskrig
-		name = so_reunion_swe.2.b
+# SWE:Ev3 - Läget är optimalt för ett krig mot RUS. Dags att ta beslutet.
+so_reunion_swe.3 = {
+	type = country_event
+	placement = root
+	title = so_reunion_swe.3.t
+	desc = so_reunion_swe.3.d
+	flavor = so_reunion_swe.3.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+	
+	duration = 6
+	
+	# triggas av SWE:JE2
+	trigger = {
+	}
+
+	option = { # Option A: Finländskt självständighetskrig
+		name = so_reunion_swe.3.a
 		c:FIN = {
-			set_variable = {
-				name = so_reunion_fin_fennoman_boosted
-				value = yes
-			}
-		}
-		add_treasury = -5000 			# residood: Vart tar pengarna vägen?
-		c:FIN = {
-			trigger_event = {
-				id = so_reunion_fin.1
+			create_diplomatic_play = {
+				target_country = c:RUS
+				war = yes
+				type = dp_independence
+				add_initiator_backers =  { c:SWE }
 			}
 		}
 		ai_chance = {
@@ -148,21 +201,21 @@ so_reunion_swe.2 = {
 		}
 	}
 
-	option = { # Option C: Sätt dig. Inget krig.
-		name = so_reunion_swe.2.c
+	option = { # Option B: Sätt dig. Inget krig.
+		name = so_reunion_swe.3.b
 		ai_chance = {
 			base = 40
 		}
 	}
 }
 
-# SWE:Ev3 - Ett självständigt Finland, kan det övertalas till återförening?
-so_reunion_swe.3 = {
+# SWE:Ev4 - Ett självständigt Finland, kan det övertalas till återförening?
+so_reunion_swe.4 = {
 	type = country_event
 	placement = root
-	title = so_reunion_swe.3.t
-	desc = so_reunion_swe.3.d
-	flavor = so_reunion_swe.3.f
+	title = so_reunion_swe.4.t
+	desc = so_reunion_swe.4.d
+	flavor = so_reunion_swe.4.f
 	
 	event_image = {
 		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
@@ -188,56 +241,28 @@ so_reunion_swe.3 = {
 	}
 	
 	option = { # Option A: Be om återförening
-		name = so_reunion_swe.3.a
+		name = so_reunion_swe.4.a
         default_option = yes
-		# Todo: Hitta hur SWE kan vara allierad i kriget
-		c:FIN = {
-			create_diplomatic_play = {
-				target_country = c:RUS
-				war = yes
-				type = dp_independence
-				friendly = c:SWE
-			}
-		}
 		ai_chance = {
 			base = 40
 		}
 	}
 
 	option = { # Option B: Be inte om återförening
-		name = so_reunion_swe.3.b
-		c:FIN = {
-			set_variable = {
-				name = so_reunion_fin_fennoman_boosted
-				value = yes
-			}
-		}
-		add_treasury = -5000
-		c:FIN = {
-			trigger_event = {
-				id = so_reunion_fin.1
-			}
-		}
+		name = so_reunion_swe.4.b
 		ai_chance = {
 			base = 30
 		}
 	}
-
-	option = { # Option C: Sätt dig. Inget krig.
-		name = so_reunion_swe.3.c
-		ai_chance = {
-			base = 40
-		}
-	}
 }
 
-# SWE:Ev4 - Finland har återförenats. Sen då?
-so_reunion_swe.4 = {
+# SWE:Ev5 - Finland har återförenats. Sen då?
+so_reunion_swe.5 = {
 	type = country_event
 	placement = root
-	title = so_reunion_swe.4.t
-	desc = so_reunion_swe.4.d
-	flavor = so_reunion_swe.4.f
+	title = so_reunion_swe.5.t
+	desc = so_reunion_swe.5.d
+	flavor = so_reunion_swe.5.f
 	
 	event_image = {
 		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
@@ -250,48 +275,133 @@ so_reunion_swe.4 = {
 	
 	duration = 6
 	
-	# triggas av att SWE har återförenats med FIN. Fredligt eller på annat sätt.
+	# triggas av att SWE:JE5
 	trigger = {
-		has_technology_researched = nationalism
-		is_subject = no
-		is_at_war = no
-		c:FIN = {
-			relations:root >= relations_threshold:amicable
-			is_subject = no
-			is_at_war = no
-		}
 	}
 	
-	option = { # Option A: Återföreningskrig
-		name = so_reunion_swe.4.a
+	option = { # Option A: 
+		name = so_reunion_swe.5.a
         default_option = yes
-		# Todo: Hitta hur SWE kan vara allierad i kriget
-		c:FIN = {
-			create_diplomatic_play = {
-				target_country = c:RUS
-				war = yes
-				type = dp_independence
-				friendly = c:SWE
-			}
-		}
 		ai_chance = {
 			base = 40
 		}
 	}
 
-	option = { # Option B: Finländskt självständighetskrig
-		name = so_reunion_swe.4.b
-		c:FIN = {
-			set_variable = {
-				name = so_reunion_fin_fennoman_boosted
-				value = yes
-			}
+	option = { # Option B: 
+		name = so_reunion_swe.5.b
+		ai_chance = {
+			base = 30
 		}
-		add_treasury = -5000
+	}
+}
+
+# SWE:Ev6 - Återkommande evenemang för stöd av svekomaner (måste göras på SWE-sidan för att fungera med OnPulse)
+so_reunion_swe.6 = {
+	type = country_event
+	placement = root
+	title = so_reunion_swe.6.t
+	desc = so_reunion_swe.6.d
+	flavor = so_reunion_swe.6.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+	
+	duration = 3
+
+	cooldown = { months = 4 }
+	
+	# triggas av onPulse, förutsatt att triggers nedan är uppfyllda
+	trigger = {
+		has_variable = so_reunion_svecoman_boosted
 		c:FIN = {
-			trigger_event = {
-				id = so_reunion_fin.1
-			}
+			relations:root >= relations_threshold:amicable
+		}
+	}
+	
+	option = { # Option A: Mer resurser för svekomanerna!
+		name = so_reunion_swe.6.a
+        default_option = yes
+		add_treasury = -1000
+		change_variable = {
+			name = so_reunion_svecoman_boosted
+			add = 10
+		}
+		c:FIN = {
+			trigger_event = { id = so_reunion_fin.2 days = 0 popup = yes }
+		}
+		ai_chance = {
+			base = 70
+		}
+	}
+
+	option = { # Option B: Låt det gå sin stilla gång
+		name = so_reunion_swe.6.b
+		change_variable = {
+			name = so_reunion_svecoman_boosted
+			subtract = 1
+		}
+		ai_chance = {
+			base = 30
+		}
+	}
+}
+
+# SWE:Ev7 - Återkommande evenemang för stöd av fennomaner (måste göras på SWE-sidan för att fungera med OnPulse)
+so_reunion_swe.7 = {
+	type = country_event
+	placement = root
+	title = so_reunion_swe.7.t
+	desc = so_reunion_swe.7.d
+	flavor = so_reunion_swe.7.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+	
+	duration = 3
+
+	cooldown = { months = 4 }
+	
+	# triggas av onPulse, förutsatt att triggers nedan är uppfyllda
+	trigger = {
+		has_variable = so_reunion_fennoman_boosted
+		c:FIN = {
+			relations:root >= relations_threshold:amicable
+		}
+	}
+	
+	option = { # Option A: Mer resurser för fennomanerna!
+		name = so_reunion_swe.7.a
+        default_option = yes
+		add_treasury = -1000
+		change_variable = {
+			name = so_reunion_fennoman_boosted
+			add = 40
+		}
+		c:FIN = {
+			trigger_event = { id = so_reunion_fin.3 days = 0 popup = yes }
+		}
+		ai_chance = {
+			base = 70
+		}
+	}
+
+	option = { # Option B: Låt det gå sin stilla gång
+		name = so_reunion_swe.7.b
+		change_variable = {
+			name = so_reunion_fennoman_boosted
+			subtract = 1
 		}
 		ai_chance = {
 			base = 30

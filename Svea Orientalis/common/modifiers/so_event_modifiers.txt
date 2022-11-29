@@ -1,22 +1,25 @@
 ﻿# Den här modifiern är bara så att Ken ska ha det lättare :D
 so_test_em = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
-	state_standard_of_living_add = 10
-	state_poor_standard_of_living_add = 10
-	state_conscription_rate_mult = 0.75
-	building_urban_center_throughput_mult = 5
+	state_conscription_rate_mult = 5.75
+	state_accepted_birth_rate_mult = 2.5
+	state_migration_pull_mult = 5.0
+	state_infrastructure_add = 50
 	building_construction_sector_throughput_mult = 5
+	building_government_administration_throughput_mult = 15
+	building_urban_center_throughput_mult = 5
 	building_tooling_workshops_throughput_mult = 5
 	building_motor_industry_throughput_mult = 5
 	building_railway_throughput_mult = 5
-	building_rye_farm_throughput_mult = 50
-	building_livestock_ranch_throughput_mult = 50
-	building_logging_camp_throughput_mult = 50
-	building_fishing_wharf_throughput_mult = 50
-	building_coal_mine_throughput_mult = 50
-	building_iron_mine_throughput_mult = 50
-	building_sulfur_mine_throughput_mult = 50
-	building_lead_mine_throughput_mult = 50
+	building_rye_farm_throughput_mult = 5
+	building_wheat_farm_throughput_mult = 5
+	building_livestock_ranch_throughput_mult = 5
+	building_logging_camp_throughput_mult = 5
+	building_fishing_wharf_throughput_mult = 5
+	building_coal_mine_throughput_mult = 5
+	building_iron_mine_throughput_mult = 5
+	building_sulfur_mine_throughput_mult = 5
+	building_lead_mine_throughput_mult = 5
 	building_dye_plantation_throughput_mult = 5
 	building_coffee_plantation_throughput_mult = 5
 	building_tea_plantation_throughput_mult = 5
@@ -40,24 +43,32 @@ so_test_em = {
 	building_electrics_industry_throughput_mult = 5
 	building_war_machine_industry_throughput_mult = 5
 	building_input_mult = -0.99
-	country_bureaucracy_mult = 1.5
-	country_authority_mult = 1.5
-	country_army_power_projection_mult = 0.3
-	country_law_enactment_success_add = 0.4
-	country_trade_route_exports_add = 100
-	country_trade_route_imports_add = 100
+	building_training_rate_add = 10000
+	country_bureaucracy_mult = 5
+	country_authority_mult = 5
 	country_loan_interest_rate_mult = -0.5
 	country_gold_reserve_limit_mult = 0.5
-	country_tax_income_add = 350000
-	unit_offense_mult = 1.75
-	unit_defense_mult = 3.75
+	country_infamy_decay_mult = 2.5
+	unit_morale_protection_mult = 2.0
+	unit_morale_damage_mult = 2.0
+	unit_kill_rate_add = 5.0
 }
 
 # so_reunion_swe.1 modifiers
 # först, svenska sidan:
 
+# Sverige väljer att stöda svekomanerna. Ett kostsamt projekt.
+so_reunion_swe_svecoman_boosted = {
+	country_expenses_add = 1
+}
+
+# Sverige väljer att stöda fennomanerna. Ett kostsamt projekt.
+so_reunion_swe_fennoman_boosted = {
+	country_expenses_add = 1
+}
+
 # Sverige väljer att fokusera på västra halvan. Öst är bortglömt. Glöm krig.
-so_reunion_swe_mod_abandoned = {
+so_reunion_swe_abandoned_fin = {
 	building_tooling_workshops_throughput_mult = 0.25
 	building_construction_sector_throughput_mult = 0.20
 	building_arms_industry_throughput_mult = -0.1

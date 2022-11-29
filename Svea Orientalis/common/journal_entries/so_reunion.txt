@@ -9,6 +9,7 @@ je_so_reunion_swe_provoke = { # SWE:JE1 - uppvigla den finländska nationalismen
 	# Todo: Ett kriterium ska också vara att den svenska kulturen har majoritetsstatus?
 	is_shown_when_inactive = {
 		owns_entire_state_region = STATE_SVEALAND
+		country_has_primary_culture = cu:swedish
 	}
 
 	# För att den ska vara möjlig att uppfylla behöver ägaren till Svealand ha nationalism och Finland måste existera och inte vara självständigt
@@ -45,7 +46,157 @@ je_so_reunion_swe_provoke = { # SWE:JE1 - uppvigla den finländska nationalismen
 	should_be_pinned_by_default = yes
 }
 
-je_so_reunion_swe = { # SWE:JE2 - för att återförenas med Finland
+je_so_reunion_swe_svecoman = { # SWE:JE2 - få sentimentet för återförening att växa 
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	# För att den ska vara möjlig att uppfylla behöver ägaren till Svealand ha nationalism och Finland måste existera och inte vara självständigt
+	# Todo: Om Finland inte existerar (och inte ägs av ägaren av Svealand), en skild JE där Sverige kan trigga ett finländskt uppror?
+	possible = {
+		exists = c:FIN
+		c:FIN = {
+			is_subject = yes
+		}
+	}
+
+	# JE avklaras om Sverige inte är i krig, FIN är inte självständigt eller i krig och relationen till SWE är god
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+		is_at_war = no
+		c:FIN = {
+			is_subject = yes
+			is_at_war = no
+		}
+		c:FIN = {
+			relations:root >= relations_threshold:amicable
+		}
+		army_size >= 100
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					c:FIN = {
+						relations:root >= relations_threshold:amicable
+					}
+				}
+				change_variable = {
+					name = so_reunion_svecoman_boosted
+					add = 1
+				}
+			}
+		}
+		events = {
+			so_reunion_swe.6
+		}
+	}
+
+	# Då JE avklaras triggas SWE:Ev2 - återföreningskrig
+	on_complete = {
+		trigger_event = {
+			id = so_reunion_swe.2
+		}
+	}
+
+	invalid = {
+		c:FIN = {
+			is_subject_of = ROOT
+		}
+	}
+
+	current_value = {
+		value = root.var:so_reunion_svecoman_boosted
+	}
+
+	goal_add_value = {
+		add = 100
+	}
+
+	progressbar = yes
+	
+	# Timeout är 100 år... Så att den inte timeoutar :)
+	timeout = 36500
+	should_be_pinned_by_default = yes
+}
+
+je_so_reunion_swe_fennoman = { # SWE:JE3 - få sentimentet för självständighet att växa 
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	# För att den ska vara möjlig att uppfylla behöver ägaren till Svealand ha nationalism och Finland måste existera och inte vara självständigt
+	# Todo: Om Finland inte existerar (och inte ägs av ägaren av Svealand), en skild JE där Sverige kan trigga ett finländskt uppror?
+	possible = {
+		exists = c:FIN
+		c:FIN = {
+			is_subject = yes
+		}
+	}
+
+	# JE avklaras om Sverige inte är i krig, FIN är inte självständigt eller i krig och relationen till SWE är god
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+		is_at_war = no
+		c:FIN = {
+			is_subject = yes
+			is_at_war = no
+		}
+		c:FIN = {
+			relations:root >= relations_threshold:amicable
+		}
+		army_size >= 100
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					c:FIN = {
+						relations:root >= relations_threshold:amicable
+					}
+				}
+				change_variable = {
+					name = so_reunion_fennoman_boosted
+					add = 1
+				}
+			}
+		}
+		events = {
+			so_reunion_swe.7
+		}
+	}
+
+	# Då JE avklaras triggas SWE:Ev3 - ett finskt självständighetskrig
+	on_complete = {
+		trigger_event = {
+			id = so_reunion_swe.3
+		}
+	}
+
+	invalid = {
+		c:FIN = {
+			is_subject_of = ROOT
+		}
+	}
+
+	current_value = {
+		value = root.var:so_reunion_fennoman_boosted
+	}
+
+	goal_add_value = {
+		add = 100
+	}
+
+	progressbar = yes
+	
+	# Timeout är 100 år... Så att den inte timeoutar :)
+	timeout = 36500
+	should_be_pinned_by_default = yes
+}
+
+je_so_reunion_swe_dip = { # SWE:JE4 - övertyga FIN om återförening
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 
 	# JE är bara för den som äger hela Svealand
@@ -58,6 +209,53 @@ je_so_reunion_swe = { # SWE:JE2 - för att återförenas med Finland
 	# Todo: Om Finland inte existerar (och inte ägs av ägaren av Svealand), en skild JE där Sverige kan trigga ett finländskt uppror?
 	possible = {
 		exists = c:FIN
+		c:FIN = {
+			is_subject = no
+			is_at_war = no
+		}
+	}
+
+	# JE avklaras om Sverige inte är i krig och FIN är självständigt, inte är i krig och relationen till SWE är god
+	complete = {
+		has_technology_researched = pan-nationalism
+		is_subject = no
+		is_at_war = no
+		c:FIN = {
+			is_subject = no
+			is_at_war = no
+		}
+		c:FIN = {
+			relations:root >= relations_threshold:friendly
+		}
+	}
+
+	# Då JE avklaras triggas SWE:Ev4
+	on_complete = {
+		trigger_event = { id = so_reunion_swe.4 }
+	}
+	
+	# Timeout är 100 år... Så att den inte timeoutar :)
+	timeout = 36500
+	should_be_pinned_by_default = yes
+}
+
+je_so_reunion_swe = { # SWE:JE5 - för att återförenas med Finland
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	# JE är bara för den som äger hela Svealand
+	# Todo: Ett kriterium ska också vara att den svenska kulturen har majoritetsstatus?
+	is_shown_when_inactive = {
+		owns_entire_state_region = STATE_SVEALAND
+		country_has_primary_culture = cu:swedish
+	}
+
+	# 
+	possible = {
+		exists = c:FIN
+		c:FIN = {
+			is_subject = no
+			is_at_war = no
+		}
 	}
 
 	# JE avklaras om Sverige inte är i krig och FIN är självständigt, inte är i krig och relationen till SWE är god
@@ -77,6 +275,28 @@ je_so_reunion_swe = { # SWE:JE2 - för att återförenas med Finland
 	# Då JE avklaras triggas SWE:Ev4
 	on_complete = {
 		trigger_event = { id = so_reunion_swe.4 }
+	}
+	
+	# Timeout är 100 år... Så att den inte timeoutar :)
+	timeout = 36500
+	should_be_pinned_by_default = yes
+}
+
+je_so_reunion_reunification_war = { # SWE:JE6 - återföreningskriget är slut
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	# JE avklaras om Sverige inte är i krig och FIN är självständigt, inte är i krig och relationen till SWE är god
+	complete = {
+		is_at_war = no
+		c:FIN = {
+			is_subject = no
+			is_at_war = no
+		}
+	}
+
+	# Då JE avklaras blir FIN SWE
+	on_complete = {
+		annex = c:FIN
 	}
 	
 	# Timeout är 100 år... Så att den inte timeoutar :)

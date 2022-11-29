@@ -14,29 +14,36 @@ so_reunion_fin.1 = {
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	on_opened_soundeffect = "event:/SFX/Events/middleeast/police_breaking_door"
 
 	icon = "gfx/interface/icons/event_icons/event_scales.dds"
 	
 	duration = 3
 	
+	# triggered by event - so_reunion_swe.1
 	trigger = {
-		# triggered by event - so_reunion_swe.1
 	}
 	
 	option = { # Sverige stöder svekomanerna. Vi gillar.
 		name = so_reunion_fin.1.a1
+        default_option = yes
 		trigger = {
-			has_variable = so_reunion_fin_svecoman_boosted
+			has_variable = so_reunion_svecoman_boosted
 		}
 		change_relations = {
 			country = c:SWE
 			value = 10
 		}
 		set_variable = {
-			name = so_reunion_fin_svecoman_accepted
-			value = 10
+			name = so_reunion_svecoman_accepted
+			value = yes
 		}
+		c:SWE = {
+			change_variable = {
+				name = so_reunion_svecoman_boosted
+				add = 5
+			}
+		}
+		c:SWE = { post_notification = so_reunion_svecoman_accepted_notification }
 		ai_chance = {
 			base = 70
 		}
@@ -44,17 +51,23 @@ so_reunion_fin.1 = {
 	option = { # Sverige stöder svekomanerna. Vi gillar inte.
 		name = so_reunion_fin.1.b1
 		trigger = {
-			has_variable = so_reunion_fin_svecoman_boosted
+			has_variable = so_reunion_svecoman_boosted
 		}
 		change_relations = {
 			country = c:SWE
-			value = -50
+			value = -10
 		}
-		remove_variable = so_reunion_fin_svecoman_boosted
 		set_variable = {
 			name = so_reunion_fin_svecoman_rejected
 			value = yes
 		}
+		c:SWE = {
+			change_variable = {
+				name = so_reunion_svecoman_boosted
+				subtract = 5
+			}
+		}
+		c:SWE = { post_notification = so_reunion_svecoman_rejected_notification }
 		ai_chance = {
 			base = 30
 		}
@@ -62,8 +75,9 @@ so_reunion_fin.1 = {
 	
 	option = { # Sverige stöder fennomanerna. Vi gillar.
 		name = so_reunion_fin.1.a2
+        default_option = yes
 		trigger = {
-			has_variable = so_reunion_fin_fennoman_boosted
+			has_variable = so_reunion_fennoman_boosted
 		}
 		change_relations = {
 			country = c:SWE
@@ -71,8 +85,15 @@ so_reunion_fin.1 = {
 		}
 		set_variable = {
 			name = so_reunion_fin_fennoman_accepted
-			value = 10
+			value = yes
 		}
+		c:SWE = {
+			change_variable = {
+				name = so_reunion_fennoman_boosted
+				add = 5
+			}
+		}
+		c:SWE = { post_notification = so_reunion_fennoman_accepted_notification }
 		ai_chance = {
 			base = 70
 		}
@@ -81,24 +102,30 @@ so_reunion_fin.1 = {
 	option = { # Sverige stöder fennomanerna. Vi gillar inte.
 		name = so_reunion_fin.1.b2
 		trigger = {
-			has_variable = so_reunion_fin_fennoman_boosted
+			has_variable = so_reunion_fennoman_boosted
 		}
 		change_relations = {
 			country = c:SWE
-			value = -50
+			value = -10
 		}
-		remove_variable = so_reunion_fin_fennoman_boosted
 		set_variable = {
 			name = so_reunion_fin_fennoman_rejected
 			value = yes
 		}
+		c:SWE = {
+			change_variable = {
+				name = so_reunion_fennoman_boosted
+				subtract = 5
+			}
+		}
+		c:SWE = { post_notification = so_reunion_fennoman_rejected_notification }
 		ai_chance = {
 			base = 30
 		}
 	}
 }
 
-# FIN:Ev2 - Triggas om FIN:Ev1 positivt - (återkommande) - händelser om stöd till svekomaner/fennomaner
+# FIN:Ev2 - Triggas om FIN:Ev1 positivt - (återkommande) - händelser om stöd till svekomaner
 so_reunion_fin.2 = {
 	type = country_event
 	placement = root
@@ -111,43 +138,36 @@ so_reunion_fin.2 = {
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	on_opened_soundeffect = "event:/SFX/Events/middleeast/police_breaking_door"
 
 	icon = "gfx/interface/icons/event_icons/event_scales.dds"
 	
 	duration = 3
+
+	cooldown = { months = 4 }
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_variable = so_reunion_fin_svecoman_accepted
-				has_variable = so_reunion_fin_svecoman_boosted
-			}
-			AND = {
-				has_variable = so_reunion_fin_fennoman_accepted
-				has_variable = so_reunion_fin_fennoman_boosted
-			}
-		}
+		has_variable = so_reunion_svecoman_boosted
 	}
 	
 	option = { # Sverige stöder svekomanerna. Vi kan understöda det.
 		name = so_reunion_fin.2.a
         default_option = yes
-		change_variable = {
-			name = so_reunion_fin_svecoman_accepted
-			add = 20
+		change_relations = {
+			country = c:SWE
+			value = 10
 		}
+		c:SWE = { post_notification = so_reunion_svecoman_accepted_notification }
 		ai_chance = {
 			base = 70
 		}
 	}
 	option = { # Sverige stöder svekomanerna. Vi kan försöka motarbeta det.
 		name = so_reunion_fin.2.b
-		change_variable = {
-			name = so_reunion_fin_svecoman_accepted
-			subtract = 20
+		change_relations = {
+			country = c:SWE
+			value = -10
 		}
-		add_treasury = -10000
+		add_treasury = -5000
 		s:STATE_SOUTHERN_FINLAND = {
 			add_radicals = {
 				strata = rich
@@ -155,6 +175,64 @@ so_reunion_fin.2 = {
 				value = medium_radicals
 			}
 		}
+		c:SWE = { post_notification = so_reunion_svecoman_rejected_notification }
+		ai_chance = {
+			base = 30
+		}
+	}
+}
+
+# FIN:Ev3 - Triggas om FIN:Ev1 positivt - (återkommande) - händelser om stöd till fennomaner
+so_reunion_fin.3 = {
+	type = country_event
+	placement = root
+	title = so_reunion_fin.3.t
+	desc = so_reunion_fin.3.d
+	flavor = so_reunion_fin.3.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	
+	duration = 3
+
+	cooldown = { months = 6 }
+	
+	trigger = {
+		has_variable = so_reunion_fennoman_boosted
+	}
+	
+	option = { # Sverige stöder fennomanerna. Vi kan understöda det.
+		name = so_reunion_fin.3.a
+        default_option = yes
+		change_relations = {
+			country = c:SWE
+			value = 10
+		}
+		c:SWE = { post_notification = so_reunion_fennoman_accepted_notification }
+		ai_chance = {
+			base = 70
+		}
+	}
+	option = { # Sverige stöder fennomanerna. Vi kan försöka motarbeta det.
+		name = so_reunion_fin.3.b
+		change_relations = {
+			country = c:SWE
+			value = -10
+		}
+		add_treasury = -5000
+		s:STATE_SOUTHERN_FINLAND = {
+			add_radicals = {
+				strata = rich
+				culture = cu:finnish
+				value = medium_radicals
+			}
+		}
+		c:SWE = { post_notification = so_reunion_fennoman_rejected_notification }
 		ai_chance = {
 			base = 30
 		}
@@ -189,6 +267,7 @@ so_reunion_fin.4 = {
 
 	option = { # Finland är Sverige. Vi ska återförenas.
 		name = so_reunion_fin.4.a
+        default_option = yes
 		# Finland blir en del av Sverige. Spelaren spelar som Sverige.
 		if = {
 			limit = {
@@ -232,6 +311,7 @@ so_reunion_fin.5 = {
 
 	option = { # Finland är Sverige. Vi ska återförenas.
 		name = so_reunion_fin.5.a
+        default_option = yes
 		# Finland blir en del av Sverige. Spelaren spelar som Sverige.
 		if = {
 			limit = {

@@ -18,9 +18,27 @@
    je_so_reunion_swe_provoke:0 "Awaken the Finns"
    je_so_reunion_swe_provoke_reason:0 "While Finland may be content with its current overlord for the time being, maybe we can agitate them to seek... alternatives"
    
-   # SWE:JE2 - för att återförenas med Finland
+   # SWE:JE2 - stöd svekomanerna 
+   je_so_reunion_swe_svecoman:0 "Support the Svecoman movement in Finland"
+   je_so_reunion_swe_svecoman_reason:0 ""
+   je_so_reunion_swe_svecoman_goal:0 "Have enough #variable $so_reunion_svecoman_boosted$#!"
+   
+   # SWE:JE1 - stöd fennomanerna
+   je_so_reunion_swe_fennoman:0 "Support the Fennoman movement in Finland"
+   je_so_reunion_swe_fennoman_reason:0 ""
+   je_so_reunion_swe_fennoman_goal:0 "Have enough support for the Fennoman movement"
+   
+   # SWE:JE4 - ett självständigt Finland, kan vi övertala dem om att återförenas?
+   je_so_reunion_swe_dip:0 "Convince the Finns to reunite"
+   je_so_reunion_swe_dip_reason:0 ""
+   
+   # SWE:JE5 - för att återförenas med Finland
    je_so_reunion_swe:0 "Reunion with the East"
    je_so_reunion_swe_reason:0 "Finland has broken free, now we can be together again!"
+   
+   # SWE:JE6 - vinn återföreningskriget, återförenas
+   je_so_reunion_reunification_war:0 "Win the Reunification War"
+   je_so_reunion_reunification_war_reason:0 "We are at war with the Russians in order to reunite with our eastern part. We need to win."
    
    # FIN:JE
    
@@ -46,49 +64,77 @@
    so_reunion_swe.1.f:0 "After the 1808-09 war, Sweden was forced to hand over its eastern territories to the Russian Czar. This included all of Finland and the Åland islands."
    # Option A: Invest in a Svecoman reunification movement
    so_reunion_swe.1.a:0 "Invest in reunification"
-   so_reunion_fin_svecoman_boosted:0 "Boosted the Svecoman movement"
+   so_reunion_svecoman_boosted:0 "Boosted the Svecoman movement in Finland"
    # Option B: Invest in a Finnish independence movement
    so_reunion_swe.1.b:0 "Invest in Finnish nationalism"
-   so_reunion_fin_fennoman_boosted:0 "Boosted the Fennoman movement"
+   so_reunion_fennoman_boosted:0 "Boosted the Fennoman movement in Finland"
    # Option C: Focus on the West
    so_reunion_swe.1.c:0 "Leave Finland be, it is a lost cause."
    so_reunion_swe_abandoned_fin:0 "Abandoned Finland"
    
    # SWE:Ev2 - Läget är optimalt för ett krig mot RUS. Dags att ta beslutet.
-   so_reunion_swe.2:0 "The Finnish War"
-   so_reunion_swe.2.t:0 "The Finnish War"
+   so_reunion_swe.2:0 "The Fennoswedish Reunification War"
+   so_reunion_swe.2.t:0 "The Fennoswedish Reunification War"
    so_reunion_swe.2.d:0 "The circumstances are in our favor. Shall we gather the courage? Shall we undo the shameful sundering of our realm?"
    so_reunion_swe.2.f:0 "After years of investment and anti-Russian propaganda, the situation is quickly coming to a boiling point. With the Swedish army and navy ready to strike, all that is needed is the stroke of a pen to set it all ablaze."
    # Option A: Återföreningskrig
    so_reunion_swe.2.a:0 "It is time. Let slip the dogs of war and bring Finland back to where she belongs."
-   # Option B: Självständighetskrig
-   so_reunion_swe.2.b:0 "It is no longer our fight. If Finland wishes to be free, let her break her own chains."
    # Option C: Focus on the West
-   so_reunion_swe.2.c:0 "Stand down. We do not turn our back against the East, but we choose to face the West."
+   so_reunion_swe.2.b:0 "Stand down. We do not turn our back against the East, but we choose to face the West."
+   
+   # SWE:Ev3 - Läget är optimalt för ett krig mot RUS. Dags att ta beslutet.
+   so_reunion_swe.3:0 "The Finnish War"
+   so_reunion_swe.3.t:0 "The Finnish War"
+   so_reunion_swe.3.d:0 "The circumstances are in our favor. Shall we gather the courage? Shall we undo the shameful sundering of our realm?"
+   so_reunion_swe.3.f:0 "After years of investment and anti-Russian propaganda, the situation is quickly coming to a boiling point. With the Swedish army and navy ready to strike, all that is needed is the stroke of a pen to set it all ablaze."
+   # Option B: Självständighetskrig
+   so_reunion_swe.3.a:0 "The Finns wish to be free. We shall aid them with all our force."
+   # Option C: Focus on the West
+   so_reunion_swe.3.b:0 "Stand down. We do not turn our back against the East, but we choose to face the West."
    
    # SWE:Ev3 - Ett självständigt Finland, kan det övertalas till återförening?
-   so_reunion_swe.3:0 "A modest proposal"
-   so_reunion_swe.3.t:0 "A modest proposal"
-   so_reunion_swe.3.d:0 "Finland is independent now. Free from the Russian shackles, can it perhaps be convinced to reunite with us?"
-   so_reunion_swe.3.f:0 "While the Finnish achievement of independence certainly boosted Finnish nationalism, the Svecoman movement also grew more confident."
+   so_reunion_swe.4:0 "A modest proposal"
+   so_reunion_swe.4.t:0 "A modest proposal"
+   so_reunion_swe.4.d:0 "Finland is independent now. Free from the Russian shackles, can it perhaps be convinced to reunite with us?"
+   so_reunion_swe.4.f:0 "While the Finnish achievement of independence certainly boosted Finnish nationalism, the Svecoman movement also grew more confident."
    # Option A: Peta inte för hårt. Är situationen god är den god. Är den mindre god är chansen mindre.
-   so_reunion_swe.3.a:0 "Approach the matter gently"
+   so_reunion_swe.4.a:0 "Approach the matter gently"
    # Option B: Peta hårt. Antingen eller. Krig om så krävs.
-   so_reunion_swe.3.b:0 "Be persuasive, even if it might spark a conflict"
+   so_reunion_swe.4.b:0 "Be persuasive, even if it might spark a conflict"
    # Option C: Peta inte alls. Inget pet, inget bråk.
-   so_reunion_swe.3.c:0 "What is 'modest' about this proposal, exactly? Get out!"
+   so_reunion_swe.4.c:0 "What is 'modest' about this proposal, exactly? Get out!"
    
    # SWE:Ev4 - Finland har återförenats. Sen då?
-   so_reunion_swe.4:0 "Reunited at last"
-   so_reunion_swe.4.t:0 "Reunited at last"
-   so_reunion_swe.4.d:0 "The 1809 peace treaty has been undone."
-   so_reunion_swe.4.f:0 "TBD"
+   so_reunion_swe.5:0 "Reunited at last"
+   so_reunion_swe.5.t:0 "Reunited at last"
+   so_reunion_swe.5.d:0 "The 1809 peace treaty has been undone."
+   so_reunion_swe.5.f:0 "TBD"
    # Option A: TBD
-   so_reunion_swe.4.a:0 "TBD"
+   so_reunion_swe.5.a:0 "TBD"
    # Option B: TBD
-   so_reunion_swe.4.b:0 "TBD"
+   so_reunion_swe.5.b:0 "TBD"
    # Option C: TBD
-   so_reunion_swe.4.c:0 "TBD"
+   so_reunion_swe.5.c:0 "TBD"
+   
+   # SWE:Ev6 - återkommande event för stödet av svekomanerna i Finland
+   so_reunion_swe.6:0 "Our support of the Svecoman movement"
+   so_reunion_swe.6.t:0 "Our support of the Svecoman movement"
+   so_reunion_swe.6.d:0 "Shall we intensify our support?"
+   so_reunion_swe.6.f:0 "TBD"
+   # Option A: TBD
+   so_reunion_swe.6.a:0 "Yes."
+   # Option B: TBD
+   so_reunion_swe.6.b:0 "No."
+   
+   # SWE:Ev7 - återkommande event för stödet av fennomanerna i Finland
+   so_reunion_swe.7:0 "Our support of the Fennoman movement"
+   so_reunion_swe.7.t:0 "Our support of the Fennoman movement"
+   so_reunion_swe.7.d:0 "Shall we intensify our support?"
+   so_reunion_swe.7.f:0 "TBD"
+   # Option A: TBD
+   so_reunion_swe.7.a:0 "Yes."
+   # Option B: TBD
+   so_reunion_swe.7.b:0 "No."
    
    
    # -----------  FIN:Events ----------- 
@@ -100,45 +146,44 @@
    so_reunion_fin.1.f:0 "Are we to dream of ridding ourselves of one yoke, just to accept another? Are we but a pawn in this game?"
    # Option A1: Accept svecoman boost
    so_reunion_fin.1.a1:0 "A hand extended in friendship is not to be turned away. We see you Sweden, as you see us."
+   so_reunion_svecoman_accepted_notification:0 "Finland accepts support"
    # Option B1: reject svecoman boost
    so_reunion_fin.1.b1:0 "Better to suffer with dignity under Russian rule, than to lick the Swedish boot."
+   so_reunion_svecoman_rejected_notification:0 "Finland rejects meddling"
    # Option A2: Accept fennoman boost
    so_reunion_fin.1.a2:0 "A hand extended in friendship is not to be turned away. We see you Sweden, as you see us."
+   so_reunion_fennoman_accepted_notification:0 "Finland accepts support"
    # Option B2: Reject fennoman boost
    so_reunion_fin.1.b2:0 "Better to suffer with dignity under Russian rule, than to lick the Swedish boot."
+   so_reunion_fennoman_rejected_notification:0 "Finland rejects meddling"
    
    
-   # FIN:Ev2 - Triggas om FIN:Ev1 positivt - (återkommande) - händelser om stöd till svekomaner/fennomaner
-   so_reunion_fin.2:0 ""
-   so_reunion_fin.2.t:0 ""
-   so_reunion_fin.2.d:0 ""
-   so_reunion_fin.2.f:0 ""
+   # FIN:Ev2 - Triggas om FIN:Ev1 positivt och SWE:JE2 eller SWE:JE3 - (återkommande) - händelser om stöd till svekomaner
+   so_reunion_fin.2:0 "Swedish support for Svecomans"
+   so_reunion_fin.2.t:0 "Swedish support for Svecomans"
+   so_reunion_fin.2.d:0 "The Swedes continue to support their Swedish brethren and their wish for reunification."
+   so_reunion_fin.2.f:0 "TBD"
    # Option A: TBD
-   so_reunion_fin.2.a:0 ""
+   so_reunion_fin.2.a:0 "We welcome this"
    # Option B: TBD
-   so_reunion_fin.2.b:0 ""
-   # Option C: TBD
-   so_reunion_fin.2.c:0 ""
+   so_reunion_fin.2.b:0 "Reject it, whatever the cost!"
+   
+   # FIN:Ev3 - Triggas om FIN:Ev1 positivt och SWE:JE2 eller SWE:JE3 - (återkommande) - händelser om stöd till svekomaner
+   so_reunion_fin.3:0 "Swedish support for Fennomans"
+   so_reunion_fin.3.t:0 "Swedish support for Fennomans"
+   so_reunion_fin.3.d:0 "The Swedes continue to support our brightest minds and their wish for independence."
+   so_reunion_fin.3.f:0 "TBD"
+   # Option A: TBD
+   so_reunion_fin.3.a:0 "We welcome this"
+   # Option B: TBD
+   so_reunion_fin.3.b:0 "Reject it, whatever the cost!"
       
    
-   # FIN:Ev3 - Triggas av 1) SWE:Ev2 väljer krig, eller 2) av spelaren vid självständighetskrig mot RUS
-   so_reunion_fin.3:0 "Towards independence, towards freedom"
-   so_reunion_fin.3.t:0 "Towards independence, towards freedom"
-   so_reunion_fin.3.d:0 "We did not want war, but if that is the only way we can become a sovereign nation, then perhaps it is a cost we are willing to pay."
-   so_reunion_fin.3.f:0 "Beneath oppression's yoke thou never liest\nThy morning's come, O Finland of ours!"
-   # Option A: TBD
-   so_reunion_fin.3.a:0 ""
-   # Option B: TBD
-   so_reunion_fin.3.b:0 ""
-   # Option C: TBD
-   so_reunion_fin.3.c:0 ""
-      
-   
-   # FIN:Ev4 - Triggas av FIN:JE2 är avklarat och Ev3 valt återförening - nu återförening.
-   so_reunion_fin.4:0 "Return to Mother's Svea's embrace"
-   so_reunion_fin.4.t:0 "Return to Mother's Svea's embrace"
-   so_reunion_fin.4.d:0 "The aim of our struggle was never to wander the pathways of history alone. Alone, we are not whole. Alone, we risk being swallowed and destroyed by greater forces. Let us once more be embraced by Sweden."
-   so_reunion_fin.4.f:0 "What fate once tore apart, man can now reunite. Let us heal the wound between our nations and within our souls."
+   # FIN:Ev4 - Triggas av 1) SWE:Ev2 väljer krig, eller 2) av spelaren vid självständighetskrig mot RUS
+   so_reunion_fin.4:0 "Towards independence, towards freedom"
+   so_reunion_fin.4.t:0 "Towards independence, towards freedom"
+   so_reunion_fin.4.d:0 "We did not want war, but if that is the only way we can become a sovereign nation, then perhaps it is a cost we are willing to pay."
+   so_reunion_fin.4.f:0 "Beneath oppression's yoke thou never liest\nThy morning's come, O Finland of ours!"
    # Option A: TBD
    so_reunion_fin.4.a:0 ""
    # Option B: TBD
@@ -147,17 +192,30 @@
    so_reunion_fin.4.c:0 ""
       
    
-   # FIN:Ev5 - Triggas av SWE:Ev3 - hur svara då Sverige vill återförenas - Sverige vill på diplomatisk väg återförenas, nu då självständighet uppnåtts och det är fred.
-   so_reunion_fin.5:0 ""
-   so_reunion_fin.5.t:0 ""
-   so_reunion_fin.5.d:0 ""
-   so_reunion_fin.5.f:0 ""
+   # FIN:Ev5 - Triggas av FIN:JE2 är avklarat och Ev3 valt återförening - nu återförening.
+   so_reunion_fin.5:0 "Return to Mother's Svea's embrace"
+   so_reunion_fin.5.t:0 "Return to Mother's Svea's embrace"
+   so_reunion_fin.5.d:0 "The aim of our struggle was never to wander the pathways of history alone. Alone, we are not whole. Alone, we risk being swallowed and destroyed by greater forces. Let us once more be embraced by Sweden."
+   so_reunion_fin.5.f:0 "What fate once tore apart, man can now reunite. Let us heal the wound between our nations and within our souls."
    # Option A: TBD
    so_reunion_fin.5.a:0 ""
    # Option B: TBD
    so_reunion_fin.5.b:0 ""
    # Option C: TBD
    so_reunion_fin.5.c:0 ""
+      
+   
+   # FIN:Ev6 - Triggas av SWE:Ev3 - hur svara då Sverige vill återförenas - Sverige vill på diplomatisk väg återförenas, nu då självständighet uppnåtts och det är fred.
+   so_reunion_fin.6:0 ""
+   so_reunion_fin.6.t:0 ""
+   so_reunion_fin.6.d:0 ""
+   so_reunion_fin.6.f:0 ""
+   # Option A: TBD
+   so_reunion_fin.6.a:0 ""
+   # Option B: TBD
+   so_reunion_fin.6.b:0 ""
+   # Option C: TBD
+   so_reunion_fin.6.c:0 ""
       
    
    
