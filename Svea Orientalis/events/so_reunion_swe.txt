@@ -52,7 +52,7 @@ so_reunion_swe.1 = {
 			}
 		}
 		ai_chance = {
-			base = 50
+			base = 60
 		}
 	}
 
@@ -107,7 +107,7 @@ so_reunion_swe.1 = {
 			remove_claim = ROOT
 		}
 		ai_chance = {
-			base = 20
+			base = 10
 		}
 	}
 }

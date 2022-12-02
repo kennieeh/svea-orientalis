@@ -1,6 +1,90 @@
 ﻿# namespace för återföreningen, Finlands perspektiv
 namespace = so_reunion_fin
 
+
+
+# 20: Svekomanerna
+so_reunion_fin.20 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.20.t
+	desc = so_reunion_fin.20.d
+	flavor = so_reunion_fin.20.f
+	
+	duration = 3
+	
+	# triggered by onPulse in SI_1
+	trigger = {
+	}
+
+	option = { # X
+		name = so_reunion_fin.20.a
+        default_option = yes
+		ai_chance = {
+			base = 70
+		}
+	}
+	
+	option = { # Y
+		name = so_reunion_fin.20.b
+		ai_chance = {
+			base = 30
+		}
+	}
+}
+
+
+# 30: Fennomanerna
+so_reunion_fin.30 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.30.t
+	desc = so_reunion_fin.30.d
+	flavor = so_reunion_fin.30.f
+	
+	duration = 3
+	
+	# triggered by onPulse in SI_1
+	trigger = {
+	}
+
+	option = { # X
+		name = so_reunion_fin.30.a
+        default_option = yes
+		ai_chance = {
+			base = 70
+		}
+	}
+	
+	option = { # Y
+		name = so_reunion_fin.30.b
+		ai_chance = {
+			base = 30
+		}
+	}
+}
+
+
+# Legacy events:
+
 # FIN:Ev1 - Triggas av SWE:Ev1 - Sverige har blandat sig i våra interna angelägenheter. Hur känner vi?
 so_reunion_fin.1 = {
 	type = country_event
@@ -125,7 +209,7 @@ so_reunion_fin.1 = {
 	}
 }
 
-# FIN:Ev2 - Triggas om FIN:Ev1 positivt - (återkommande) - händelser om stöd till svekomaner
+# FIN:Ev2 - Triggas om SWE:Ev6 - händelser om stöd till svekomaner
 so_reunion_fin.2 = {
 	type = country_event
 	placement = root
