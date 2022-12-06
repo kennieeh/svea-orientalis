@@ -83,6 +83,258 @@ so_reunion_fin.30 = {
 }
 
 
+# 40: Aktivt eller passivt motstånd?
+so_reunion_fin.40 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.40.t
+	desc = so_reunion_fin.40.d
+	flavor = so_reunion_fin.40.f
+	
+	duration = 3
+	
+	# triggered by VtF_1
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.40.a
+        default_option = yes
+		add_modifier = {
+			name = so_fin_mod_passive_resistance
+		}
+		add_journal_entry = {
+			type = so_je_fin_vtf_2a
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.40.b
+		add_modifier = {
+			name = so_fin_mod_active_resistance
+		}
+		add_journal_entry = {
+			type = so_je_fin_vtf_2b
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 50: Passivt motstånd, återkommande random event
+so_reunion_fin.50 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.50.t
+	desc = so_reunion_fin.50.d
+	flavor = so_reunion_fin.50.f
+	
+	duration = 3
+	
+	# triggered by onPulse av VtF_2a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.50.a
+        default_option = yes
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.50.b
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 51: Passivt motstånd, återkommande random event
+so_reunion_fin.51 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.51.t
+	desc = so_reunion_fin.51.d
+	flavor = so_reunion_fin.51.f
+	
+	duration = 3
+	
+	# triggered by onPulse av VtF_2a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.51.a
+        default_option = yes
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.51.b
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 52: Passivt motstånd, återkommande random event
+so_reunion_fin.52 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.52.t
+	desc = so_reunion_fin.52.d
+	flavor = so_reunion_fin.52.f
+	
+	duration = 3
+	
+	# triggered by onPulse av VtF_2a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.52.a
+        default_option = yes
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.52.b
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 53: Passivt motstånd, återkommande random event
+so_reunion_fin.53 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.53.t
+	desc = so_reunion_fin.53.d
+	flavor = so_reunion_fin.53.f
+	
+	duration = 3
+	
+	# triggered by onPulse av VtF_2a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.53.a
+        default_option = yes
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.53.b
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 54: Passivt motstånd, återkommande random event
+so_reunion_fin.54 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.54.t
+	desc = so_reunion_fin.54.d
+	flavor = so_reunion_fin.54.f
+	
+	duration = 3
+	
+	# triggered by onPulse av VtF_2a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.54.a
+        default_option = yes
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.54.b
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
 # Legacy events:
 
 # FIN:Ev1 - Triggas av SWE:Ev1 - Sverige har blandat sig i våra interna angelägenheter. Hur känner vi?

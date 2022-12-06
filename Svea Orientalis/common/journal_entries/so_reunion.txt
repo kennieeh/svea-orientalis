@@ -306,6 +306,134 @@ je_so_reunion_reunification_war = { # SWE:JE6 - återföreningskriget är slut
 
 # Finland
 
+so_je_fin_vtf_1 = { # Resist the Czar
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	is_shown_when_inactive = {
+		country_has_primary_culture = cu:finnish
+		is_subject_of = c:RUS
+		has_technology_researched = nationalism
+	}
+
+	# 
+	possible = {
+		OR = {
+			ig:ig_svecoman = {
+				ig_clout >= 0.2
+			}
+			ig:ig_fennoman = {
+				ig_clout >= 0.2
+			}
+			AND = {
+				ig:ig_svecoman = {
+					ig_clout >= 0.15
+				}
+				ig:ig_fennoman = {
+					ig_clout >= 0.15
+				}
+			}
+			OR = {
+				ig:ig_svecoman = {
+					ig_government_power_share >= 0.3
+				}
+				ig:ig_fennoman = {
+					ig_government_power_share >= 0.3
+				}
+			}
+		}
+	}
+	
+	# 
+	complete = {
+		OR = {
+			ig:ig_svecoman = {
+				ig_clout >= 0.25
+			}
+			ig:ig_fennoman = {
+				ig_clout >= 0.25
+			}
+			AND = {
+				ig:ig_svecoman = {
+					ig_clout >= 0.2
+				}
+				ig:ig_fennoman = {
+					ig_clout >= 0.2
+				}
+			}
+			OR = {
+				ig:ig_svecoman = {
+					ig_government_power_share >= 0.5
+				}
+				ig:ig_fennoman = {
+					ig_government_power_share >= 0.5
+				}
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = so_reunion_fin.40
+	}
+	
+	# Timeout är 100 år... Så att den inte timeoutar :)
+	timeout = 36500
+	should_be_pinned_by_default = yes
+}
+
+so_je_fin_vtf_2a = { # Passive resistance
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	# Aktiverad av FIN:Ev40
+
+	# Varje år händer ett av dessa event (eller 0, dvs ingenting), angivet som procent av 100
+	on_yearly_pulse = {
+		random_events = {
+			25 =  0
+			15 = so_reunion_fin.50
+			15 = so_reunion_fin.51
+			15 = so_reunion_fin.52
+			15 = so_reunion_fin.53
+			15 = so_reunion_fin.54
+		}
+	}
+	
+	# 
+	complete = {
+		OR = {
+			ig:ig_svecoman = {
+				ig_clout >= 0.35
+			}
+			ig:ig_fennoman = {
+				ig_clout >= 0.35
+			}
+			AND = {
+				ig:ig_svecoman = {
+					ig_clout >= 0.3
+				}
+				ig:ig_fennoman = {
+					ig_clout >= 0.3
+				}
+			}
+			OR = {
+				ig:ig_svecoman = {
+					ig_government_power_share >= 0.7
+				}
+				ig:ig_fennoman = {
+					ig_government_power_share >= 0.7
+				}
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = so_reunion_fin.40
+	}
+	
+	# Timeout är 100 år... Så att den inte timeoutar :)
+	timeout = 36500
+	should_be_pinned_by_default = yes
+}
+
+# Legacy
+
 je_so_reunion_fin_independence = { # FIN:JE1 - nå självständighet
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 

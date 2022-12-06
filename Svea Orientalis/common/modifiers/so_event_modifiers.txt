@@ -8,6 +8,14 @@ so_fin_mod_fennoman_1 = {
 	interest_group_pop_attraction_mult = 0.1
 }
 
+# Resisting the Czar
+so_fin_mod_active_resistance = {
+	
+}
+so_fin_mod_passive_resistance = {
+	
+}
+
 # LEGACY:
 
 # so_reunion_swe.1 modifiers

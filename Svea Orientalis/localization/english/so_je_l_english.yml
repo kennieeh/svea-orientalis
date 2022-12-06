@@ -1,12 +1,7 @@
 ﻿l_english:
-  #boost
-  so_test_event.1:0 "Make good things"
-  so_test_event.1.t:0 "Good things happen"
-  so_test_event.1.d:0 "Don't you like it when good things happen?"
-  so_test_event.1.f:0 "Flavor text"
-  so_test_event.1.a:0 "Less good things"
-  so_test_event.1.b:0 "More good things"
-  so_test_em:1 "The boost"
+  
+  # MAP:
+  STATE_FINLAND_PROPER:0 "Finland Proper"
     
    # ----------------------------------------------
    # ------------x-x-x-x-x-x-x-x-x-x-----------
@@ -139,11 +134,16 @@
    # ----------------------------------------------
    
    ig_fennoman:0 "The Fennomans"
+   ig_fennoman_only_icon:0 "@fennoman!"
+   ig_fennoman_desc:0 ""
+   
    ideology_fennoman_agrarian:0 "Agrarian"
    ideology_fennoman_particularist:0 "Particularist"
    ideology_fennoman_isolationist:0 "Isolationist"
    
    ig_svecoman:0 "The Svecomans"
+   ig_svecoman_only_icon:0 "@svecoman!"
+   ig_svecoman_desc:0 ""
    
    # ----------------------------------------------
    # -------------- Journal Entries --------------
@@ -151,8 +151,11 @@
    
    # Vägen till Frihet - Way to Freedom
    
-   so_je_fin_vtf_1:0 "Passive or active resistance?"
+   so_je_fin_vtf_1:0 "Resist the Czar"
    so_je_fin_vtf_1_reason:0 "Is it better to resist actively, or is a passive approach more feasible?"
+   # Modifiers: Resisting
+   so_fin_mod_active_resistance:1 "Actively resisting the Czar"
+   so_fin_mod_passive_resistance:1 "Passively resisting the Czar"
    
    # path a) = passiv,
    # path b) = aktivt
@@ -177,11 +180,13 @@
    
    # Svensk inblandning - Swedish Interference
    
-   so_je_fin_si_1:0 ""
+   so_je_fin_si_1:0 "Sweden supports the Svecoman Movement"
    so_je_fin_si_1_reason:0 ""
+   so_fin_mod_svecoman_1:1 "Svecomans Supported"
    
-   so_je_fin_si_2:0 ""
+   so_je_fin_si_2:0 "Sweden supports the Fennoman Movement"
    so_je_fin_si_2_reason:0 ""
+   so_fin_mod_fennoman_1:1 "Fennoman Supported"
    
    # FIN:JE1 - nå självständighet
    je_so_reunion_fin_independence:0 "Independence"
