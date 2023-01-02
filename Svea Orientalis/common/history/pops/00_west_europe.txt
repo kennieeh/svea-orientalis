@@ -160,32 +160,92 @@
 	s:STATE_SOUTHERN_FINLAND = {
 		region_state:FIN = {
 			create_pop = {
-				culture = swedish
-				size = 104900
+				culture = finnish
+				size = 496500
 			}
 			create_pop = {
-				culture = finnish
-				size = 500000
+				culture = swedish
+				size = 115000
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 300
+				size = 500
 			}
 			create_pop = {
 				culture = russian
-				size = 200
+				size = 5000
 			}
 		}
 	}
 	s:STATE_FINLAND_PROPER = {
 		region_state:FIN = {
 			create_pop = {
-				culture = swedish
-				size = 50000
+				culture = finnish
+				size = 187000
 			}
 			create_pop = {
+				culture = swedish
+				size = 105700
+			}
+			create_pop = {
+				culture = ashkenazi
+				size = 200
+			}
+			create_pop = {
+				culture = russian
+				size = 100
+			}
+		}
+	}
+	s:STATE_TAVAST  = {
+		region_state:FIN = {
+			create_pop = {
 				culture = finnish
-				size = 190000
+				size = 224300
+			}
+			create_pop = {
+				culture = swedish
+				size = 15000
+			}
+			create_pop = {
+				culture = ashkenazi
+				size = 200
+			}
+			create_pop = {
+				culture = russian
+				size = 500
+			}
+		}
+	}
+	s:STATE_MICHELS = {
+		region_state:FIN = {
+			create_pop = {
+				culture = finnish
+				size = 27000
+			}
+			create_pop = {
+				culture = swedish
+				size = 1000
+			}
+			create_pop = {
+				culture = ashkenazi
+				size = 200
+			}
+			create_pop = {
+				culture = russian
+				size = 1800
+			}
+		}
+	}
+	s:STATE_KUOPIO = {
+		region_state:FIN = {
+			create_pop = {
+				culture = finnish
+				size = 22400
+			}
+			create_pop = {
+				culture = swedish
+				size = 500
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -193,7 +253,35 @@
 			}
 			create_pop = {
 				culture = russian
+				size = 1000
+			}
+			create_pop = {
+				culture = sami
+				size = 2000
+			}
+		}
+	}
+	s:STATE_OULU  = {
+		region_state:FIN = {
+			create_pop = {
+				culture = finnish
+				size = 20000
+			}
+			create_pop = {
+				culture = swedish
+				size = 4000
+			}
+			create_pop = {
+				culture = ashkenazi
 				size = 100
+			}
+			create_pop = {
+				culture = russian
+				size = 500
+			}
+			create_pop = {
+				culture = sami
+				size = 15400
 			}
 		}
 	}
@@ -201,7 +289,7 @@
 		region_state:FIN = {
 			create_pop = {
 				culture = finnish
-				size = 177000
+				size = 50800
 			}
 			create_pop = {
 				culture = finnish
@@ -210,23 +298,27 @@
 			}
 			create_pop = {
 				culture = swedish
-				size = 1200
+				size = 7500
 			}
 			create_pop = {
 				culture = russian
-				size = 700
+				size = 11500
 			}
 		}
 	}
 	s:STATE_ALAND = {
 		region_state:FIN = {
 			create_pop = {
-				culture = swedish
-				size = 12000
+				culture = finnish
+				size = 750
 			}
 			create_pop = {
-				culture = finnish
-				size = 500
+				culture = swedish
+				size = 14000
+			}
+			create_pop = {
+				culture = russian
+				size = 250
 			}
 		}
 	}
@@ -234,15 +326,15 @@
 		region_state:FIN = {
 			create_pop = {
 				culture = finnish
-				size = 360000
+				size = 20500
 			}
 			create_pop = {
 				culture = swedish
-				size = 47000
+				size = 29400
 			}
 			create_pop = {
-				culture = sami
-				size = 18000
+				culture = ashkenazi
+				size = 100
 			}
 		}
 	}

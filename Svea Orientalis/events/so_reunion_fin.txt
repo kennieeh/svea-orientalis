@@ -115,6 +115,10 @@ so_reunion_fin.40 = {
 		add_journal_entry = {
 			type = so_je_fin_vtf_2a
 		}
+		set_variable = {
+			name = so_var_fin_so_vtf_2a
+			value = 0
+		}
 		ai_chance = {
 			base = 50
 		}
@@ -127,6 +131,803 @@ so_reunion_fin.40 = {
 		}
 		add_journal_entry = {
 			type = so_je_fin_vtf_2b
+		}
+		set_variable = {
+			name = so_var_fin_so_vtf_2b
+			value = 0
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# 41: Tvångsmönstring
+so_reunion_fin.41 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.41.t
+	desc = so_reunion_fin.41.d
+	flavor = so_reunion_fin.41.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by VtF_1
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.41.a
+        default_option = yes
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -5
+		}
+		if = {
+			limit = {
+				has_modifier = so_fin_mod_ev41_passive_resistance
+			}
+			remove_modifier = so_fin_mod_ev41_passive_resistance
+			add_modifier = {
+				name = so_fin_mod_ev41_passive_resistance
+				years = 4
+				multiplier = 3
+			}
+		}
+		else = {
+			add_modifier = {
+				name = so_fin_mod_ev41_passive_resistance
+				years = 10
+				multiplier = 1
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.41.b
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -10
+		}
+		if = {
+			limit = {
+				has_modifier = so_fin_mod_ev41_active_resistance
+			}
+			remove_modifier = so_fin_mod_ev41_active_resistance
+			add_modifier = {
+				name = so_fin_mod_ev41_active_resistance
+				years = 4
+				multiplier = 3
+			}
+		}
+		else = {
+			add_modifier = {
+				name = so_fin_mod_ev41_active_resistance
+				years = 10
+				multiplier = 1
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# 42: Begränsad lagstiftning
+so_reunion_fin.42 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.42.t
+	desc = so_reunion_fin.42.d
+	flavor = so_reunion_fin.42.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by VtF_1
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.42.a
+        default_option = yes
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -5
+		}
+		add_modifier = {
+			name = so_fin_mod_ev42
+			years = 5
+			multiplier = 1
+		}
+		if = {
+			limit = {
+				has_modifier = so_fin_mod_ev42_passive_resistance
+			}
+			remove_modifier = so_fin_mod_ev42_passive_resistance
+			add_modifier = {
+				name = so_fin_mod_ev42_passive_resistance
+				years = 5
+				multiplier = 3
+			}
+		}
+		else = {
+			add_modifier = {
+				name = so_fin_mod_ev42_passive_resistance
+				years = 10
+				multiplier = 1
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.42.b
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -20
+		}
+		add_modifier = {
+			name = so_fin_mod_ev42
+			years = 5
+			multiplier = 1
+		}
+		if = {
+			limit = {
+				has_modifier = so_fin_mod_ev42_active_resistance
+			}
+			remove_modifier = so_fin_mod_ev42_active_resistance
+			add_modifier = {
+				name = so_fin_mod_ev42_active_resistance
+				years = 5
+				multiplier = 3
+			}
+		}
+		else = {
+			add_modifier = {
+				name = so_fin_mod_ev42_active_resistance
+				years = 10
+				multiplier = 1
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# 43: Aktivt eller passivt motstånd?
+so_reunion_fin.43 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.43.t
+	desc = so_reunion_fin.43.d
+	flavor = so_reunion_fin.43.f
+	
+	duration = 3
+
+	cooldown = { months = 24 }
+	
+	# triggered by VtF_1
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.43.a
+        default_option = yes
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -5
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.43.b
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -10
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# 44: Aktivt eller passivt motstånd?
+so_reunion_fin.44 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.44.t
+	desc = so_reunion_fin.44.d
+	flavor = so_reunion_fin.44.f
+	
+	duration = 3
+
+	cooldown = { months = 24 }
+	
+	# triggered by VtF_1
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.44.a
+        default_option = yes
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -5
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.44.b
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -10
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# 45: Aktivt eller passivt motstånd?
+so_reunion_fin.45 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.45.t
+	desc = so_reunion_fin.45.d
+	flavor = so_reunion_fin.45.f
+	
+	duration = 3
+
+	cooldown = { months = 24 }
+	
+	# triggered by VtF_1
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.45.a
+        default_option = yes
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -5
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.45.b
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -10
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# 46: Aktivt eller passivt motstånd?
+so_reunion_fin.46 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.46.t
+	desc = so_reunion_fin.46.d
+	flavor = so_reunion_fin.46.f
+	
+	duration = 3
+
+	cooldown = { months = 24 }
+	
+	# triggered by VtF_1
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.46.a
+        default_option = yes
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -5
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.46.b
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -10
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# 47: Aktivt eller passivt motstånd?
+so_reunion_fin.47 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.47.t
+	desc = so_reunion_fin.47.d
+	flavor = so_reunion_fin.47.f
+	
+	duration = 3
+
+	cooldown = { months = 24 }
+	
+	# triggered by VtF_1
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.47.a
+        default_option = yes
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -5
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.47.b
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -10
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# 48: Aktivt eller passivt motstånd?
+so_reunion_fin.48 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.48.t
+	desc = so_reunion_fin.48.d
+	flavor = so_reunion_fin.48.f
+	
+	duration = 3
+
+	cooldown = { months = 24 }
+	
+	# triggered by VtF_1
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.48.a
+        default_option = yes
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -5
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.48.b
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -10
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# 49: Aktivt eller passivt motstånd?
+so_reunion_fin.49 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.49.t
+	desc = so_reunion_fin.49.d
+	flavor = so_reunion_fin.49.f
+	
+	duration = 3
+
+	cooldown = { months = 24 }
+	
+	# triggered by VtF_1
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.49.a
+        default_option = yes
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -5
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.49.b
+		if = {
+			limit = {
+				is_set = root.var:so_var_fin_so_vtf_1
+			}
+			change_variable = {
+				name = so_var_fin_so_vtf_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_fin_so_vtf_1
+				value = 1
+			}
+		}
+		change_relations = {
+			country = c:RUS
+			value = -10
 		}
 		ai_chance = {
 			base = 50

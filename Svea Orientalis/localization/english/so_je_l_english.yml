@@ -5,6 +5,10 @@
   
   # MAP:
   STATE_FINLAND_PROPER:0 "Finland Proper"
+  STATE_TAVAST:0 "Tavastia"
+  STATE_MICHELS:0 "S:t Michels"
+  STATE_KUOPIO:0 "Kuopio"
+  STATE_OULU:0 "Oulu"
     
    # ----------------------------------------------
    # ------------x-x-x-x-x-x-x-x-x-x-----------
@@ -20,6 +24,8 @@
    
    so_je_swe_so_1:0 "Svea Orientalis: It is gone, but not forgotten"
    so_je_swe_so_1_reason:0 "Reason"
+   so_je_swe_so_2:0 "Svea Orientalis: Debate on Peace or War"
+   so_je_swe_so_2_reason:0 "Reason"
    
    # --------------------------------------
    # --------------  Events -------------- 
@@ -34,6 +40,33 @@
    # Finland is on its own. Enables the alternative tree
    so_reunion_swe.10.b:0 "Finland was taken from us by force, and by force it shall be regained"
    
+   so_reunion_swe.11:0 "A debate on Finland"
+   so_reunion_swe.11.t:0 "A debate on Finland"
+   so_reunion_swe.11.d:0 "TBD"
+   so_reunion_swe.11.f:0 "TBD"
+   # Positive
+   so_reunion_swe.11.a:0 "Finland deserves our attention"
+   # Negative
+   so_reunion_swe.11.b:0 "We can prosper better on our own"
+   
+   so_reunion_swe.12:0 "A delegation from Finland"
+   so_reunion_swe.12.t:0 "A delegation from Finland"
+   so_reunion_swe.12.d:0 "TBD"
+   so_reunion_swe.12.f:0 "TBD"
+   # Positive
+   so_reunion_swe.12.a:0 "You make a good case, we must help"
+   # Negative
+   so_reunion_swe.12.b:0 "Preposterous. You only want our hard-earned cash"
+   
+   so_reunion_swe.13:0 "Concerning the East"
+   so_reunion_swe.13.t:0 "Concerning the East"
+   so_reunion_swe.13.d:0 "TBD"
+   so_reunion_swe.13.f:0 "TBD"
+   # Positive
+   so_reunion_swe.13.a:0 "Positive response"
+   # Negative
+   so_reunion_swe.13.b:0 "Negative response"
+   
    
    # Triggered by SO_2 (20-39)
    so_reunion_swe.20:0 "Peace or War"
@@ -45,6 +78,56 @@
    # War is all we know. Enables the military path
    so_reunion_swe.20.b:0 "Finland was taken from us by force, and by force it shall be regained"
    
+   # Triggered by SO_2 (20-39)
+   so_reunion_swe.21:0 "Event.21"
+   so_reunion_swe.21.t:0 "Event.21"
+   so_reunion_swe.21.d:0 "TBD"
+   so_reunion_swe.21.f:0 "TBD"
+   # 
+   so_reunion_swe.21.a:0 "A"
+   # 
+   so_reunion_swe.21.b:0 "B"
+   
+   # Triggered by SO_2 (20-39)
+   so_reunion_swe.22:0 "Event.22"
+   so_reunion_swe.22.t:0 "Event.22"
+   so_reunion_swe.22.d:0 "TBD"
+   so_reunion_swe.22.f:0 "TBD"
+   # 
+   so_reunion_swe.22.a:0 "A"
+   # 
+   so_reunion_swe.22.b:0 "B"
+   
+   # Triggered by SO_2 (20-39)
+   so_reunion_swe.23:0 "Event.23"
+   so_reunion_swe.23.t:0 "Event.23"
+   so_reunion_swe.23.d:0 "TBD"
+   so_reunion_swe.23.f:0 "TBD"
+   # 
+   so_reunion_swe.23.a:0 "A"
+   # 
+   so_reunion_swe.23.b:0 "B"
+   
+   # Triggered by SO_2 (20-39)
+   so_reunion_swe.24:0 "Event.24"
+   so_reunion_swe.24.t:0 "Event.24"
+   so_reunion_swe.24.d:0 "TBD"
+   so_reunion_swe.24.f:0 "TBD"
+   # 
+   so_reunion_swe.24.a:0 "A"
+   # 
+   so_reunion_swe.21.b:0 "B"
+   
+   # Triggered by SO_2 (20-39)
+   so_reunion_swe.25:0 "Event.25"
+   so_reunion_swe.25.t:0 "Event.25"
+   so_reunion_swe.25.d:0 "TBD"
+   so_reunion_swe.25.f:0 "TBD"
+   # 
+   so_reunion_swe.25.a:0 "A"
+   # 
+   so_reunion_swe.25.b:0 "B"
+   
    # ----------------------------------------------
    # ------------o-o-o-o-o-o-o-o-o-o-----------
    # ------------o--------------------o-----------
@@ -53,26 +136,24 @@
    # ------------o-o-o-o-o-o-o-o-o-o-----------
    # ----------------------------------------------
    
-   ig_fennoman:0 "The Fennomans"
-   ig_fennoman_only_icon:0 "@fennoman!"
-   ig_fennoman_desc:0 ""
-   
-   ideology_fennoman_agrarian:0 "Agrarian"
-   ideology_fennoman_particularist:0 "Particularist"
-   ideology_fennoman_isolationist:0 "Isolationist"
-   
-   ig_svecoman:0 "The Svecomans"
-   ig_svecoman_only_icon:0 "@svecoman!"
-   ig_svecoman_desc:0 ""
-   
    # ----------------------------------------------
    # -------------- Journal Entries --------------
    # ----------------------------------------------
    
    # Vägen till Frihet - Way to Freedom
    
-   so_je_fin_vtf_1:0 "Resist the Czar"
+   so_je_fin_vtf_start:0 "Svea Orientalis: Initiation"
+   so_je_fin_vtf_start_goal:0 "Start the journal entry tree"
+   
+   so_je_fin_vtf_1:0 "Svea Orientalis: Resist the Czar"
    so_je_fin_vtf_1_reason:0 "Is it better to resist actively, or is a passive approach more feasible?"
+    so_je_fin_vtf_1_goal:0 "Every month when active, there is a chance for an event firing. When enough events have been fired, the journal entry is complete, and the player will have to decide."
+   
+   # The debate variable for passive resistance
+   so_var_fin_so_vtf_1_name:0 "Debates on how to resist Russification"
+   so_var_fin_so_vtf_1_desc:0 ""
+   so_var_fin_so_vtf_1_tooltip:0 ""
+   
    # Modifiers: Resisting
    so_fin_mod_active_resistance:1 "Actively resisting the Czar"
    so_fin_mod_passive_resistance:1 "Passively resisting the Czar"
@@ -80,22 +161,33 @@
    # path a) = passiv,
    # path b) = aktivt
    
-   so_je_fin_vtf_2a:0 "Passive resistance"
+   so_je_fin_vtf_2a:0 "Svea Orientalis: Passive resistance"
    so_je_fin_vtf_2a_reason:0 ""
    
-   so_je_fin_vtf_2b:0 "Active resistance"
+   # The debate variable for passive resistance
+   so_var_fin_so_vtf_2a_name:0 "Debates on how to resist Russification passively"
+   so_var_fin_so_vtf_2a_desc:0 ""
+   so_var_fin_so_vtf_2a_tooltip:0 ""
+   
+   so_je_fin_vtf_2b:0 "Svea Orientalis: Active resistance"
    so_je_fin_vtf_2b_reason:0 ""
    
-   so_je_fin_vtf_3a:0 "The rise of Finnish nationalism"
+   # The debate variable for active resistance
+   so_var_fin_so_vtf_2b_name:0 "Debates on how to resist Russification actively"
+   so_var_fin_so_vtf_2b_desc:0 ""
+   so_var_fin_so_vtf_2b_tooltip:0 ""
+   
+   # Passive resistance: Implementation
+   so_je_fin_vtf_3a:0 "Svea Orientalis: The rise of Finnish nationalism"
    so_je_fin_vtf_3a_reason:0 ""
    
-   so_je_fin_vtf_3b:0 "Pursue violence"
+   so_je_fin_vtf_3b:0 "Svea Orientalis: Pursue violence"
    so_je_fin_vtf_3b_reason:0 ""
    
-   so_je_fin_vtf_4a:0 "Russian passive resistance"
+   so_je_fin_vtf_4a:0 "Svea Orientalis: Russian passive resistance"
    so_je_fin_vtf_4a_reason:0 ""
    
-   so_je_fin_vtf_4b:0 "Bullets shall fly"
+   so_je_fin_vtf_4b:0 "Svea Orientalis: Bullets shall fly"
    so_je_fin_vtf_4b_reason:0 ""
    
    # Svensk inblandning - Swedish Interference
@@ -239,42 +331,83 @@
     
     # Triggas genom VtF.
     
-    so_reunion_fin.40:0 "Placeholder"
-    so_reunion_fin.40.t:0 "Placeholder title"
-    so_reunion_fin.40.d:0 "Placeholder desc"
-    so_reunion_fin.40.f:0 "Placeholder flav"
-    so_reunion_fin.40.a:0 "Placeholder option"
-    so_reunion_fin.40.b:0 "Placeholder option"
+    # Beslutet - aktivt eller passivt motstånd?
+    so_reunion_fin.40:0 "Decision time"
+    so_reunion_fin.40.t:0 "Decision time"
+    so_reunion_fin.40.d:0 "While the debate has raged on for quite some time on the topic of how to handle the threat of Russification, we must finally choose whether to resist passively or actively."
+    so_reunion_fin.40.f:0 "Russification was the name for a series of intentional policies adopted by the Russian Empire in order to integrate Finland in the Russian ways."
+    so_reunion_fin.40.a:0 "Resist passively"
+    so_reunion_fin.40.b:0 "Resist actively"
 
-    so_reunion_fin.41:0 "Placeholder"
-    so_reunion_fin.41.t:0 "Placeholder title"
-    so_reunion_fin.41.d:0 "Placeholder desc"
+    so_reunion_fin.41:0 "Forced conscription"
+    so_reunion_fin.41.t:0 "Forced conscription"
+    so_reunion_fin.41.d:0 "One strategy of Russification was to force Finnish men to be conscripted into the Russian imperial army. We can resist the attempts in various ways."
     so_reunion_fin.41.f:0 "Placeholder flav"
-    so_reunion_fin.41.a:0 "Placeholder option"
-    so_reunion_fin.41.b:0 "Placeholder option"
+    so_reunion_fin.41.a:0 "Simply... don't show up?"
+    so_reunion_fin.41.b:0 "For every man they conscript, we must find another to our own forces!"
+    so_fin_mod_ev41_passive_resistance:1 "It's a no-show"
+    so_fin_mod_ev41_active_resistance:1 "One for you, one for me"
 
-    so_reunion_fin.42:0 "Placeholder"
-    so_reunion_fin.42.t:0 "Placeholder title"
-    so_reunion_fin.42.d:0 "Placeholder desc"
-    so_reunion_fin.42.f:0 "Placeholder flav"
-    so_reunion_fin.42.a:0 "Placeholder option"
-    so_reunion_fin.42.b:0 "Placeholder option"
+    so_reunion_fin.42:0 "Legislative restrictions"
+    so_reunion_fin.42.t:0 "Legislative restrictions"
+    so_reunion_fin.42.d:0 "The Russian efforts to limit our free status are increased, this time by placing restrictions on our domestic legislative processes. How shall we respond?"
+    so_reunion_fin.42.f:0 "While the Grand Duchy enjoyed the freedom to enact its own laws, the processes for this were not always straight-forward."
+    so_reunion_fin.42.a:0 "Issue a formal letter of complaint"
+    so_reunion_fin.42.b:0 "Enact more laws! Burn something!"
+    so_fin_mod_ev42:1 "Legislation restricted"
+    so_fin_mod_ev42_passive_resistance:1 "Letter of complaint"
+    so_fin_mod_ev42_active_resistance:1 "Enact all the laws"
 
     so_reunion_fin.43:0 "Placeholder"
-    so_reunion_fin.43.t:0 "Placeholder title"
+    so_reunion_fin.43.t:0 "Placeholder title 43"
     so_reunion_fin.43.d:0 "Placeholder desc"
     so_reunion_fin.43.f:0 "Placeholder flav"
     so_reunion_fin.43.a:0 "Placeholder option"
     so_reunion_fin.43.b:0 "Placeholder option"
 
     so_reunion_fin.44:0 "Placeholder"
-    so_reunion_fin.44.t:0 "Placeholder title"
+    so_reunion_fin.44.t:0 "Placeholder title 44"
     so_reunion_fin.44.d:0 "Placeholder desc"
     so_reunion_fin.44.f:0 "Placeholder flav"
     so_reunion_fin.44.a:0 "Placeholder option"
     so_reunion_fin.44.b:0 "Placeholder option"
+
+    so_reunion_fin.45:0 "Placeholder"
+    so_reunion_fin.45.t:0 "Placeholder title 45"
+    so_reunion_fin.45.d:0 "Placeholder desc"
+    so_reunion_fin.45.f:0 "Placeholder flav"
+    so_reunion_fin.45.a:0 "Placeholder option"
+    so_reunion_fin.45.b:0 "Placeholder option"
+
+    so_reunion_fin.46:0 "Placeholder"
+    so_reunion_fin.46.t:0 "Placeholder title 46"
+    so_reunion_fin.46.d:0 "Placeholder desc"
+    so_reunion_fin.46.f:0 "Placeholder flav"
+    so_reunion_fin.46.a:0 "Placeholder option"
+    so_reunion_fin.46.b:0 "Placeholder option"
+
+    so_reunion_fin.47:0 "Placeholder"
+    so_reunion_fin.47.t:0 "Placeholder title 47"
+    so_reunion_fin.47.d:0 "Placeholder desc"
+    so_reunion_fin.47.f:0 "Placeholder flav"
+    so_reunion_fin.47.a:0 "Placeholder option"
+    so_reunion_fin.47.b:0 "Placeholder option"
+
+    so_reunion_fin.48:0 "Placeholder"
+    so_reunion_fin.48.t:0 "Placeholder title 48"
+    so_reunion_fin.48.d:0 "Placeholder desc"
+    so_reunion_fin.48.f:0 "Placeholder flav"
+    so_reunion_fin.48.a:0 "Placeholder option"
+    so_reunion_fin.48.b:0 "Placeholder option"
+
+    so_reunion_fin.49:0 "Placeholder"
+    so_reunion_fin.49.t:0 "Placeholder title 49"
+    so_reunion_fin.49.d:0 "Placeholder desc"
+    so_reunion_fin.49.f:0 "Placeholder flav"
+    so_reunion_fin.49.a:0 "Placeholder option"
+    so_reunion_fin.49.b:0 "Placeholder option"
     
-    # Triggas genom VtF - passivt motstånd
+    # Triggas genom VtF 2a - passivt motstånd
     
     so_reunion_fin.50:0 "Placeholder"
     so_reunion_fin.50.t:0 "Placeholder title"
@@ -310,8 +443,115 @@
     so_reunion_fin.54.f:0 "Placeholder flav"
     so_reunion_fin.54.a:0 "Placeholder option"
     so_reunion_fin.54.b:0 "Placeholder option"
+
+    so_reunion_fin.55:0 "Placeholder"
+    so_reunion_fin.55.t:0 "Placeholder title"
+    so_reunion_fin.55.d:0 "Placeholder desc"
+    so_reunion_fin.55.f:0 "Placeholder flav"
+    so_reunion_fin.55.a:0 "Placeholder option"
+    so_reunion_fin.55.b:0 "Placeholder option"
+
+    so_reunion_fin.56:0 "Placeholder"
+    so_reunion_fin.56.t:0 "Placeholder title"
+    so_reunion_fin.56.d:0 "Placeholder desc"
+    so_reunion_fin.56.f:0 "Placeholder flav"
+    so_reunion_fin.56.a:0 "Placeholder option"
+    so_reunion_fin.56.b:0 "Placeholder option"
+
+    so_reunion_fin.57:0 "Placeholder"
+    so_reunion_fin.57.t:0 "Placeholder title"
+    so_reunion_fin.57.d:0 "Placeholder desc"
+    so_reunion_fin.57.f:0 "Placeholder flav"
+    so_reunion_fin.57.a:0 "Placeholder option"
+    so_reunion_fin.57.b:0 "Placeholder option"
+
+    so_reunion_fin.58:0 "Placeholder"
+    so_reunion_fin.58.t:0 "Placeholder title"
+    so_reunion_fin.58.d:0 "Placeholder desc"
+    so_reunion_fin.58.f:0 "Placeholder flav"
+    so_reunion_fin.58.a:0 "Placeholder option"
+    so_reunion_fin.58.b:0 "Placeholder option"
+
+    so_reunion_fin.59:0 "Placeholder"
+    so_reunion_fin.59.t:0 "Placeholder title"
+    so_reunion_fin.59.d:0 "Placeholder desc"
+    so_reunion_fin.59.f:0 "Placeholder flav"
+    so_reunion_fin.59.a:0 "Placeholder option"
+    so_reunion_fin.59.b:0 "Placeholder option"
     
-    # Triggas genom VtF - aktivt motstånd.
+    # Triggas genom VtF 3a - passivt motstånd
+    
+    so_reunion_fin.60:0 "Placeholder"
+    so_reunion_fin.60.t:0 "Placeholder title"
+    so_reunion_fin.60.d:0 "Placeholder desc"
+    so_reunion_fin.60.f:0 "Placeholder flav"
+    so_reunion_fin.60.a:0 "Placeholder option"
+    so_reunion_fin.60.b:0 "Placeholder option"
+
+    so_reunion_fin.61:0 "Placeholder"
+    so_reunion_fin.61.t:0 "Placeholder title"
+    so_reunion_fin.61.d:0 "Placeholder desc"
+    so_reunion_fin.61.f:0 "Placeholder flav"
+    so_reunion_fin.61.a:0 "Placeholder option"
+    so_reunion_fin.61.b:0 "Placeholder option"
+
+    so_reunion_fin.62:0 "Placeholder"
+    so_reunion_fin.62.t:0 "Placeholder title"
+    so_reunion_fin.62.d:0 "Placeholder desc"
+    so_reunion_fin.62.f:0 "Placeholder flav"
+    so_reunion_fin.62.a:0 "Placeholder option"
+    so_reunion_fin.62.b:0 "Placeholder option"
+
+    so_reunion_fin.63:0 "Placeholder"
+    so_reunion_fin.63.t:0 "Placeholder title"
+    so_reunion_fin.63.d:0 "Placeholder desc"
+    so_reunion_fin.63.f:0 "Placeholder flav"
+    so_reunion_fin.63.a:0 "Placeholder option"
+    so_reunion_fin.63.b:0 "Placeholder option"
+
+    so_reunion_fin.64:0 "Placeholder"
+    so_reunion_fin.64.t:0 "Placeholder title"
+    so_reunion_fin.64.d:0 "Placeholder desc"
+    so_reunion_fin.64.f:0 "Placeholder flav"
+    so_reunion_fin.64.a:0 "Placeholder option"
+    so_reunion_fin.64.b:0 "Placeholder option"
+
+    so_reunion_fin.65:0 "Placeholder"
+    so_reunion_fin.65.t:0 "Placeholder title"
+    so_reunion_fin.65.d:0 "Placeholder desc"
+    so_reunion_fin.65.f:0 "Placeholder flav"
+    so_reunion_fin.65.a:0 "Placeholder option"
+    so_reunion_fin.65.b:0 "Placeholder option"
+
+    so_reunion_fin.66:0 "Placeholder"
+    so_reunion_fin.66.t:0 "Placeholder title"
+    so_reunion_fin.66.d:0 "Placeholder desc"
+    so_reunion_fin.66.f:0 "Placeholder flav"
+    so_reunion_fin.66.a:0 "Placeholder option"
+    so_reunion_fin.66.b:0 "Placeholder option"
+
+    so_reunion_fin.67:0 "Placeholder"
+    so_reunion_fin.67.t:0 "Placeholder title"
+    so_reunion_fin.67.d:0 "Placeholder desc"
+    so_reunion_fin.67.f:0 "Placeholder flav"
+    so_reunion_fin.67.a:0 "Placeholder option"
+    so_reunion_fin.67.b:0 "Placeholder option"
+
+    so_reunion_fin.68:0 "Placeholder"
+    so_reunion_fin.68.t:0 "Placeholder title"
+    so_reunion_fin.68.d:0 "Placeholder desc"
+    so_reunion_fin.68.f:0 "Placeholder flav"
+    so_reunion_fin.68.a:0 "Placeholder option"
+    so_reunion_fin.68.b:0 "Placeholder option"
+
+    so_reunion_fin.69:0 "Placeholder"
+    so_reunion_fin.69.t:0 "Placeholder title"
+    so_reunion_fin.69.d:0 "Placeholder desc"
+    so_reunion_fin.69.f:0 "Placeholder flav"
+    so_reunion_fin.69.a:0 "Placeholder option"
+    so_reunion_fin.69.b:0 "Placeholder option"
+    
+    # Triggas genom VtF 2b - aktivt motstånd.
     
     so_reunion_fin.70:0 "Placeholder"
     so_reunion_fin.70.t:0 "Placeholder title"
@@ -347,3 +587,110 @@
     so_reunion_fin.74.f:0 "Placeholder flav"
     so_reunion_fin.74.a:0 "Placeholder option"
     so_reunion_fin.74.b:0 "Placeholder option"
+
+    so_reunion_fin.75:0 "Placeholder"
+    so_reunion_fin.75.t:0 "Placeholder title"
+    so_reunion_fin.75.d:0 "Placeholder desc"
+    so_reunion_fin.75.f:0 "Placeholder flav"
+    so_reunion_fin.75.a:0 "Placeholder option"
+    so_reunion_fin.75.b:0 "Placeholder option"
+
+    so_reunion_fin.76:0 "Placeholder"
+    so_reunion_fin.76.t:0 "Placeholder title"
+    so_reunion_fin.76.d:0 "Placeholder desc"
+    so_reunion_fin.76.f:0 "Placeholder flav"
+    so_reunion_fin.76.a:0 "Placeholder option"
+    so_reunion_fin.76.b:0 "Placeholder option"
+
+    so_reunion_fin.77:0 "Placeholder"
+    so_reunion_fin.77.t:0 "Placeholder title"
+    so_reunion_fin.77.d:0 "Placeholder desc"
+    so_reunion_fin.77.f:0 "Placeholder flav"
+    so_reunion_fin.77.a:0 "Placeholder option"
+    so_reunion_fin.77.b:0 "Placeholder option"
+
+    so_reunion_fin.78:0 "Placeholder"
+    so_reunion_fin.78.t:0 "Placeholder title"
+    so_reunion_fin.78.d:0 "Placeholder desc"
+    so_reunion_fin.78.f:0 "Placeholder flav"
+    so_reunion_fin.78.a:0 "Placeholder option"
+    so_reunion_fin.78.b:0 "Placeholder option"
+
+    so_reunion_fin.79:0 "Placeholder"
+    so_reunion_fin.79.t:0 "Placeholder title"
+    so_reunion_fin.79.d:0 "Placeholder desc"
+    so_reunion_fin.79.f:0 "Placeholder flav"
+    so_reunion_fin.79.a:0 "Placeholder option"
+    so_reunion_fin.79.b:0 "Placeholder option"
+    
+    # Triggas genom VtF 3b - aktivt motstånd.
+    
+    so_reunion_fin.80:0 "Placeholder"
+    so_reunion_fin.80.t:0 "Placeholder title"
+    so_reunion_fin.80.d:0 "Placeholder desc"
+    so_reunion_fin.80.f:0 "Placeholder flav"
+    so_reunion_fin.80.a:0 "Placeholder option"
+    so_reunion_fin.80.b:0 "Placeholder option"
+
+    so_reunion_fin.81:0 "Placeholder"
+    so_reunion_fin.81.t:0 "Placeholder title"
+    so_reunion_fin.81.d:0 "Placeholder desc"
+    so_reunion_fin.81.f:0 "Placeholder flav"
+    so_reunion_fin.81.a:0 "Placeholder option"
+    so_reunion_fin.81.b:0 "Placeholder option"
+
+    so_reunion_fin.82:0 "Placeholder"
+    so_reunion_fin.82.t:0 "Placeholder title"
+    so_reunion_fin.82.d:0 "Placeholder desc"
+    so_reunion_fin.82.f:0 "Placeholder flav"
+    so_reunion_fin.82.a:0 "Placeholder option"
+    so_reunion_fin.82.b:0 "Placeholder option"
+
+    so_reunion_fin.83:0 "Placeholder"
+    so_reunion_fin.83.t:0 "Placeholder title"
+    so_reunion_fin.83.d:0 "Placeholder desc"
+    so_reunion_fin.83.f:0 "Placeholder flav"
+    so_reunion_fin.83.a:0 "Placeholder option"
+    so_reunion_fin.83.b:0 "Placeholder option"
+
+    so_reunion_fin.84:0 "Placeholder"
+    so_reunion_fin.84.t:0 "Placeholder title"
+    so_reunion_fin.84.d:0 "Placeholder desc"
+    so_reunion_fin.84.f:0 "Placeholder flav"
+    so_reunion_fin.84.a:0 "Placeholder option"
+    so_reunion_fin.84.b:0 "Placeholder option"
+
+    so_reunion_fin.85:0 "Placeholder"
+    so_reunion_fin.85.t:0 "Placeholder title"
+    so_reunion_fin.85.d:0 "Placeholder desc"
+    so_reunion_fin.85.f:0 "Placeholder flav"
+    so_reunion_fin.85.a:0 "Placeholder option"
+    so_reunion_fin.85.b:0 "Placeholder option"
+
+    so_reunion_fin.86:0 "Placeholder"
+    so_reunion_fin.86.t:0 "Placeholder title"
+    so_reunion_fin.86.d:0 "Placeholder desc"
+    so_reunion_fin.86.f:0 "Placeholder flav"
+    so_reunion_fin.86.a:0 "Placeholder option"
+    so_reunion_fin.86.b:0 "Placeholder option"
+
+    so_reunion_fin.87:0 "Placeholder"
+    so_reunion_fin.87.t:0 "Placeholder title"
+    so_reunion_fin.87.d:0 "Placeholder desc"
+    so_reunion_fin.87.f:0 "Placeholder flav"
+    so_reunion_fin.87.a:0 "Placeholder option"
+    so_reunion_fin.87.b:0 "Placeholder option"
+
+    so_reunion_fin.88:0 "Placeholder"
+    so_reunion_fin.88.t:0 "Placeholder title"
+    so_reunion_fin.88.d:0 "Placeholder desc"
+    so_reunion_fin.88.f:0 "Placeholder flav"
+    so_reunion_fin.88.a:0 "Placeholder option"
+    so_reunion_fin.88.b:0 "Placeholder option"
+
+    so_reunion_fin.89:0 "Placeholder"
+    so_reunion_fin.89.t:0 "Placeholder title"
+    so_reunion_fin.89.d:0 "Placeholder desc"
+    so_reunion_fin.89.f:0 "Placeholder flav"
+    so_reunion_fin.89.a:0 "Placeholder option"
+    so_reunion_fin.89.b:0 "Placeholder option"

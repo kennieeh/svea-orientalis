@@ -1,13 +1,13 @@
 ﻿# namespace för återföreningen, Sveriges perspektiv
 namespace = so_reunion_swe
 
-# Ev10 
+# Triggas av SO_1
 so_reunion_swe.10 = {
 	type = country_event
 	placement = root
-	title = so_reunion_swe.7.t
-	desc = so_reunion_swe.7.d
-	flavor = so_reunion_swe.7.f
+	title = so_reunion_swe.10.t
+	desc = so_reunion_swe.10.d
+	flavor = so_reunion_swe.10.f
 	
 	event_image = {
 		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
@@ -22,34 +22,311 @@ so_reunion_swe.10 = {
 
 	cooldown = { months = 4 }
 	
-	# triggas av onPulse, förutsatt att triggers nedan är uppfyllda
+	# triggas av Complete
 	trigger = {
 	}
 	
-	option = { # Option A: Mer resurser för fennomanerna!
-		name = so_reunion_swe.7.a
+	option = { # SWE bryr sig om FIN
+		name = so_reunion_swe.10.a
         default_option = yes
-		add_treasury = -1000
-		change_variable = {
-			name = so_reunion_fennoman_boosted
-			add = 40
-		}
-		c:FIN = {
-			trigger_event = { id = so_reunion_fin.3 days = 0 popup = yes }
+		set_variable = {
+			name = so_var_swe_reunion
+			value = yes
 		}
 		ai_chance = {
-			base = 70
+			base = 80
 		}
 	}
 
-	option = { # Option B: Låt det gå sin stilla gång
-		name = so_reunion_swe.7.b
-		change_variable = {
-			name = so_reunion_fennoman_boosted
-			subtract = 1
+	option = { # SWE bryr sig bara om sig själv
+		name = so_reunion_swe.10.b
+		ai_chance = {
+			base = 20
+		}
+	}
+}
+
+# SO_1
+so_reunion_swe.11 = {
+	type = country_event
+	placement = root
+	title = so_reunion_swe.11.t
+	desc = so_reunion_swe.11.d
+	flavor = so_reunion_swe.11.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+	
+	duration = 3
+
+	cooldown = { months = 24 }
+	
+	# triggas av onMonthlyPulse
+	trigger = {
+	}
+	
+	option = { # Good arguments, FIN deserves our attention
+		name = so_reunion_swe.11.a
+        default_option = yes
+		if = {
+			limit = {
+				is_set = root.var:so_var_swe_so_1
+			}
+			change_variable = {
+				name = so_var_swe_so_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_swe_so_1
+				value = 1
+			}
 		}
 		ai_chance = {
-			base = 30
+			base = 80
+		}
+	}
+
+	option = { # We have the possibility of rapid growth if we focus on ourselves
+		name = so_reunion_swe.11.b
+		if = {
+			limit = {
+				is_set = root.var:so_var_swe_so_1
+			}
+			change_variable = {
+				name = so_var_swe_so_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_swe_so_1
+				value = 1
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+}
+
+# SO_1
+so_reunion_swe.12 = {
+	type = country_event
+	placement = root
+	title = so_reunion_swe.12.t
+	desc = so_reunion_swe.12.d
+	flavor = so_reunion_swe.12.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+	
+	duration = 3
+
+	cooldown = { months = 24 }
+	
+	# triggas av onMonthlyPulse
+	trigger = {
+	}
+	
+	option = { # Good arguments, FIN deserves our attention
+		name = so_reunion_swe.12.a
+        default_option = yes
+		if = {
+			limit = {
+				is_set = root.var:so_var_swe_so_1
+			}
+			change_variable = {
+				name = so_var_swe_so_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_swe_so_1
+				value = 1
+			}
+		}
+		ai_chance = {
+			base = 80
+		}
+	}
+
+	option = { # We have the possibility of rapid growth if we focus on ourselves
+		name = so_reunion_swe.12.b
+		if = {
+			limit = {
+				is_set = root.var:so_var_swe_so_1
+			}
+			change_variable = {
+				name = so_var_swe_so_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_swe_so_1
+				value = 1
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+}
+
+
+# SO_1
+so_reunion_swe.13 = {
+	type = country_event
+	placement = root
+	title = so_reunion_swe.13.t
+	desc = so_reunion_swe.13.d
+	flavor = so_reunion_swe.13.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+	
+	duration = 3
+
+	cooldown = { months = 24 }
+	
+	# triggas av onMonthlyPulse
+	trigger = {
+	}
+	
+	option = { # Good arguments, FIN deserves our attention
+		name = so_reunion_swe.13.a
+        default_option = yes
+		if = {
+			limit = {
+				is_set = root.var:so_var_swe_so_1
+			}
+			change_variable = {
+				name = so_var_swe_so_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_swe_so_1
+				value = 1
+			}
+		}
+		ai_chance = {
+			base = 80
+		}
+	}
+
+	option = { # We have the possibility of rapid growth if we focus on ourselves
+		name = so_reunion_swe.13.b
+		if = {
+			limit = {
+				is_set = root.var:so_var_swe_so_1
+			}
+			change_variable = {
+				name = so_var_swe_so_1
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_swe_so_1
+				value = 1
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+}
+
+# SO_2
+so_reunion_swe.21 = {
+	type = country_event
+	placement = root
+	title = so_reunion_swe.21.t
+	desc = so_reunion_swe.21.d
+	flavor = so_reunion_swe.21.f
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+	
+	duration = 3
+
+	cooldown = { months = 24 }
+	
+	# triggas av onMonthlyPulse
+	trigger = {
+	}
+	
+	option = { # Good arguments, FIN deserves our attention
+		name = so_reunion_swe.21.a
+        default_option = yes
+		if = {
+			limit = {
+				is_set = root.var:so_var_swe_so_2
+			}
+			change_variable = {
+				name = so_var_swe_so_2
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_swe_so_2
+				value = 1
+			}
+		}
+		ai_chance = {
+			base = 80
+		}
+	}
+
+	option = { # We have the possibility of rapid growth if we focus on ourselves
+		name = so_reunion_swe.21.b
+		if = {
+			limit = {
+				is_set = root.var:so_var_swe_so_2
+			}
+			change_variable = {
+				name = so_var_swe_so_2
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = so_var_swe_so_2
+				value = 1
+			}
+		}
+		ai_chance = {
+			base = 20
 		}
 	}
 }

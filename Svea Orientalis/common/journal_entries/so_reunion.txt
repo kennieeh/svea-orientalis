@@ -2,83 +2,191 @@
 
 # Sverige
 
-
-# Finland
-
-so_je_fin_vtf_1 = { # Resist the Czar
+so_je_swe_so_1 = { # It is Gone, but not Forgotten
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 	is_shown_when_inactive = {
-		country_has_primary_culture = cu:finnish
-		is_subject_of = c:RUS
-		has_technology_researched = nationalism
+		exists = c:SWE
+		this = c:SWE
+		c:FIN = {
+			is_subject = yes
+			NOT = { is_subject_of = ROOT }
+		}
 	}
 
 	# 
 	possible = {
-		c:FIN = {
-			OR = {
-				ig:ig_svecoman = {
-					ig_clout >= 0.2
-				}
-				ig:ig_fennoman = {
-					ig_clout >= 0.2
-				}
-				AND = {
-					ig:ig_svecoman = {
-						ig_clout >= 0.15
-					}
-					ig:ig_fennoman = {
-						ig_clout >= 0.15
-					}
-				}
-				OR = {
-					ig:ig_svecoman = {
-						ig_government_power_share >= 0.3
-					}
-					ig:ig_fennoman = {
-						ig_government_power_share >= 0.3
-					}
-				}
-			}
+		has_technology_researched = nationalism
+	}
+	
+	# Every month, there is a chance for an event to happen (but not a big chance - 20/100) - each event increases progress bar by one. TODO: More events!
+	on_monthly_pulse = {
+		random_events = {
+			10 = so_reunion_swe.11
+			10 = so_reunion_swe.12
+			80 = 0
 		}
 	}
 	
 	# 
 	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+	
+	# När avklarat, trigga eventet där man väljer om man ska fokusera på FIN eller inte
+	on_complete = {
+		trigger_event = so_reunion_swe.10
+	}
+
+	current_value = {
+		value = root.var:so_var_swe_so_1
+	}
+
+	goal_add_value = {
+		add = 10
+	}
+
+	progressbar = yes
+	
+	# Timeout är 100 år... Så att den inte timeoutar :)
+	timeout = 36500
+	should_be_pinned_by_default = yes
+}
+
+so_je_swe_so_2 = { # Debate on Peace or War
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	is_shown_when_inactive = {
+		exists = c:SWE
+		exists = c:FIN
+		this = c:SWE
 		c:FIN = {
-			OR = {
-				ig:ig_svecoman = {
-					ig_clout >= 0.25
-				}
-				ig:ig_fennoman = {
-					ig_clout >= 0.25
-				}
-				AND = {
-					ig:ig_svecoman = {
-						ig_clout >= 0.2
-					}
-					ig:ig_fennoman = {
-						ig_clout >= 0.2
-					}
-				}
-				OR = {
-					ig:ig_svecoman = {
-						ig_government_power_share >= 0.5
-					}
-					ig:ig_fennoman = {
-						ig_government_power_share >= 0.5
-					}
-				}
-			}
+			is_subject = yes
+			NOT = { is_subject_of = ROOT }
+		}
+		has_variable = so_var_swe_reunion
+	}
+
+	# 
+	possible = {
+		c:FIN = {
+			relations:root >= relations_threshold:amicable
+		}
+	}
+	
+	# Every month, there is a chance for an event to happen (but not a big chance - 20/100) - each event increases progress bar by one. TODO: More events!
+	on_monthly_pulse = {
+		random_events = {
+			10 = so_reunion_swe.21
+			10 = so_reunion_swe.22
+			80 = 0
+		}
+	}
+	
+	# 
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+	
+	# När avklarat, trigga eventet där man väljer om man ska fokusera på FIN eller inte
+	on_complete = {
+		trigger_event = so_reunion_swe.20
+	}
+
+	current_value = {
+		value = root.var:so_var_swe_so_2
+	}
+
+	goal_add_value = {
+		add = 10
+	}
+
+	progressbar = yes
+	
+	# Timeout är 100 år... Så att den inte timeoutar :)
+	timeout = 36500
+	should_be_pinned_by_default = yes
+}
+   
+# ----------------------------------------------
+# ------------o-o-o-o-o-o-o-o-o-o-----------
+# ------------o--------------------o-----------
+# ------------o-- F I N L A N D --o-----------
+# ------------o--------------------o-----------
+# ------------o-o-o-o-o-o-o-o-o-o-----------
+# ----------------------------------------------
+
+so_je_fin_vtf_start = { # Start of the journal entries
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	is_shown_when_inactive = {
+		exists = c:FIN
+		this = c:FIN
+		c:FIN = {
+			is_subject_of = c:RUS
+		}
+	}
+	
+	
+	possible = {
+		always = yes
+	}
+	
+	complete = {
+		has_technology_researched = nationalism
+	}
+
+	on_complete = {
+		add_journal_entry = { type = so_je_fin_vtf_1 }
+		set_variable =  {
+			name = so_var_fin_so_vtf_1
+			value = 0
+		}
+	}
+}
+
+so_je_fin_vtf_1 = { # Resist the Czar
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	# triggered by so_je_fin_vtf_start
+
+	# Varje år händer ett av dessa event (eller 0, dvs ingenting), angivet som procent av 100
+	on_yearly_pulse = {
+		random_events = {
+			80 =  0
+			5 = so_reunion_fin.41
+			5 = so_reunion_fin.42
+			5 = so_reunion_fin.43
+			5 = so_reunion_fin.44
+			5 = so_reunion_fin.45
+			5 = so_reunion_fin.46
+			5 = so_reunion_fin.47
+			5 = so_reunion_fin.48
+			5 = so_reunion_fin.49
+		}
+	}
+	
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
 		}
 	}
 
 	on_complete = {
 		trigger_event = so_reunion_fin.40
 	}
+
+	current_value = {
+		value = root.var:so_var_fin_so_vtf_1
+	}
+
+	# Håller på tills goal är klart, goal har värdet 10, varje event som händer lägger till 1 = 10 events
+	goal_add_value = {
+		add = 10
+	}
+
+	progressbar = yes
 	
-	# Timeout är 100 år... Så att den inte timeoutar :)
-	timeout = 36500
 	should_be_pinned_by_default = yes
 }
 
@@ -90,7 +198,6 @@ so_je_fin_vtf_2a = { # Passive resistance
 	on_yearly_pulse = {
 		random_events = {
 			25 =  0
-			15 = so_reunion_fin.50
 			15 = so_reunion_fin.51
 			15 = so_reunion_fin.52
 			15 = so_reunion_fin.53
@@ -100,37 +207,141 @@ so_je_fin_vtf_2a = { # Passive resistance
 	
 	# 
 	complete = {
-		OR = {
-			ig:ig_svecoman = {
-				ig_clout >= 0.35
-			}
-			ig:ig_fennoman = {
-				ig_clout >= 0.35
-			}
-			AND = {
-				ig:ig_svecoman = {
-					ig_clout >= 0.3
-				}
-				ig:ig_fennoman = {
-					ig_clout >= 0.3
-				}
-			}
-			OR = {
-				ig:ig_svecoman = {
-					ig_government_power_share >= 0.7
-				}
-				ig:ig_fennoman = {
-					ig_government_power_share >= 0.7
-				}
-			}
+		scope:journal_entry = {
+			is_goal_complete = yes
 		}
 	}
 
 	on_complete = {
-		trigger_event = so_reunion_fin.40
+		trigger_event = so_reunion_fin.50
+	}
+
+	current_value = {
+		value = root.var:so_var_fin_so_vtf_2a
+	}
+
+	goal_add_value = {
+		add = 10
+	}
+
+	progressbar = yes
+	
+	should_be_pinned_by_default = yes
+}
+
+so_je_fin_vtf_2b = { # Active resistance
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	# Aktiverad av FIN:Ev40
+
+	# Varje år händer ett av dessa event (eller 0, dvs ingenting), angivet som procent av 100
+	on_yearly_pulse = {
+		random_events = {
+			25 =  0
+			15 = so_reunion_fin.71
+			15 = so_reunion_fin.72
+			15 = so_reunion_fin.73
+			15 = so_reunion_fin.74
+		}
 	}
 	
-	# Timeout är 100 år... Så att den inte timeoutar :)
-	timeout = 36500
+	# 
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+	on_complete = {
+		trigger_event = so_reunion_fin.70
+	}
+
+	current_value = {
+		value = root.var:so_var_fin_so_vtf_2b
+	}
+
+	goal_add_value = {
+		add = 10
+	}
+
+	progressbar = yes
+	
+	should_be_pinned_by_default = yes
+}
+
+so_je_fin_vtf_3a = { # Passive resistance - round two
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	# Aktiverad av FIN:Ev50
+
+	# Varje år händer ett av dessa event (eller 0, dvs ingenting), angivet som procent av 100
+	on_yearly_pulse = {
+		random_events = {
+			25 =  0
+			15 = so_reunion_fin.61
+			15 = so_reunion_fin.62
+			15 = so_reunion_fin.63
+			15 = so_reunion_fin.64
+		}
+	}
+	
+	# 
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+	on_complete = {
+		trigger_event = so_reunion_fin.60
+	}
+
+	current_value = {
+		value = root.var:so_var_fin_so_vtf_3a
+	}
+
+	goal_add_value = {
+		add = 10
+	}
+
+	progressbar = yes
+	
+	should_be_pinned_by_default = yes
+}
+
+so_je_fin_vtf_3b = { # Active resistance - round two
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	# Aktiverad av FIN:Ev70
+
+	# Varje år händer ett av dessa event (eller 0, dvs ingenting), angivet som procent av 100
+	on_yearly_pulse = {
+		random_events = {
+			25 =  0
+			15 = so_reunion_fin.81
+			15 = so_reunion_fin.82
+			15 = so_reunion_fin.83
+			15 = so_reunion_fin.84
+		}
+	}
+	
+	# 
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+	on_complete = {
+		trigger_event = so_reunion_fin.80
+	}
+
+	current_value = {
+		value = root.var:so_var_fin_so_vtf_3a
+	}
+
+	goal_add_value = {
+		add = 10
+	}
+
+	progressbar = yes
+	
 	should_be_pinned_by_default = yes
 }
