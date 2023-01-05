@@ -170,20 +170,9 @@ so_reunion_fin.41 = {
 	option = { # Passivt motstånd
 		name = so_reunion_fin.41.a
         default_option = yes
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -193,10 +182,11 @@ so_reunion_fin.41 = {
 			limit = {
 				has_modifier = so_fin_mod_ev41_passive_resistance
 			}
+			highlighted_option = yes
 			remove_modifier = so_fin_mod_ev41_passive_resistance
 			add_modifier = {
 				name = so_fin_mod_ev41_passive_resistance
-				years = 4
+				years = 5
 				multiplier = 3
 			}
 		}
@@ -214,20 +204,9 @@ so_reunion_fin.41 = {
 	
 	option = { # Aktivt motstånd
 		name = so_reunion_fin.41.b
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -237,10 +216,11 @@ so_reunion_fin.41 = {
 			limit = {
 				has_modifier = so_fin_mod_ev41_active_resistance
 			}
+			highlighted_option = yes
 			remove_modifier = so_fin_mod_ev41_active_resistance
 			add_modifier = {
 				name = so_fin_mod_ev41_active_resistance
-				years = 4
+				years = 5
 				multiplier = 3
 			}
 		}
@@ -285,20 +265,9 @@ so_reunion_fin.42 = {
 	option = { # Passivt motstånd
 		name = so_reunion_fin.42.a
         default_option = yes
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -313,6 +282,7 @@ so_reunion_fin.42 = {
 			limit = {
 				has_modifier = so_fin_mod_ev42_passive_resistance
 			}
+			highlighted_option = yes
 			remove_modifier = so_fin_mod_ev42_passive_resistance
 			add_modifier = {
 				name = so_fin_mod_ev42_passive_resistance
@@ -334,20 +304,9 @@ so_reunion_fin.42 = {
 	
 	option = { # Aktivt motstånd
 		name = so_reunion_fin.42.b
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -362,6 +321,7 @@ so_reunion_fin.42 = {
 			limit = {
 				has_modifier = so_fin_mod_ev42_active_resistance
 			}
+			highlighted_option = yes
 			remove_modifier = so_fin_mod_ev42_active_resistance
 			add_modifier = {
 				name = so_fin_mod_ev42_active_resistance
@@ -382,7 +342,7 @@ so_reunion_fin.42 = {
 	}
 }
 
-# 43: Aktivt eller passivt motstånd?
+# 43: Torgmöte
 so_reunion_fin.43 = {
 	type = country_event
 	
@@ -401,7 +361,7 @@ so_reunion_fin.43 = {
 	
 	duration = 3
 
-	cooldown = { months = 24 }
+	cooldown = { years = 2 }
 	
 	# triggered by VtF_1
 	trigger = {
@@ -410,24 +370,32 @@ so_reunion_fin.43 = {
 	option = { # Passivt motstånd
 		name = so_reunion_fin.43.a
         default_option = yes
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
-			value = -5
+			value = -10
+		}
+		if = {
+			limit = {
+				has_modifier = so_fin_mod_ev43_passive_resistance
+			}
+			highlighted_option = yes
+			remove_modifier = so_fin_mod_ev43_passive_resistance
+			add_modifier = {
+				name = so_fin_mod_ev43_passive_resistance
+				years = 1
+				multiplier = 3
+			}
+		}
+		else = {
+			add_modifier = {
+				name = so_fin_mod_ev43_passive_resistance
+				years = 3
+				multiplier = 1
+			}
 		}
 		ai_chance = {
 			base = 50
@@ -436,24 +404,32 @@ so_reunion_fin.43 = {
 	
 	option = { # Aktivt motstånd
 		name = so_reunion_fin.43.b
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
-			value = -10
+			value = -20
+		}
+		if = {
+			limit = {
+				has_modifier = so_fin_mod_ev43_active_resistance
+			}
+			highlighted_option = yes
+			remove_modifier = so_fin_mod_ev43_active_resistance
+			add_modifier = {
+				name = so_fin_mod_ev43_active_resistance
+				years = 1
+				multiplier = 3
+			}
+		}
+		else = {
+			add_modifier = {
+				name = so_fin_mod_ev43_active_resistance
+				years = 3
+				multiplier = 1
+			}
 		}
 		ai_chance = {
 			base = 50
@@ -480,7 +456,7 @@ so_reunion_fin.44 = {
 	
 	duration = 3
 
-	cooldown = { months = 24 }
+	cooldown = { years = 5 }
 	
 	# triggered by VtF_1
 	trigger = {
@@ -489,20 +465,9 @@ so_reunion_fin.44 = {
 	option = { # Passivt motstånd
 		name = so_reunion_fin.44.a
         default_option = yes
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -515,20 +480,9 @@ so_reunion_fin.44 = {
 	
 	option = { # Aktivt motstånd
 		name = so_reunion_fin.44.b
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -559,7 +513,7 @@ so_reunion_fin.45 = {
 	
 	duration = 3
 
-	cooldown = { months = 24 }
+	cooldown = { years = 5 }
 	
 	# triggered by VtF_1
 	trigger = {
@@ -568,20 +522,9 @@ so_reunion_fin.45 = {
 	option = { # Passivt motstånd
 		name = so_reunion_fin.45.a
         default_option = yes
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -594,20 +537,9 @@ so_reunion_fin.45 = {
 	
 	option = { # Aktivt motstånd
 		name = so_reunion_fin.45.b
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -638,7 +570,7 @@ so_reunion_fin.46 = {
 	
 	duration = 3
 
-	cooldown = { months = 24 }
+	cooldown = { years = 5 }
 	
 	# triggered by VtF_1
 	trigger = {
@@ -647,20 +579,9 @@ so_reunion_fin.46 = {
 	option = { # Passivt motstånd
 		name = so_reunion_fin.46.a
         default_option = yes
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -673,20 +594,9 @@ so_reunion_fin.46 = {
 	
 	option = { # Aktivt motstånd
 		name = so_reunion_fin.46.b
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -717,7 +627,7 @@ so_reunion_fin.47 = {
 	
 	duration = 3
 
-	cooldown = { months = 24 }
+	cooldown = { years = 5 }
 	
 	# triggered by VtF_1
 	trigger = {
@@ -726,20 +636,9 @@ so_reunion_fin.47 = {
 	option = { # Passivt motstånd
 		name = so_reunion_fin.47.a
         default_option = yes
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -752,20 +651,9 @@ so_reunion_fin.47 = {
 	
 	option = { # Aktivt motstånd
 		name = so_reunion_fin.47.b
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -796,7 +684,7 @@ so_reunion_fin.48 = {
 	
 	duration = 3
 
-	cooldown = { months = 24 }
+	cooldown = { years = 5 }
 	
 	# triggered by VtF_1
 	trigger = {
@@ -805,20 +693,9 @@ so_reunion_fin.48 = {
 	option = { # Passivt motstånd
 		name = so_reunion_fin.48.a
         default_option = yes
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -831,20 +708,9 @@ so_reunion_fin.48 = {
 	
 	option = { # Aktivt motstånd
 		name = so_reunion_fin.48.b
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -875,7 +741,7 @@ so_reunion_fin.49 = {
 	
 	duration = 3
 
-	cooldown = { months = 24 }
+	cooldown = { years = 5 }
 	
 	# triggered by VtF_1
 	trigger = {
@@ -884,20 +750,9 @@ so_reunion_fin.49 = {
 	option = { # Passivt motstånd
 		name = so_reunion_fin.49.a
         default_option = yes
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -910,20 +765,9 @@ so_reunion_fin.49 = {
 	
 	option = { # Aktivt motstånd
 		name = so_reunion_fin.49.b
-		if = {
-			limit = {
-				is_set = root.var:so_var_fin_so_vtf_1
-			}
-			change_variable = {
-				name = so_var_fin_so_vtf_1
-				add = 1
-			}
-		}
-		else = {
-			set_variable = {
-				name = so_var_fin_so_vtf_1
-				value = 1
-			}
+		change_variable = {
+			name = so_var_fin_so_vtf_1
+			add = 1
 		}
 		change_relations = {
 			country = c:RUS
@@ -954,14 +798,28 @@ so_reunion_fin.50 = {
 	flavor = so_reunion_fin.50.f
 	
 	duration = 3
+
+	cooldown = { years = 5 }
 	
-	# triggered by onPulse av VtF_2a
+	# triggered by VtF_2a
 	trigger = {
 	}
 
 	option = { # Passivt motstånd
 		name = so_reunion_fin.50.a
         default_option = yes
+		remove_modifier = so_fin_mod_passive_resistance
+		add_modifier = {
+			name = so_fin_mod_passive_resistance
+			multiplier = 2
+		}
+		add_journal_entry = {
+			type = so_je_fin_vtf_3a
+		}
+		set_variable = {
+			name = so_var_fin_so_vtf_3a
+			value = 0
+		}
 		ai_chance = {
 			base = 50
 		}
@@ -969,6 +827,16 @@ so_reunion_fin.50 = {
 	
 	option = { # Aktivt motstånd
 		name = so_reunion_fin.50.b
+		add_modifier = {
+			name = so_fin_mod_passive_resistance_2
+		}
+		add_journal_entry = {
+			type = so_je_fin_vtf_3a
+		}
+		set_variable = {
+			name = so_var_fin_so_vtf_3a
+			value = 0
+		}
 		ai_chance = {
 			base = 50
 		}
@@ -994,6 +862,8 @@ so_reunion_fin.51 = {
 	flavor = so_reunion_fin.51.f
 	
 	duration = 3
+
+	cooldown = { years = 5 }
 	
 	# triggered by onPulse av VtF_2a
 	trigger = {
@@ -1002,6 +872,10 @@ so_reunion_fin.51 = {
 	option = { # Passivt motstånd
 		name = so_reunion_fin.51.a
         default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_2a
+			add = 1
+		}
 		ai_chance = {
 			base = 50
 		}
@@ -1009,6 +883,10 @@ so_reunion_fin.51 = {
 	
 	option = { # Aktivt motstånd
 		name = so_reunion_fin.51.b
+		change_variable = {
+			name = so_var_fin_so_vtf_2a
+			add = 1
+		}
 		ai_chance = {
 			base = 50
 		}
@@ -1034,6 +912,8 @@ so_reunion_fin.52 = {
 	flavor = so_reunion_fin.52.f
 	
 	duration = 3
+
+	cooldown = { years = 5 }
 	
 	# triggered by onPulse av VtF_2a
 	trigger = {
@@ -1042,6 +922,10 @@ so_reunion_fin.52 = {
 	option = { # Passivt motstånd
 		name = so_reunion_fin.52.a
         default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_2a
+			add = 1
+		}
 		ai_chance = {
 			base = 50
 		}
@@ -1049,6 +933,10 @@ so_reunion_fin.52 = {
 	
 	option = { # Aktivt motstånd
 		name = so_reunion_fin.52.b
+		change_variable = {
+			name = so_var_fin_so_vtf_2a
+			add = 1
+		}
 		ai_chance = {
 			base = 50
 		}
@@ -1074,6 +962,8 @@ so_reunion_fin.53 = {
 	flavor = so_reunion_fin.53.f
 	
 	duration = 3
+
+	cooldown = { years = 5 }
 	
 	# triggered by onPulse av VtF_2a
 	trigger = {
@@ -1082,6 +972,10 @@ so_reunion_fin.53 = {
 	option = { # Passivt motstånd
 		name = so_reunion_fin.53.a
         default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_2a
+			add = 1
+		}
 		ai_chance = {
 			base = 50
 		}
@@ -1089,6 +983,10 @@ so_reunion_fin.53 = {
 	
 	option = { # Aktivt motstånd
 		name = so_reunion_fin.53.b
+		change_variable = {
+			name = so_var_fin_so_vtf_2a
+			add = 1
+		}
 		ai_chance = {
 			base = 50
 		}
@@ -1114,6 +1012,8 @@ so_reunion_fin.54 = {
 	flavor = so_reunion_fin.54.f
 	
 	duration = 3
+
+	cooldown = { years = 5 }
 	
 	# triggered by onPulse av VtF_2a
 	trigger = {
@@ -1122,6 +1022,10 @@ so_reunion_fin.54 = {
 	option = { # Passivt motstånd
 		name = so_reunion_fin.54.a
         default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_2a
+			add = 1
+		}
 		ai_chance = {
 			base = 50
 		}
@@ -1129,6 +1033,1312 @@ so_reunion_fin.54 = {
 	
 	option = { # Aktivt motstånd
 		name = so_reunion_fin.54.b
+		change_variable = {
+			name = so_var_fin_so_vtf_2a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 60: Passivt motstånd 2 (VtF_3a), återkommande random event
+so_reunion_fin.60 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.60.t
+	desc = so_reunion_fin.60.d
+	flavor = so_reunion_fin.60.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by VtF_3a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.60.a
+        default_option = yes
+		remove_modifier = so_fin_mod_passive_resistance_2
+		add_modifier = {
+			name = so_fin_mod_passive_resistance_2
+			multiplier = 2
+		}
+		add_journal_entry = {
+			type = so_je_fin_vtf_4a
+		}
+		set_variable = {
+			name = so_var_fin_so_vtf_4a
+			value = 0
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.60.b
+		add_modifier = {
+			name = so_fin_mod_passive_resistance_3
+		}
+		add_journal_entry = {
+			type = so_je_fin_vtf_4a
+		}
+		set_variable = {
+			name = so_var_fin_so_vtf_4a
+			value = 0
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 61: Passivt motstånd, återkommande random event
+so_reunion_fin.61 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.61.t
+	desc = so_reunion_fin.61.d
+	flavor = so_reunion_fin.61.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_3a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.61.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_3a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.61.b
+		change_variable = {
+			name = so_var_fin_so_vtf_3a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 62: Passivt motstånd, återkommande random event
+so_reunion_fin.62 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.62.t
+	desc = so_reunion_fin.62.d
+	flavor = so_reunion_fin.62.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_3a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.62.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_3a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.62.b
+		change_variable = {
+			name = so_var_fin_so_vtf_3a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 63: Passivt motstånd, återkommande random event
+so_reunion_fin.63 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.63.t
+	desc = so_reunion_fin.63.d
+	flavor = so_reunion_fin.63.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_3a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.63.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_3a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.63.b
+		change_variable = {
+			name = so_var_fin_so_vtf_3a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 64: Passivt motstånd, återkommande random event
+so_reunion_fin.64 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.64.t
+	desc = so_reunion_fin.64.d
+	flavor = so_reunion_fin.64.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_3a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.64.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_3a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.64.b
+		change_variable = {
+			name = so_var_fin_so_vtf_3a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 70: Aktivt motstånd, slutligt event
+so_reunion_fin.70 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.70.t
+	desc = so_reunion_fin.70.d
+	flavor = so_reunion_fin.70.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by VtF_2b
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.70.a
+        default_option = yes
+		remove_modifier = so_fin_mod_passive_resistance
+		add_modifier = {
+			name = so_fin_mod_passive_resistance
+			multiplier = 2
+		}
+		add_journal_entry = {
+			type = so_je_fin_vtf_3b
+		}
+		set_variable = {
+			name = so_var_fin_so_vtf_3b
+			value = 0
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.70.b
+		add_modifier = {
+			name = so_fin_mod_passive_resistance_2
+		}
+		add_journal_entry = {
+			type = so_je_fin_vtf_3b
+		}
+		set_variable = {
+			name = so_var_fin_so_vtf_3b
+			value = 0
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 71: Aktivt motstånd, återkommande random event
+so_reunion_fin.71 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.71.t
+	desc = so_reunion_fin.71.d
+	flavor = so_reunion_fin.71.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_2b
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.71.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_2b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.71.b
+		change_variable = {
+			name = so_var_fin_so_vtf_2b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 72: Aktivt motstånd, återkommande random event
+so_reunion_fin.72 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.72.t
+	desc = so_reunion_fin.72.d
+	flavor = so_reunion_fin.72.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_2b
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.72.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_2b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.72.b
+		change_variable = {
+			name = so_var_fin_so_vtf_2b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 73: Aktivt motstånd, återkommande random event
+so_reunion_fin.73 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.73.t
+	desc = so_reunion_fin.73.d
+	flavor = so_reunion_fin.73.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_2b
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.73.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_2b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.73.b
+		change_variable = {
+			name = so_var_fin_so_vtf_2b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 74: Aktivt motstånd, återkommande random event
+so_reunion_fin.74 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.74.t
+	desc = so_reunion_fin.74.d
+	flavor = so_reunion_fin.74.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_2b
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.74.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_2b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.74.b
+		change_variable = {
+			name = so_var_fin_so_vtf_2b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 80: Aktivt motstånd 2, slutligt event
+so_reunion_fin.80 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.80.t
+	desc = so_reunion_fin.80.d
+	flavor = so_reunion_fin.80.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by VtF_3b
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.80.a
+        default_option = yes
+		remove_modifier = so_fin_mod_passive_resistance
+		add_modifier = {
+			name = so_fin_mod_passive_resistance
+			multiplier = 2
+		}
+		add_journal_entry = {
+			type = so_je_fin_vtf_4b
+		}
+		set_variable = {
+			name = so_var_fin_so_vtf_4b
+			value = 0
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.80.b
+		add_modifier = {
+			name = so_fin_mod_passive_resistance_2
+		}
+		add_journal_entry = {
+			type = so_je_fin_vtf_4b
+		}
+		set_variable = {
+			name = so_var_fin_so_vtf_4b
+			value = 0
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 81: Aktivt motstånd, återkommande random event
+so_reunion_fin.81 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.81.t
+	desc = so_reunion_fin.81.d
+	flavor = so_reunion_fin.81.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_3b
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.81.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_3b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.81.b
+		change_variable = {
+			name = so_var_fin_so_vtf_3b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 82: Aktivt motstånd, återkommande random event
+so_reunion_fin.82 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.82.t
+	desc = so_reunion_fin.82.d
+	flavor = so_reunion_fin.82.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_3b
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.82.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_3b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.82.b
+		change_variable = {
+			name = so_var_fin_so_vtf_3b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 83: Aktivt motstånd, återkommande random event
+so_reunion_fin.83 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.83.t
+	desc = so_reunion_fin.83.d
+	flavor = so_reunion_fin.83.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_3b
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.83.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_3b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.83.b
+		change_variable = {
+			name = so_var_fin_so_vtf_3b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 84: Aktivt motstånd, återkommande random event
+so_reunion_fin.84 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.84.t
+	desc = so_reunion_fin.84.d
+	flavor = so_reunion_fin.84.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_3b
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.84.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_3b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.84.b
+		change_variable = {
+			name = so_var_fin_so_vtf_3b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 90: Passivt slutligt motstånd, slutligt event
+so_reunion_fin.90 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.90.t
+	desc = so_reunion_fin.90.d
+	flavor = so_reunion_fin.90.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by VtF_4a
+	trigger = {
+	}
+
+	option = { # Pressa Overlord till att ge självständighet
+		name = so_reunion_fin.90.a
+        default_option = yes
+		remove_modifier = so_fin_mod_passive_resistance
+		add_modifier = {
+			name = so_fin_mod_independent
+			multiplier = 2
+		}
+		make_independent = yes
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.90.b
+		play_as = c:SWE
+		c:SWE = {
+			annex = c:FIN
+			add_modifier = {
+				name = so_fin_mod_reunited
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 91: Passivt slutligt motstånd, återkommande random event
+so_reunion_fin.91 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.91.t
+	desc = so_reunion_fin.91.d
+	flavor = so_reunion_fin.91.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_4a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.91.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_4a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.91.b
+		change_variable = {
+			name = so_var_fin_so_vtf_4a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 92: Passivt slutligt motstånd, återkommande random event
+so_reunion_fin.92 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.92.t
+	desc = so_reunion_fin.92.d
+	flavor = so_reunion_fin.92.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_4a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.92.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_4a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.92.b
+		change_variable = {
+			name = so_var_fin_so_vtf_4a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 93: Passivt slutligt motstånd, återkommande random event
+so_reunion_fin.93 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.93.t
+	desc = so_reunion_fin.93.d
+	flavor = so_reunion_fin.93.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_4a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.93.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_4a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.93.b
+		change_variable = {
+			name = so_var_fin_so_vtf_4a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 94: Passivt slutligt motstånd, återkommande random event
+so_reunion_fin.94 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.94.t
+	desc = so_reunion_fin.94.d
+	flavor = so_reunion_fin.94.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_4a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.94.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_4a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.94.b
+		change_variable = {
+			name = so_var_fin_so_vtf_4a
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 95: Aktivt slutligt motstånd, slutligt event
+so_reunion_fin.95 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.95.t
+	desc = so_reunion_fin.95.d
+	flavor = so_reunion_fin.95.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by VtF_4b
+	trigger = {
+	}
+
+	option = { # Pressa Overlord till att ge självständighet
+		name = so_reunion_fin.95.a
+        default_option = yes
+		remove_modifier = so_fin_mod_active_resistance
+		add_modifier = {
+			name = so_fin_mod_independent
+			multiplier = 2
+		}
+		make_independent = yes
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.95.b
+		play_as = c:SWE
+		c:SWE = {
+			annex = c:FIN
+			add_modifier = {
+				name = so_fin_mod_reunited
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 96: Passivt slutligt motstånd, återkommande random event
+so_reunion_fin.96 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.96.t
+	desc = so_reunion_fin.96.d
+	flavor = so_reunion_fin.96.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_4b
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.96.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_4b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.96.b
+		change_variable = {
+			name = so_var_fin_so_vtf_4b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 97: Passivt slutligt motstånd, återkommande random event
+so_reunion_fin.97 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.97.t
+	desc = so_reunion_fin.97.d
+	flavor = so_reunion_fin.97.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_4b
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.97.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_4b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.97.b
+		change_variable = {
+			name = so_var_fin_so_vtf_4b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 98: Passivt slutligt motstånd, återkommande random event
+so_reunion_fin.98 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.98.t
+	desc = so_reunion_fin.98.d
+	flavor = so_reunion_fin.98.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_4a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.98.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_4b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.98.b
+		change_variable = {
+			name = so_var_fin_so_vtf_4b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+# 99: Passivt slutligt motstånd, återkommande random event
+so_reunion_fin.99 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.99.t
+	desc = so_reunion_fin.99.d
+	flavor = so_reunion_fin.99.f
+	
+	duration = 3
+
+	cooldown = { years = 5 }
+	
+	# triggered by onPulse av VtF_4a
+	trigger = {
+	}
+
+	option = { # Passivt motstånd
+		name = so_reunion_fin.99.a
+        default_option = yes
+		change_variable = {
+			name = so_var_fin_so_vtf_4b
+			add = 1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # Aktivt motstånd
+		name = so_reunion_fin.99.b
+		change_variable = {
+			name = so_var_fin_so_vtf_4b
+			add = 1
+		}
 		ai_chance = {
 			base = 50
 		}

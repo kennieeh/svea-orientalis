@@ -161,19 +161,19 @@
    # path a) = passiv,
    # path b) = aktivt
    
-   so_je_fin_vtf_2a:0 "Svea Orientalis: Passive resistance"
-   so_je_fin_vtf_2a_reason:0 ""
+   so_je_fin_vtf_2a:0 "Svea Orientalis: The Path of Passive Resistance"
+   so_je_fin_vtf_2a_reason:0 "We have chosen to resist Russification passively"
    
    # The debate variable for passive resistance
-   so_var_fin_so_vtf_2a_name:0 "Debates on how to resist Russification passively"
+   so_var_fin_so_vtf_2a_name:0 "Passive resistance"
    so_var_fin_so_vtf_2a_desc:0 ""
    so_var_fin_so_vtf_2a_tooltip:0 ""
    
-   so_je_fin_vtf_2b:0 "Svea Orientalis: Active resistance"
+   so_je_fin_vtf_2b:0 "Svea Orientalis: The Path of Active resistance"
    so_je_fin_vtf_2b_reason:0 ""
    
    # The debate variable for active resistance
-   so_var_fin_so_vtf_2b_name:0 "Debates on how to resist Russification actively"
+   so_var_fin_so_vtf_2b_name:0 "Active resistance"
    so_var_fin_so_vtf_2b_desc:0 ""
    so_var_fin_so_vtf_2b_tooltip:0 ""
    
@@ -358,12 +358,14 @@
     so_fin_mod_ev42_passive_resistance:1 "Letter of complaint"
     so_fin_mod_ev42_active_resistance:1 "Enact all the laws"
 
-    so_reunion_fin.43:0 "Placeholder"
-    so_reunion_fin.43.t:0 "Placeholder title 43"
-    so_reunion_fin.43.d:0 "Placeholder desc"
+    so_reunion_fin.43:0 "Town hall meeting"
+    so_reunion_fin.43.t:0 "Town hall meeting"
+    so_reunion_fin.43.d:0 "A town meeting is held between prominent figures for the two approaches of resistance. Who has the more convincing argument?"
     so_reunion_fin.43.f:0 "Placeholder flav"
-    so_reunion_fin.43.a:0 "Placeholder option"
-    so_reunion_fin.43.b:0 "Placeholder option"
+    so_reunion_fin.43.a:0 "Surely, causing too much trouble will only punish us more severely!"
+    so_reunion_fin.43.b:0 "If we do not act firmly against the oppression, there will only be more of it!"
+    so_fin_mod_ev43_passive_resistance:1 "Intellectual resistance"
+    so_fin_mod_ev43_active_resistance:1 "Aggressive resistance"
 
     so_reunion_fin.44:0 "Placeholder"
     so_reunion_fin.44.t:0 "Placeholder title 44"
@@ -409,12 +411,12 @@
     
     # Triggas genom VtF 2a - passivt motstånd
     
-    so_reunion_fin.50:0 "Placeholder"
-    so_reunion_fin.50.t:0 "Placeholder title"
-    so_reunion_fin.50.d:0 "Placeholder desc"
+    so_reunion_fin.50:0 "Passive Escalations"
+    so_reunion_fin.50.t:0 "Passive Escalations"
+    so_reunion_fin.50.d:0 "With the line firmly set on resisting our overlord by any passive means, questions arise on how to escalate the resistance."
     so_reunion_fin.50.f:0 "Placeholder flav"
-    so_reunion_fin.50.a:0 "Placeholder option"
-    so_reunion_fin.50.b:0 "Placeholder option"
+    so_reunion_fin.50.a:0 "Continue the current path of legislation"
+    so_reunion_fin.50.b:0 "Pursue a more diplomatically active sort of passive resistance"
 
     so_reunion_fin.51:0 "Placeholder"
     so_reunion_fin.51.t:0 "Placeholder title"

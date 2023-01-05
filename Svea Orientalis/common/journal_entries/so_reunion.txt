@@ -144,6 +144,13 @@ so_je_fin_vtf_start = { # Start of the journal entries
 			value = 0
 		}
 	}
+
+	invalid = {
+		OR = {
+			is_subject = no
+			is_subject_of = c:SWE
+		}
+	}
 }
 
 so_je_fin_vtf_1 = { # Resist the Czar
@@ -151,18 +158,12 @@ so_je_fin_vtf_1 = { # Resist the Czar
 	# triggered by so_je_fin_vtf_start
 
 	# Varje år händer ett av dessa event (eller 0, dvs ingenting), angivet som procent av 100
-	on_yearly_pulse = {
+	on_monthly_pulse = {
 		random_events = {
-			80 =  0
-			5 = so_reunion_fin.41
-			5 = so_reunion_fin.42
-			5 = so_reunion_fin.43
-			5 = so_reunion_fin.44
-			5 = so_reunion_fin.45
-			5 = so_reunion_fin.46
-			5 = so_reunion_fin.47
-			5 = so_reunion_fin.48
-			5 = so_reunion_fin.49
+			88 =  0
+			3 = so_reunion_fin.41
+			2 = so_reunion_fin.42
+			1 = so_reunion_fin.43
 		}
 	}
 	
@@ -176,13 +177,20 @@ so_je_fin_vtf_1 = { # Resist the Czar
 		trigger_event = so_reunion_fin.40
 	}
 
+	invalid = {
+		OR = {
+			is_subject = no
+			is_subject_of = c:SWE
+		}
+	}
+
 	current_value = {
 		value = root.var:so_var_fin_so_vtf_1
 	}
 
 	# Håller på tills goal är klart, goal har värdet 10, varje event som händer lägger till 1 = 10 events
 	goal_add_value = {
-		add = 10
+		add = 5
 	}
 
 	progressbar = yes
@@ -214,6 +222,13 @@ so_je_fin_vtf_2a = { # Passive resistance
 
 	on_complete = {
 		trigger_event = so_reunion_fin.50
+	}
+
+	invalid = {
+		OR = {
+			is_subject = no
+			is_subject_of = c:SWE
+		}
 	}
 
 	current_value = {
@@ -255,6 +270,13 @@ so_je_fin_vtf_2b = { # Active resistance
 		trigger_event = so_reunion_fin.70
 	}
 
+	invalid = {
+		OR = {
+			is_subject = no
+			is_subject_of = c:SWE
+		}
+	}
+
 	current_value = {
 		value = root.var:so_var_fin_so_vtf_2b
 	}
@@ -292,6 +314,13 @@ so_je_fin_vtf_3a = { # Passive resistance - round two
 
 	on_complete = {
 		trigger_event = so_reunion_fin.60
+	}
+
+	invalid = {
+		OR = {
+			is_subject = no
+			is_subject_of = c:SWE
+		}
 	}
 
 	current_value = {
@@ -333,12 +362,111 @@ so_je_fin_vtf_3b = { # Active resistance - round two
 		trigger_event = so_reunion_fin.80
 	}
 
+	invalid = {
+		OR = {
+			is_subject = no
+			is_subject_of = c:SWE
+		}
+	}
+
 	current_value = {
 		value = root.var:so_var_fin_so_vtf_3a
 	}
 
 	goal_add_value = {
 		add = 10
+	}
+
+	progressbar = yes
+	
+	should_be_pinned_by_default = yes
+}
+
+so_je_fin_vtf_4a = { # Passive resistance - final round
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	# Aktiverad av FIN:Ev60
+
+	# Varje år händer ett av dessa event (eller 0, dvs ingenting), angivet som procent av 100
+	on_monthly_pulse = {
+		random_events = {
+			96 =  0
+			1 = so_reunion_fin.91
+			1 = so_reunion_fin.92
+			1 = so_reunion_fin.93
+			1 = so_reunion_fin.94
+		}
+	}
+	
+	# 
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+	on_complete = {
+		trigger_event = so_reunion_fin.90
+	}
+
+	invalid = {
+		OR = {
+			is_subject = no
+			is_subject_of = c:SWE
+		}
+	}
+
+	current_value = {
+		value = root.var:so_var_fin_so_vtf_4a
+	}
+
+	goal_add_value = {
+		add = 4
+	}
+
+	progressbar = yes
+	
+	should_be_pinned_by_default = yes
+}
+
+so_je_fin_vtf_4b = { # Active resistance - round two
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	# Aktiverad av FIN:Ev80
+
+	# Varje år händer ett av dessa event (eller 0, dvs ingenting), angivet som procent av 100
+	on_montly_pulse = {
+		random_events = {
+			96 =  0
+			1 = so_reunion_fin.96
+			1 = so_reunion_fin.97
+			1 = so_reunion_fin.98
+			1 = so_reunion_fin.99
+		}
+	}
+	
+	# 
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+	on_complete = {
+		trigger_event = so_reunion_fin.95
+	}
+
+	invalid = {
+		OR = {
+			is_subject = no
+			is_subject_of = c:SWE
+		}
+	}
+
+	current_value = {
+		value = root.var:so_var_fin_so_vtf_4b
+	}
+
+	goal_add_value = {
+		add = 4
 	}
 
 	progressbar = yes
