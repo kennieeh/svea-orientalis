@@ -1636,7 +1636,7 @@ so_reunion_fin.80 = {
 }
 
 
-# 81: Aktivt motstånd, återkommande random event
+# 81: Mordet på en rysk politiker
 so_reunion_fin.81 = {
 	type = country_event
 	
@@ -1659,6 +1659,31 @@ so_reunion_fin.81 = {
 	
 	# triggered by onPulse av VtF_3b
 	trigger = {
+		
+	}
+	
+	immediate = {
+		c:RUS = {
+			random_interest_group = {
+				limit = {
+					is_in_government = yes
+				}
+				leader = { save_scope_as = so_rus_assassinated_politician }
+			}
+		}
+		scope:so_rus_assassinated_politician = {
+			kill_character = yes
+		}
+		random_scope_character = {
+			limit = {
+				is_ruler = no
+				has_role = politician
+				interest_group = {
+					ig_clout < 0.2
+				}
+			}
+			save_scope_as = so_fin_assassin
+		}
 	}
 
 	option = { # Passivt motstånd
@@ -1667,6 +1692,13 @@ so_reunion_fin.81 = {
 		change_variable = {
 			name = so_var_fin_so_vtf_3b
 			add = 1
+		}
+		scope:so_fin_assassin = {
+			kill_character = yes
+		}
+		change_relations = {
+			country = c:RUS
+			value = -25
 		}
 		ai_chance = {
 			base = 50
@@ -1678,6 +1710,10 @@ so_reunion_fin.81 = {
 		change_variable = {
 			name = so_var_fin_so_vtf_3b
 			add = 1
+		}
+		change_relations = {
+			country = c:RUS
+			value = -75
 		}
 		ai_chance = {
 			base = 50
