@@ -15,7 +15,7 @@ so_je_swe_so_1 = { # It is Gone, but not Forgotten
 
 	# 
 	possible = {
-		has_technology_researched = nationalism
+		always = no
 	}
 	
 	# Every month, there is a chance for an event to happen (but not a big chance - 20/100) - each event increases progress bar by one. TODO: More events!
@@ -69,9 +69,7 @@ so_je_swe_so_2 = { # Debate on Peace or War
 
 	# 
 	possible = {
-		c:FIN = {
-			relations:root >= relations_threshold:amicable
-		}
+		always = no
 	}
 	
 	# Every month, there is a chance for an event to happen (but not a big chance - 20/100) - each event increases progress bar by one. TODO: More events!
@@ -118,358 +116,260 @@ so_je_swe_so_2 = { # Debate on Peace or War
 # ------------o-o-o-o-o-o-o-o-o-o-----------
 # ----------------------------------------------
 
-so_je_fin_vtf_start = { # Start of the journal entries
-	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
-	is_shown_when_inactive = {
-		exists = c:FIN
-		this = c:FIN
-		c:FIN = {
-			is_subject_of = c:RUS
-		}
-	}
+so_je_fin_vtf_main = { # Rework based on 1.3.5 France's Divided Monarchists' JE
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
 	
-	
-	possible = {
-		always = yes
+	immediate = {
+		set_variable = { name = so_var_fin_vtf_leading_faction_progress value = 0 }
+		so_var_fin_vtf_variables = yes
 	}
 	
 	complete = {
-		has_technology_researched = nationalism
+		custom_tooltip ={
+			text = so_je_fin_vtf_tt
+			has_variable = so_var_fin_vtf_main_complete
+		}
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
 	}
 
 	on_complete = {
-		add_journal_entry = { type = so_je_fin_vtf_1 }
-		set_variable =  {
-			name = so_var_fin_so_vtf_1
-			value = 0
+		custom_tooltip = {
+			text = so_je_fin_vtf_complete_tt
+			so_je_fin_vtf_clear_variables = yes
 		}
 	}
-
-	invalid = {
-		OR = {
-			is_subject = no
-			is_subject_of = c:SWE
+	
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = so_je_fin_vtf_svecoman_leading_desc
+				trigger = {
+					AND = {
+						var:so_var_fin_svecoman_progress > var:so_var_fin_fennoman_progress
+						var:so_var_fin_svecoman_progress > var:so_var_fin_russoman_progress
+					}
+				}
+			}
+			triggered_desc = {
+				desc = so_je_fin_vtf_fennoman_leading_desc
+				trigger = {
+					AND = {
+						var:so_var_fin_fennoman_progress > var:so_var_fin_svecoman_progress
+						var:so_var_fin_fennoman_progress > var:so_var_fin_russoman_progress
+					}
+				}
+			}
+			triggered_desc = {
+				desc = so_je_fin_vtf_russoman_leading_desc
+				trigger = {
+					AND = {
+						var:so_var_fin_russoman_progress > var:so_var_fin_fennoman_progress
+						var:so_var_fin_russoman_progress > var:so_var_fin_svecoman_progress
+					}
+				}
+			}
+			triggered_desc = {
+				desc = so_je_fin_vtf_no_leading_desc
+				trigger = {
+					always = yes
+				}
+			}
 		}
 	}
-}
-
-so_je_fin_vtf_1 = { # Resist the Czar
-	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
-	# triggered by so_je_fin_vtf_start
-
-	# Varje år händer ett av dessa event (eller 0, dvs ingenting), angivet som procent av 100
+	
+	modifiers_while_active = {
+		so_je_fin_vtf_main_modifier
+	}
+	
+	on_weekly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_variable = so_je_fin_vtf_freeze
+					}
+				}
+				so_var_fin_vtf_weekly_pulse_svecoman_progress = yes
+				so_var_fin_vtf_weekly_pulse_fennoman_progress = yes
+				so_var_fin_vtf_weekly_pulse_russoman_progress = yes
+			}
+			so_var_fin_vtf_define_leading_faction = yes
+		}
+	}
+	
 	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_variable = so_je_fin_vtf_freeze
+					}
+				}
+				change_variable = { name = so_var_fin_svecoman_progress add = var:so_var_fin_svecoman_progress_next }
+				change_variable = { name = so_var_fin_fennoman_progress add = var:so_var_fin_fennoman_progress_next }
+				change_variable = { name = so_var_fin_russoman_progress add = var:so_var_fin_russoman_progress_next }
+				so_var_fin_vtf_define_leading_faction = yes
+			}
+		}
 		random_events = {
-			88 =  0
-			3 = so_reunion_fin.41
-			2 = so_reunion_fin.42
-			1 = so_reunion_fin.43
+		400 = 0
+		30 = so_reunion_fin.30
+		30 = so_reunion_fin.31
+		30 = so_reunion_fin.41
+		3 = so_reunion_fin.60
 		}
 	}
 	
-	complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
-		}
-	}
-
-	on_complete = {
-		trigger_event = so_reunion_fin.40
-	}
-
-	invalid = {
-		OR = {
-			is_subject = no
-			is_subject_of = c:SWE
-		}
-	}
-
-	current_value = {
-		value = root.var:so_var_fin_so_vtf_1
-	}
-
-	# Håller på tills goal är klart, goal har värdet 10, varje event som händer lägger till 1 = 10 events
-	goal_add_value = {
-		add = 5
-	}
-
-	progressbar = yes
-	
-	should_be_pinned_by_default = yes
-}
-
-so_je_fin_vtf_2a = { # Passive resistance
-	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
-	# Aktiverad av FIN:Ev40
-
-	# Varje år händer ett av dessa event (eller 0, dvs ingenting), angivet som procent av 100
 	on_yearly_pulse = {
 		random_events = {
-			25 =  0
-			15 = so_reunion_fin.51
-			15 = so_reunion_fin.52
-			15 = so_reunion_fin.53
-			15 = so_reunion_fin.54
+			
 		}
 	}
 	
-	# 
+	fail = {
+		root = {
+			OR = {
+				AND = {
+					is_subject_type = subject_type_puppet
+					has_subject_relation_with = c:RUS
+				}
+				is_subject = no
+			}
+		}
+	}
+	
+	current_value = {
+		value = root.var:so_var_fin_vtf_leading_faction_progress
+	}
+
+	goal_add_value = {
+		value = 200
+	}
+
+	progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+so_je_fin_vtf_end = { # How does it end?
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = so_je_fin_vtf_constitutionalists_leading_desc
+				trigger = {
+					AND = {
+						var:so_var_fin_const_progress > var:so_var_fin_activist_progress
+						var:so_var_fin_const_progress > var:so_var_fin_appeas_progress
+					}
+				}
+			}
+			triggered_desc = {
+				desc = so_je_fin_vtf_activists_leading_desc
+				trigger = {
+					AND = {
+						var:so_var_fin_activist_progress > var:so_var_fin_const_progress
+						var:so_var_fin_activist_progress > var:so_var_fin_appeas_progress
+					}
+				}
+			}
+			triggered_desc = {
+				desc = so_je_fin_vtf_appeasement_leading_desc
+				trigger = {
+					AND = {
+						var:so_var_fin_appeas_progress > var:so_var_fin_const_progress
+						var:so_var_fin_appeas_progress > var:so_var_fin_activist_progress
+					}
+				}
+			}
+			triggered_desc = {
+				desc = so_je_fin_vtf_no_leading_method_desc
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		
+	}
+	
 	complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
+		OR = {
+			is_subject = no
 		}
 	}
 
 	on_complete = {
-		trigger_event = so_reunion_fin.50
+		
 	}
-
-	invalid = {
-		OR = {
-			is_subject = no
-			is_subject_of = c:SWE
-		}
-	}
-
-	current_value = {
-		value = root.var:so_var_fin_so_vtf_2a
-	}
-
-	goal_add_value = {
-		add = 10
-	}
-
-	progressbar = yes
 	
-	should_be_pinned_by_default = yes
-}
-
-so_je_fin_vtf_2b = { # Active resistance
-	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
-	# Aktiverad av FIN:Ev40
-
-	# Varje år händer ett av dessa event (eller 0, dvs ingenting), angivet som procent av 100
-	on_yearly_pulse = {
-		random_events = {
-			25 =  0
-			15 = so_reunion_fin.71
-			15 = so_reunion_fin.72
-			15 = so_reunion_fin.73
-			15 = so_reunion_fin.74
+	modifiers_while_active = {
+		so_je_fin_vtf_end_modifier
+	}
+	
+	on_weekly_pulse = {
+		events = {
+			
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_variable = so_je_fin_vtf_method_freeze
+					}
+				}
+				so_var_fin_vtf_weekly_pulse_const_progress = yes
+				so_var_fin_vtf_weekly_pulse_activist_progress = yes
+				so_var_fin_vtf_weekly_pulse_appeas_progress = yes
+			}
+			so_var_fin_vtf_define_leading_method = yes
 		}
 	}
 	
-	# 
-	complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
-		}
-	}
-
-	on_complete = {
-		trigger_event = so_reunion_fin.70
-	}
-
-	invalid = {
-		OR = {
-			is_subject = no
-			is_subject_of = c:SWE
-		}
-	}
-
-	current_value = {
-		value = root.var:so_var_fin_so_vtf_2b
-	}
-
-	goal_add_value = {
-		add = 10
-	}
-
-	progressbar = yes
-	
-	should_be_pinned_by_default = yes
-}
-
-so_je_fin_vtf_3a = { # Passive resistance - round two
-	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
-	# Aktiverad av FIN:Ev50
-
-	# Varje år händer ett av dessa event (eller 0, dvs ingenting), angivet som procent av 100
-	on_yearly_pulse = {
-		random_events = {
-			25 =  0
-			15 = so_reunion_fin.61
-			15 = so_reunion_fin.62
-			15 = so_reunion_fin.63
-			15 = so_reunion_fin.64
-		}
-	}
-	
-	# 
-	complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
-		}
-	}
-
-	on_complete = {
-		trigger_event = so_reunion_fin.60
-	}
-
-	invalid = {
-		OR = {
-			is_subject = no
-			is_subject_of = c:SWE
-		}
-	}
-
-	current_value = {
-		value = root.var:so_var_fin_so_vtf_3a
-	}
-
-	goal_add_value = {
-		add = 10
-	}
-
-	progressbar = yes
-	
-	should_be_pinned_by_default = yes
-}
-
-so_je_fin_vtf_3b = { # Active resistance - round two
-	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
-	# Aktiverad av FIN:Ev70
-
-	# Varje år händer ett av dessa event (eller 0, dvs ingenting), angivet som procent av 100
-	on_yearly_pulse = {
-		random_events = {
-			25 =  0
-			15 = so_reunion_fin.81
-			15 = so_reunion_fin.82
-			15 = so_reunion_fin.83
-			15 = so_reunion_fin.84
-		}
-	}
-	
-	# 
-	complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
-		}
-	}
-
-	on_complete = {
-		trigger_event = so_reunion_fin.80
-	}
-
-	invalid = {
-		OR = {
-			is_subject = no
-			is_subject_of = c:SWE
-		}
-	}
-
-	current_value = {
-		value = root.var:so_var_fin_so_vtf_3a
-	}
-
-	goal_add_value = {
-		add = 10
-	}
-
-	progressbar = yes
-	
-	should_be_pinned_by_default = yes
-}
-
-so_je_fin_vtf_4a = { # Passive resistance - final round
-	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
-	# Aktiverad av FIN:Ev60
-
-	# Varje år händer ett av dessa event (eller 0, dvs ingenting), angivet som procent av 100
 	on_monthly_pulse = {
+		effect = {
+			if = {
+				change_variable = { name = so_var_fin_const_progress add = var:so_var_fin_const_progress_next }
+				change_variable = { name = so_var_fin_activist_progress add = var:so_var_fin_activist_progress_next }
+				change_variable = { name = so_var_fin_appeas_progress add = var:so_var_fin_appeas_progress_next }
+				so_var_fin_vtf_define_leading_method = yes
+			}
+		}
 		random_events = {
-			96 =  0
-			1 = so_reunion_fin.91
-			1 = so_reunion_fin.92
-			1 = so_reunion_fin.93
-			1 = so_reunion_fin.94
+		400 = 0
+		3 = so_reunion_fin.40
 		}
 	}
 	
-	# 
-	complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
+	on_yearly_pulse = {
+		random_events = {
+			
 		}
 	}
-
-	on_complete = {
-		trigger_event = so_reunion_fin.90
-	}
-
-	invalid = {
-		OR = {
-			is_subject = no
-			is_subject_of = c:SWE
+	
+	fail = {
+		ROOT = {
+			has_diplomatic_pact = {
+				who = c:RUS
+				type = puppet
+			}
 		}
 	}
-
+	
 	current_value = {
-		value = root.var:so_var_fin_so_vtf_4a
+		value = root.var:so_var_fin_vtf_leading_faction_progress
 	}
 
 	goal_add_value = {
-		add = 4
+		value = 3600
 	}
 
 	progressbar = yes
-	
-	should_be_pinned_by_default = yes
-}
 
-so_je_fin_vtf_4b = { # Active resistance - round two
-	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
-	# Aktiverad av FIN:Ev80
-
-	# Varje år händer ett av dessa event (eller 0, dvs ingenting), angivet som procent av 100
-	on_montly_pulse = {
-		random_events = {
-			96 =  0
-			1 = so_reunion_fin.96
-			1 = so_reunion_fin.97
-			1 = so_reunion_fin.98
-			1 = so_reunion_fin.99
-		}
-	}
-	
-	# 
-	complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
-		}
-	}
-
-	on_complete = {
-		trigger_event = so_reunion_fin.95
-	}
-
-	invalid = {
-		OR = {
-			is_subject = no
-			is_subject_of = c:SWE
-		}
-	}
-
-	current_value = {
-		value = root.var:so_var_fin_so_vtf_4b
-	}
-
-	goal_add_value = {
-		add = 4
-	}
-
-	progressbar = yes
-	
 	should_be_pinned_by_default = yes
 }

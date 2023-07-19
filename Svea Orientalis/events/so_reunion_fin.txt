@@ -1,10 +1,8 @@
 ﻿# namespace för återföreningen, Finlands perspektiv
 namespace = so_reunion_fin
 
-
-
-# 20: Svekomanerna
-so_reunion_fin.20 = {
+# 10-29: Triggat av SWE
+so_reunion_fin.10 = {
 	type = country_event
 	
 	event_image = {
@@ -16,9 +14,9 @@ so_reunion_fin.20 = {
 
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 	
-	title = so_reunion_fin.20.t
-	desc = so_reunion_fin.20.d
-	flavor = so_reunion_fin.20.f
+	title = so_reunion_fin.10.t
+	desc = so_reunion_fin.10.d
+	flavor = so_reunion_fin.10.f
 	
 	duration = 3
 	
@@ -27,7 +25,7 @@ so_reunion_fin.20 = {
 	}
 
 	option = { # X
-		name = so_reunion_fin.20.a
+		name = so_reunion_fin.10.a
         default_option = yes
 		ai_chance = {
 			base = 70
@@ -35,7 +33,7 @@ so_reunion_fin.20 = {
 	}
 	
 	option = { # Y
-		name = so_reunion_fin.20.b
+		name = so_reunion_fin.10.b
 		ai_chance = {
 			base = 30
 		}
@@ -43,7 +41,8 @@ so_reunion_fin.20 = {
 }
 
 
-# 30: Fennomanerna
+# 30-39: Progression av so_je_fin_vtf_main
+# 30: Språkkriget eskalerar, svekomanerna leder
 so_reunion_fin.30 = {
 	type = country_event
 	
@@ -61,12 +60,17 @@ so_reunion_fin.30 = {
 	flavor = so_reunion_fin.30.f
 	
 	duration = 3
+
+	cooldown = { years = 10 }
 	
 	# triggered by onPulse in SI_1
 	trigger = {
+		OR = {
+			var:so_var_fin_svecoman_progress > 40
+		}
 	}
 
-	option = { # X
+	option = { # Let the svecomen be
 		name = so_reunion_fin.30.a
         default_option = yes
 		ai_chance = {
@@ -74,10 +78,212 @@ so_reunion_fin.30 = {
 		}
 	}
 	
-	option = { # Y
+	option = { # Crack down on them
 		name = so_reunion_fin.30.b
+		change_variable = { name = so_var_fin_svecoman_progress subtract = 10 }
 		ai_chance = {
 			base = 30
+		}
+	}
+	
+	option = { # Crack down harder!
+		name = so_reunion_fin.30.c
+		change_variable = { name = so_var_fin_svecoman_progress divide = 2 }
+		ai_chance = {
+			base = 30
+		}
+	}
+}
+
+# 31: Språkkriget eskalerar, fennomanerna leder
+so_reunion_fin.31 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.31.t
+	desc = so_reunion_fin.31.d
+	flavor = so_reunion_fin.31.f
+	
+	duration = 3
+
+	cooldown = { years = 10 }
+	
+	# triggered by onPulse in SI_1
+	trigger = {
+		OR = {
+			var:so_var_fin_fennoman_progress > 40
+		}
+	}
+
+	option = { # Let the fennomen be
+		name = so_reunion_fin.31.a
+        default_option = yes
+		ai_chance = {
+			base = 70
+		}
+	}
+	
+	option = { # Crack down on them
+		name = so_reunion_fin.31.b
+		change_variable = { name = so_var_fin_fennoman_progress subtract = 10 }
+		ai_chance = {
+			base = 30
+		}
+	}
+	
+	option = { # Crack down harder!
+		name = so_reunion_fin.31.c
+		change_variable = { name = so_var_fin_fennoman_progress divide = 2 }
+		ai_chance = {
+			base = 30
+		}
+	}
+}
+
+# 39: Språkkriget når sin kulmen - vilken sida väljer du?
+so_reunion_fin.39 = {
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	title = so_reunion_fin.39.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = so_reunion_fin.39.d_1
+				trigger = {
+					AND = {
+						var:so_var_fin_svecoman_progress > var:so_var_fin_fennoman_progress
+						var:so_var_fin_svecoman_progress > var:so_var_fin_russoman_progress
+					}
+				}
+			}
+			triggered_desc = {
+				desc = so_reunion_fin.39.d_2
+				trigger = {
+					AND = {
+						var:so_var_fin_fennoman_progress > var:so_var_fin_svecoman_progress
+						var:so_var_fin_fennoman_progress > var:so_var_fin_russoman_progress
+					}
+				}
+			}
+			triggered_desc = {
+				desc = so_reunion_fin.39.d_3
+				trigger = {
+					AND = {
+						var:so_var_fin_russoman_progress > var:so_var_fin_fennoman_progress
+						var:so_var_fin_russoman_progress > var:so_var_fin_svecoman_progress
+					}
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = so_reunion_fin.39.f_1
+				trigger = {
+					AND = {
+						var:so_var_fin_svecoman_progress > var:so_var_fin_fennoman_progress
+						var:so_var_fin_svecoman_progress > var:so_var_fin_russoman_progress
+					}
+				}
+			}
+			triggered_desc = {
+				desc = so_reunion_fin.39.f_2
+				trigger = {
+					AND = {
+						var:so_var_fin_fennoman_progress > var:so_var_fin_svecoman_progress
+						var:so_var_fin_fennoman_progress > var:so_var_fin_russoman_progress
+					}
+				}
+			}
+			triggered_desc = {
+				desc = so_reunion_fin.39.f_3
+				trigger = {
+					AND = {
+						var:so_var_fin_russoman_progress > var:so_var_fin_fennoman_progress
+						var:so_var_fin_russoman_progress > var:so_var_fin_svecoman_progress
+					}
+				}
+			}
+		}
+	}
+	
+	duration = 3
+
+	cooldown = { years = 10 }
+	
+	# triggered when either group reaches the goal of 200
+	trigger = {
+		OR = {
+			var:so_var_fin_svecoman_progress >= 200
+			var:so_var_fin_fennoman_progress >= 200
+			var:so_var_fin_russoman_progress >= 200
+		}
+	}
+
+	option = { # Svekomanerna har min röst
+		name = so_reunion_fin.39.a
+        default_option = yes
+		if = {
+			limit = {
+				var:so_var_fin_svecoman_progress >= 200
+			}
+			highlighted_option = yes
+		}
+		set_variable = { name = so_var_fin_vtf_main_complete }
+		add_journal_entry = { type = so_var_fin_vtf_end }
+		set_variable = { name = so_var_fin_vtf_end_svecoman }
+		ai_chance = {
+			base = 40
+		}
+	}
+	
+	option = { # Framtiden finns hos fennomanerna
+		name = so_reunion_fin.39.b
+		if = {
+			limit = {
+				var:so_var_fin_fennoman_progress >= 200
+			}
+			highlighted_option = yes
+		}
+		set_variable = { name = so_var_fin_vtf_main_complete }
+		add_journal_entry = { type = so_var_fin_vtf_end }
+		set_variable = { name = so_var_fin_vtf_end_fennoman }
+		ai_chance = {
+			base = 40
+		}
+	}
+	
+	option = { # All makt åt Tsaren, vår befriare
+		name = so_reunion_fin.39.c
+		if = {
+			limit = {
+				var:so_var_fin_russoman_progress >= 200
+			}
+			highlighted_option = yes
+		}
+		set_variable = { name = so_var_fin_vtf_main_complete }
+		add_journal_entry = { type = so_var_fin_vtf_end }
+		set_variable = { name = so_var_fin_vtf_end_russoman }
+		ai_chance = {
+			base = 20
 		}
 	}
 }
@@ -142,17 +348,18 @@ so_reunion_fin.40 = {
 	}
 }
 
-# 41: Tvångsmönstring
+# 41: Forced conscription
 so_reunion_fin.41 = {
 	type = country_event
-	
-	event_image = {
-		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
-	}
+	placement = ROOT
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
 
+	event_image = {
+		video = "votp_garibaldi"
+	}
+	
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 	
 	title = so_reunion_fin.41.t
@@ -161,39 +368,79 @@ so_reunion_fin.41 = {
 	
 	duration = 3
 
-	cooldown = { years = 5 }
+	cooldown = { years = 3 }
 	
 	# triggered by VtF_1
 	trigger = {
 	}
-
-	option = { # Passivt motstånd
-		name = so_reunion_fin.41.a
-        default_option = yes
-		change_variable = {
-			name = so_var_fin_so_vtf_1
-			add = 1
-		}
-		change_relations = {
-			country = c:RUS
-			value = -5
+	
+	immediate = {
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				has_building = building_conscription_center
+			}
+			save_scope_as = ev41_state_scope
 		}
 		if = {
 			limit = {
-				has_modifier = so_fin_mod_ev41_passive_resistance
+				scope:ev41_state_scope = {
+					any_scope_building = {
+						is_building_type = building_conscription_center
+					}
+				}
 			}
-			highlighted_option = yes
-			remove_modifier = so_fin_mod_ev41_passive_resistance
-			add_modifier = {
-				name = so_fin_mod_ev41_passive_resistance
-				years = 5
-				multiplier = 3
+			scope:ev41_state_scope = {
+				random_scope_building = {
+					limit = {
+						is_building_type = building_conscription_center
+					}
+					save_scope_as = ev41_building_scope
+				}
+			}
+		}
+		c:RUS = {
+			random_scope_state = {
+				limit = {
+					is_incorporated = yes
+					has_building = building_conscription_center
+				}
+				save_scope_as = ev41_rus_state_scope
+			}
+		}
+	}
+
+	option = { # What if we all hide in the woods?
+		name = so_reunion_fin.41.a
+        default_option = yes
+		if = {
+			limit = {
+				c:RUS = {
+					relations:root < relations_threshold:poor
+				}
+			}
+			change_relations = {
+				country = c:RUS
+				value = -10
 			}
 		}
 		else = {
+			change_relations = {
+				country = c:RUS
+				value = -5
+			}
+		}
+		scope:ev41_building_scope = {
+			add_modifier = {
+				name = so_fin_mod_ev41_passive_resistance_building
+				years = 1
+				multiplier = 1
+			}
+		}
+		scope:ev41_state_scope = {
 			add_modifier = {
 				name = so_fin_mod_ev41_passive_resistance
-				years = 10
+				years = 1
 				multiplier = 1
 			}
 		}
@@ -202,33 +449,77 @@ so_reunion_fin.41 = {
 		}
 	}
 	
-	option = { # Aktivt motstånd
+	option = { # Our patience is running out. Take an active stance against the recruitment officer!
 		name = so_reunion_fin.41.b
-		change_variable = {
-			name = so_var_fin_so_vtf_1
-			add = 1
-		}
-		change_relations = {
-			country = c:RUS
-			value = -10
-		}
 		if = {
 			limit = {
-				has_modifier = so_fin_mod_ev41_active_resistance
+				c:RUS = {
+					relations:root < relations_threshold:poor
+				}
 			}
-			highlighted_option = yes
-			remove_modifier = so_fin_mod_ev41_active_resistance
-			add_modifier = {
-				name = so_fin_mod_ev41_active_resistance
-				years = 5
-				multiplier = 3
+			change_relations = {
+				country = c:RUS
+				value = -20
 			}
 		}
 		else = {
+			change_relations = {
+				country = c:RUS
+				value = -10
+			}
+		}
+		scope:ev41_building_scope = {
+			add_modifier = {
+				name = so_fin_mod_ev41_active_resistance_building
+				years = 1
+				multiplier = 1
+			}
+		}
+		scope:ev41_state_scope = {
 			add_modifier = {
 				name = so_fin_mod_ev41_active_resistance
-				years = 10
+				years = 1
 				multiplier = 1
+			}
+		}
+	ai_chance = {
+			base = 30
+		}
+	}
+	
+	option = { # The Tsar, our dear leader, would want nothing else than a few able-bodied men. Is that so much to ask for?
+		name = so_reunion_fin.41.c
+		if = {
+			limit = {
+				c:RUS = {
+					relations:root < relations_threshold:poor
+				}
+			}
+			change_relations = {
+				country = c:RUS
+				value = 5
+			}
+		}
+		else = {
+			change_relations = {
+				country = c:RUS
+				value = 10
+			}
+		}
+		scope:ev41_state_scope = {
+			add_modifier = {
+				name = so_fin_mod_ev41_no_resistance
+				years = 1
+				multiplier = 1
+			}
+		}
+		scope:ev41_rus_state_scope = {
+			c:RUS = {
+				add_modifier = {
+					name = so_fin_mod_ev41_no_resistance_rus
+					years = 1
+					multiplier = 1
+				}
 			}
 		}
 		ai_chance = {
@@ -1044,12 +1335,14 @@ so_reunion_fin.54 = {
 }
 
 
-# 60: Passivt motstånd 2 (VtF_3a), återkommande random event
+# 60-79: Svekomaner och fennomaner
+# 60-69: Svekomaner
+# 60: Ett Aboensiskt Universitet
 so_reunion_fin.60 = {
 	type = country_event
 	
 	event_image = {
-		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+		video = "gfx/event_pictures/unspecific_ruler_speaking_to_people.bk2"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -1061,48 +1354,63 @@ so_reunion_fin.60 = {
 	desc = so_reunion_fin.60.d
 	flavor = so_reunion_fin.60.f
 	
-	duration = 3
+	duration = 6
 
-	cooldown = { years = 5 }
 	
-	# triggered by VtF_3a
+	# triggered by pulse
 	trigger = {
+		NOT = {
+			OR = {
+				has_variable = so_je_fin_vtf_abo_akademi
+				has_variable = so_je_fin_vtf_turun_yliopisto
+				has_variable = so_je_fin_vtf_imperial_college
+			}
+		}
+	}
+	
+	immediate = {
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_FINLAND_PROPER
+			}
+			save_scope_as = ev60_state_scope
+		}
 	}
 
-	option = { # Passivt motstånd
+	option = { # Ett finlandssvenskt universitet
 		name = so_reunion_fin.60.a
         default_option = yes
-		remove_modifier = so_fin_mod_passive_resistance_2
-		add_modifier = {
-			name = so_fin_mod_passive_resistance_2
-			multiplier = 2
+		scope:ev60_state_scope = {
+			start_privately_funded_building_construction = building_university
 		}
-		add_journal_entry = {
-			type = so_je_fin_vtf_4a
-		}
-		set_variable = {
-			name = so_var_fin_so_vtf_4a
-			value = 0
-		}
+		add_modifier = so_je_fin_vtf_abo_akademi
+		set_variable = { name = so_je_fin_vtf_abo_akademi }
 		ai_chance = {
-			base = 50
+			base = 75
 		}
 	}
 	
-	option = { # Aktivt motstånd
+	option = { # Ett finskt universitet
 		name = so_reunion_fin.60.b
-		add_modifier = {
-			name = so_fin_mod_passive_resistance_3
+		scope:ev60_state_scope = {
+			start_privately_funded_building_construction = building_university
 		}
-		add_journal_entry = {
-			type = so_je_fin_vtf_4a
-		}
-		set_variable = {
-			name = so_var_fin_so_vtf_4a
-			value = 0
-		}
+		add_modifier = so_je_fin_vtf_turun_yliopisto
+		set_variable = { name = so_je_fin_vtf_turun_yliopisto }
 		ai_chance = {
-			base = 50
+			base = 25
+		}
+	}
+	
+	option = { # Ett... ryskt universitet?
+		name = so_reunion_fin.60.c
+		scope:ev60_state_scope = {
+			start_building_construction = building_university
+		}
+		add_modifier = so_je_fin_vtf_imperial_college
+		set_variable = { name = so_je_fin_vtf_imperial_college }
+		ai_chance = {
+			base = 25
 		}
 	}
 }
@@ -1572,7 +1880,7 @@ so_reunion_fin.74 = {
 }
 
 
-# 80: Aktivt motstånd 2, slutligt event
+# 80: The Time Has Come
 so_reunion_fin.80 = {
 	type = country_event
 	
@@ -1590,45 +1898,81 @@ so_reunion_fin.80 = {
 	flavor = so_reunion_fin.80.f
 	
 	duration = 3
-
-	cooldown = { years = 5 }
 	
-	# triggered by VtF_3b
+	# triggered by completing so_je_fin_vtf_main
 	trigger = {
 	}
 
-	option = { # Passivt motstånd
+	option = { # Our Future is with Sweden
 		name = so_reunion_fin.80.a
         default_option = yes
-		remove_modifier = so_fin_mod_passive_resistance
-		add_modifier = {
-			name = so_fin_mod_passive_resistance
-			multiplier = 2
+		if = {
+			limit = {
+				var:so_var_fin_svecoman_progress >= var:so_var_fin_fennoman_progress
+			}
+			set_variable = { name = so_je_fin_vtf_goal_sweden }
+			custom_tooltip = so_je_fin_vtf_goal_sweden_tt
 		}
-		add_journal_entry = {
-			type = so_je_fin_vtf_4b
+		else_if = {
+			limit = {
+				var:so_var_fin_svecoman_progress < var:so_var_fin_fennoman_progress
+			}
+			set_variable = { name = so_je_fin_vtf_goal_sweden }
+			set_variable = { name = so_je_fin_vtf_goal_sweden_fennoman }
+			custom_tooltip = so_je_fin_vtf_goal_sweden_fennoman_tt
+			every_interest_group = {
+				limit = {
+					leader = {
+						has_ideology = ideology:ideology_fennoman
+					}
+				}
+				add_modifier = {
+					name = so_je_fin_vtf_fennoman_ig_unrest
+					years = 30
+				}
+			}
+			add_modifier = {
+				name = so_je_fin_vtf_fennoman_unrest
+				years = 30
+			}
 		}
-		set_variable = {
-			name = so_var_fin_so_vtf_4b
-			value = 0
-		}
+		trigger_event = { id = so_reunion_fin.81 popup = yes }
 		ai_chance = {
 			base = 50
 		}
 	}
 	
-	option = { # Aktivt motstånd
+	option = { # Our Future is Alone
 		name = so_reunion_fin.80.b
-		add_modifier = {
-			name = so_fin_mod_passive_resistance_2
+		if = {
+			limit = {
+				var:so_var_fin_svecoman_progress <= var:so_var_fin_fennoman_progress
+			}
+			set_variable = { name = so_je_fin_vtf_goal_free }
 		}
-		add_journal_entry = {
-			type = so_je_fin_vtf_4b
+		else_if = {
+			limit = {
+				var:so_var_fin_svecoman_progress > var:so_var_fin_fennoman_progress
+			}
+			set_variable = { name = so_je_fin_vtf_goal_free }
+			set_variable = { name = so_je_fin_vtf_goal_free_svecoman }
+			every_interest_group = {
+				limit = {
+					leader = {
+						has_ideology = ideology:ideology_svecoman
+					}
+				}
+				add_modifier = {
+					name = so_je_fin_vtf_svecoman_ig_unrest
+					years = 30
+				}
+			}
+			add_modifier = {
+				name = so_je_fin_vtf_svecoman_unrest
+				years = 30
+			}
 		}
-		set_variable = {
-			name = so_var_fin_so_vtf_4b
-			value = 0
-		}
+		trigger_event = { id = so_reunion_fin.81 popup = yes }
 		ai_chance = {
 			base = 50
 		}
@@ -1636,7 +1980,7 @@ so_reunion_fin.80 = {
 }
 
 
-# 81: Mordet på en rysk politiker
+# 81: Valet av metod
 so_reunion_fin.81 = {
 	type = country_event
 	
@@ -1650,70 +1994,165 @@ so_reunion_fin.81 = {
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 	
 	title = so_reunion_fin.81.t
-	desc = so_reunion_fin.81.d
-	flavor = so_reunion_fin.81.f
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = so_reunion_fin.81.d_1
+				trigger = {
+					has_variable = so_je_fin_vtf_goal_sweden
+				}
+			}
+			triggered_desc = {
+				desc = so_reunion_fin.81.d_2
+				trigger = {
+					has_variable = so_je_fin_vtf_goal_free
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = so_reunion_fin.81.f_1
+				trigger = {
+					has_variable = so_je_fin_vtf_goal_sweden
+				}
+			}
+			triggered_desc = {
+				desc = so_reunion_fin.81.f_2
+				trigger = {
+					has_variable = so_je_fin_vtf_goal_free
+				}
+			}
+		}
+	}
 	
 	duration = 3
-
-	cooldown = { years = 5 }
 	
-	# triggered by onPulse av VtF_3b
+	# triggered by so_reunion_fin.80
 	trigger = {
-		
 	}
 	
 	immediate = {
-		c:RUS = {
-			random_interest_group = {
-				limit = {
-					is_in_government = yes
-				}
-				leader = { save_scope_as = so_rus_assassinated_politician }
-			}
-		}
-		scope:so_rus_assassinated_politician = {
-			kill_character = yes
-		}
-		random_scope_character = {
-			limit = {
-				is_ruler = no
-				has_role = politician
-				interest_group = {
-					ig_clout < 0.2
-				}
-			}
-			save_scope_as = so_fin_assassin
-		}
 	}
 
-	option = { # Passivt motstånd
+	option = { # Diplomacy
 		name = so_reunion_fin.81.a
+		trigger = {
+			has_variable = so_je_fin_vtf_goal_sweden
+		}
         default_option = yes
-		change_variable = {
-			name = so_var_fin_so_vtf_3b
-			add = 1
+		if = {
+			limit = {
+				has_variable = so_je_fin_vtf_goal_sweden_fennoman
+			}
+			c:SWE = {
+				set_variable = so_je_swe_vtf_fennoman_discontent
+			}
 		}
-		scope:so_fin_assassin = {
-			kill_character = yes
-		}
-		change_relations = {
-			country = c:RUS
-			value = -25
+		play_as = c:SWE
+		c:SWE = {
+			annex = c:FIN
 		}
 		ai_chance = {
 			base = 50
 		}
 	}
 	
-	option = { # Aktivt motstånd
+	option = { # War
 		name = so_reunion_fin.81.b
-		change_variable = {
-			name = so_var_fin_so_vtf_3b
-			add = 1
+		trigger = {
+			has_variable = so_je_fin_vtf_goal_sweden
 		}
-		change_relations = {
-			country = c:RUS
-			value = -75
+		if = {
+			limit = {
+				AND = {
+					exists = c:SWE
+					c:SWE = {
+						relations:root > 30
+					}
+				}
+			}
+			create_diplomatic_play = {
+				war = yes
+				target_country = c:RUS
+				type = dp_independence
+				add_initiator_backers = { c:SWE }
+			}
+			
+		}
+		else = {
+			create_diplomatic_play = {
+				escalation = 0
+				war = no
+				target_country = c:RUS
+				type = dp_independence
+			}
+		}
+		if = {
+			limit = {
+				has_variable = so_je_fin_vtf_goal_sweden_fennoman
+			}
+			
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	option = { # Diplomacy
+		name = so_reunion_fin.81.c
+		trigger = {
+			has_variable = so_je_fin_vtf_goal_free
+		}
+        default_option = yes
+		if = {
+			limit = {
+				has_variable = so_je_fin_vtf_goal_free_svecoman
+			}
+			
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	option = { # War
+		name = so_reunion_fin.81.d
+		trigger = {
+			has_variable = so_je_fin_vtf_goal_free
+		}
+		if = {
+			limit = {
+				AND = {
+					exists = c:SWE
+					c:SWE = {
+						relations:root > 0
+					}
+				}
+			}
+			create_diplomatic_play = {
+				escalation = 0
+				war = no
+				target_country = c:RUS
+				type = dp_independence
+				add_initiator_backers = c:SWE
+			}
+			
+		}
+		else = {
+			create_diplomatic_play = {
+				escalation = 0
+				war = no
+				target_country = c:RUS
+				type = dp_independence
+			}
+		}
+		if = {
+			limit = {
+				has_variable = so_je_fin_vtf_goal_free_svecoman
+			}
+			
 		}
 		ai_chance = {
 			base = 50

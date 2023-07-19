@@ -1,6 +1,20 @@
 # Svea Orientalis
-![Svea Orientalis](images/svea_orientalis_dark.png)
-Svea Orientalis - A Victoria 3 Mod (to be made)
+![Svea Orientalis](images/svea_orientalis_thumbnail.png)
+Svea Orientalis - A Victoria 3 Mod
 
-## Svea Orientalis - Östsverige
-Året är 1836. Efter det katastrofala Finska kriget 1808-09 blev det svenska riket tvunget att avstå sin östra rikshalva till tsaren. Men bland den svensksinnade befolkningen lever ändå hoppet om att slå sig fri från de östländska bojorna. Men hur ska det gå till, och vilken är i så fall vägen framåt?
+## Svea Orientalis - Eastern Sweden
+![Svea Orientalis](images/svea_orientalis_dark.png)
+The year is 1836. After the catastrofic peace terms of the Finnish War of 1808-09, the Swedish Crown was forced to part with its eastern part. Much to the Tsar's delight, a forested peninsula dotted with thousands of seas was transferred under his control.
+
+While agreements made by Northern Europe's foremost powers were drafted, nobody bothered to ask the people living in these lands. While not always treated in the most delicate fashion by the Swedish monarchs, there were a significant portion of the population still longing for the Swedish time. The Svecoman movement was a pro-Swedish nationalist movement based upon Finland's long history of being a part of Sweden.
+
+The Svecoman movement mainly rose as a reaction to the Fennoman movement. The Fennoman nationalist movement's main point was the legacy use of Swedish as the administrative language while those speaking Swedish only represented 15 percent of the population.
+
+## Features
+- New Finnish states in accordance with the provinces of 1831-1921
+
+## Work In Progress
+- A Journal Entry system for the different paths, either towards freedom or towards reunion with Sweden
+
+## To Do
+

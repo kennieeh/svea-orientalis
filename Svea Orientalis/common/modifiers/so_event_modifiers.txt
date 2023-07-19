@@ -1,34 +1,34 @@
-﻿# Modifier för att stöda svekomaner
-so_fin_mod_svecoman_1 = {
-	interest_group_pop_attraction_mult = 0.1
+﻿so_je_fin_vtf_main_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	political_movement_radicalism_mult = 0.25
 }
 
-# Modifier för att stöda fennomaner
-so_fin_mod_fennoman_1 = {
-	interest_group_pop_attraction_mult = 0.1
+so_je_fin_vtf_fennoman_ig_unrest = {
+	
 }
 
-# Resisting the Czar
-# Permanent modifiers (Ev40)
-so_fin_mod_passive_resistance = {
-	country_bureaucracy_mult = 0.15
-	country_society_tech_cost_mult = 0.05
-}
-so_fin_mod_active_resistance = {
-	country_military_wages_mult = -0.1
-	country_military_tech_cost_mult = -0.05
-	building_training_rate_add = 1000
+so_je_fin_vtf_fennoman_unrest = {
+	
 }
 
 # Ev41: Resist recruitment to the RUS army
 so_fin_mod_ev41_passive_resistance = {
-	country_bureaucracy_mult = 0.15
-	country_society_tech_cost_mult = 0.05
+	state_conscription_rate_add = 0.1
+}
+so_fin_mod_ev41_passive_resistance_building = {
+	building_training_rate_add = 500
 }
 so_fin_mod_ev41_active_resistance = {
-	country_military_wages_mult = -0.1
-	country_military_tech_cost_mult = -0.05
+	state_conscription_rate_add = 0.05
+}
+so_fin_mod_ev41_active_resistance_building = {
 	building_training_rate_add = 1000
+}
+so_fin_mod_ev41_no_resistance = {
+	state_conscription_rate_add = -0.05
+}
+so_fin_mod_ev41_no_resistance_rus = {
+	state_conscription_rate_add = 0.05
 }
 
 # Ev42: Respond to Russian restrictions of legislation
@@ -52,8 +52,22 @@ so_fin_mod_ev43_active_resistance = {
 	interest_group_ig_armed_forces_pop_attraction_mult = 0.15
 }
 
-# Permanent modifiers (Ev50)
-so_fin_mod_passive_resistance_2 = {
-	country_bureaucracy_mult = 0.15
-	country_law_enactment_time_mult = 0.25
+#60: Aboensiskt Universitet
+# Svekomaner: ÅA
+so_je_fin_vtf_abo_akademi = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_production_tech_cost_mult = -0.05
+	country_society_tech_cost_mult = -0.05
+}
+
+# Fennomaner: TY
+so_je_fin_vtf_turun_yliopisto = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_production_tech_cost_mult = -0.1
+}
+
+# Russomaner: Imperiehögskolan
+so_je_fin_vtf_imperial_college = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_military_tech_cost_mult = -0.1
 }

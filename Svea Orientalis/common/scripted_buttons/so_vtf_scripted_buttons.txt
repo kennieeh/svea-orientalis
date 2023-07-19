@@ -1,0 +1,14 @@
+﻿so_je_fin_vtf_main_svecoman_button = {
+	name = "svecoman_button"
+	desc = "svecoman_button_desc"
+	
+	visible = {
+		owner = {
+			has_variable = so_fin_vtf_main_chose_initial_path
+		}
+	}
+	
+	possible = {
+		
+	}
+}

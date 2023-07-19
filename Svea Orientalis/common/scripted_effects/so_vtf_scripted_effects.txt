@@ -1,0 +1,390 @@
+﻿so_var_fin_vtf_variables = {
+	# Svecoman variables
+	set_variable = { name = so_var_fin_svecoman_progress value = 10 }
+	set_variable = { name = so_var_fin_svecoman_progress_from_igs value = 0 }
+	set_variable = { name = so_var_fin_svecoman_progress_from_swedish_claims value = 0 }
+	set_variable = { name = so_var_fin_svecoman_progress_from_abo_akademi value = 0 }
+	set_variable = { name = so_var_fin_svecoman_progress_next value = 0 }
+	
+	# Fennoman variables
+	set_variable = { name = so_var_fin_fennoman_progress value = 10 }
+	set_variable = { name = so_var_fin_fennoman_progress_from_igs value = 0 }
+	set_variable = { name = so_var_fin_fennoman_progress_from_turun_yliopisto value = 0 }
+	set_variable = { name = so_var_fin_fennoman_progress_next value = 0 }
+	
+	# Russoman variables
+	set_variable = { name = so_var_fin_russoman_progress value = 0 }
+	set_variable = { name = so_var_fin_russoman_progress_from_igs value = 0 }
+	set_variable = { name = so_var_fin_russoman_progress_next value = 0 }
+}
+
+so_var_fin_vtf_weekly_pulse_svecoman_progress = {
+	set_variable = { name = so_var_fin_svecoman_progress_from_igs value = 0 }
+	set_variable = { name = so_var_fin_svecoman_progress_from_swedish_claims value = 0 }
+	set_variable = { name = so_var_fin_svecoman_progress_from_abo_akademi value = 0 }
+	set_variable = { name = so_var_fin_svecoman_progress_next value = 0 }
+	# From Interest Groups
+	every_interest_group = {
+		limit = {
+			leader = {
+				has_ideology = ideology:ideology_svecoman
+			}
+		}
+		ROOT = {
+			set_variable = { name = ig_weight value = prev.ig_clout }
+		}
+		if = {
+			limit = {
+				is_in_government = yes
+			}
+			ROOT = {
+				change_variable = { name = ig_weight multiply = 3}
+			}
+		}
+		ROOT = {
+			change_variable = { name = so_var_fin_svecoman_progress_from_igs add = var:ig_weight }
+		}
+	}
+	every_state = {
+		limit = {
+			owner = c:FIN
+			has_claim_by = c:SWE
+		}
+		ROOT = {
+			change_variable = { name = so_var_fin_svecoman_progress_from_swedish_claims add = 1 }
+		}
+	}
+	change_variable = { name = so_var_fin_svecoman_progress_from_swedish_claims divide = 100 }
+	if = {
+		limit = {
+			has_variable = so_je_fin_vtf_abo_akademi
+		}
+		change_variable = { name = so_var_fin_svecoman_progress_from_abo_akademi add = 0.25 }
+		change_variable = { name = so_var_fin_svecoman_progress_from_igs multiply = 2 }
+	}
+	
+	
+	# Final Compilation
+	change_variable = { name = so_var_fin_svecoman_progress_next add = var:so_var_fin_svecoman_progress_from_igs }
+	change_variable = { name = so_var_fin_svecoman_progress_next add = var:so_var_fin_svecoman_progress_from_abo_akademi }
+	change_variable = { name = so_var_fin_svecoman_progress_next add = var:so_var_fin_svecoman_progress_from_swedish_claims }
+}
+
+so_var_fin_vtf_weekly_pulse_fennoman_progress = {
+	set_variable = { name = so_var_fin_fennoman_progress_from_igs value = 0 }
+	set_variable = { name = so_var_fin_fennoman_progress_from_turun_yliopisto value = 0 }
+	set_variable = { name = so_var_fin_fennoman_progress_next value = 0 }
+	# From Interest Groups
+	every_interest_group = {
+		limit = {
+			leader = {
+				has_ideology = ideology:ideology_fennoman
+			}
+		}
+		ROOT = {
+			set_variable = { name = ig_weight value = prev.ig_clout }
+		}
+		if = {
+			limit = {
+				is_in_government = yes
+			}
+			ROOT = {
+				change_variable = { name = ig_weight multiply = 2 }
+			}
+		}
+		if = {
+			limit = {
+				c:FIN = {
+					has_technology = nationalism
+				}
+			}
+			ROOT = {
+				change_variable = { name = ig_weight multiply = 2 }
+			}
+		}
+		ROOT = {
+			change_variable = { name = so_var_fin_fennoman_progress_from_igs add = var:ig_weight }
+		}
+	}
+	if = {
+		limit = {
+			has_variable = so_je_fin_vtf_turun_yliopisto
+		}
+		change_variable = { name = so_var_fin_fennoman_progress_from_turun_yliopisto add = 0.25 }
+		change_variable = { name = so_var_fin_fennoman_progress_from_igs multiply = 2 }
+	}
+	
+	# Final Compilation
+	change_variable = { name = so_var_fin_fennoman_progress_next add = var:so_var_fin_fennoman_progress_from_turun_yliopisto }
+	change_variable = { name = so_var_fin_fennoman_progress_next add = var:so_var_fin_fennoman_progress_from_igs }
+}
+
+so_var_fin_vtf_weekly_pulse_russoman_progress = {
+	set_variable = { name = so_var_fin_russoman_progress_from_igs value = 0 }
+	set_variable = { name = so_var_fin_russoman_progress_next value = 0 }
+	# From Interest Groups
+	every_interest_group = {
+		limit = {
+			leader = {
+				has_ideology = ideology:ideology_russoman
+			}
+		}
+		ROOT = {
+			set_variable = { name = ig_weight value = prev.ig_clout }
+		}
+		if = {
+			limit = {
+				is_in_government = yes
+			}
+			ROOT = {
+				change_variable = { name = ig_weight multiply = 3}
+			}
+		}
+		ROOT = {
+			change_variable = { name = so_var_fin_russoman_progress_from_igs add = var:ig_weight }
+		}
+	}
+	if = {
+		limit = {
+			has_variable = so_je_fin_vtf_imperial_college
+		}
+		change_variable = { name = so_var_fin_russoman_progress_from_imperial_college add = 0.25 }
+		change_variable = { name = so_var_fin_russoman_progress_from_igs multiply = 2 }
+	}
+	
+	# Final Compilation
+	change_variable = { name = so_var_fin_russoman_progress_next add = var:so_var_fin_russoman_progress_from_imperial_college }
+	change_variable = { name = so_var_fin_russoman_progress_next add = var:so_var_fin_russoman_progress_from_igs }
+}
+
+so_var_fin_vtf_define_leading_faction = { #Defines so_var_fin_vtf_leading_faction_progress
+	if = {
+		limit = {
+			var:so_var_fin_svecoman_progress > var:so_var_fin_fennoman_progress
+			var:so_var_fin_svecoman_progress > var:so_var_fin_russoman_progress
+		}
+		set_variable = { name = so_var_fin_vtf_leading_faction_progress value = var:so_var_fin_svecoman_progress }
+	}
+	else_if = {
+		limit = {
+			var:so_var_fin_fennoman_progress > var:so_var_fin_svecoman_progress
+			var:so_var_fin_fennoman_progress > var:so_var_fin_russoman_progress
+		}
+		set_variable = { name = so_var_fin_vtf_leading_faction_progress value = var:so_var_fin_fennoman_progress }
+	}
+	else_if = {
+		limit = {
+			var:so_var_fin_russoman_progress > var:so_var_fin_fennoman_progress
+			var:so_var_fin_russoman_progress > var:so_var_fin_svecoman_progress
+		}
+		set_variable = { name = so_var_fin_vtf_leading_faction_progress value = var:so_var_fin_russoman_progress }
+	}
+	clamp_variable = { name = so_var_fin_vtf_leading_faction_progress max = 200 min = 0 }
+}
+
+so_je_fin_vtf_freeze_progress = {
+	set_variable = so_je_fin_vtf_freeze
+	set_variable = { name = so_var_fin_svecoman_progress_next value = 0 }
+	set_variable = { name = so_var_fin_fennoman_progress_next value = 0 }
+	set_variable = { name = so_var_fin_russoman_progress_next value = 0 }
+}
+
+so_je_fin_vtf_clear_variables = {
+	remove_variable = so_var_fin_fennoman_progress
+	remove_variable = so_var_fin_fennoman_progress_from_igs
+	remove_variable = so_var_fin_fennoman_progress_next
+	remove_variable = so_var_fin_svecoman_progress
+	remove_variable = so_var_fin_svecoman_progress_from_igs
+	remove_variable = so_var_fin_svecoman_progress_next
+	remove_variable = so_var_fin_russoman_progress
+	remove_variable = so_var_fin_russoman_progress_from_igs
+	remove_variable = so_var_fin_russoman_progress_next
+	remove_variable = so_var_fin_vtf_define_leading_faction
+}
+
+so_var_fin_vtf_variables = {
+	# Constitutionalists
+	set_variable = { name = so_var_fin_const_progress value = 10 }
+	set_variable = { name = so_var_fin_const_progress_next value = 0 }
+	
+	# Activist variables
+	set_variable = { name = so_var_fin_activist_progress value = 10 }
+	set_variable = { name = so_var_fin_activist_progress_next value = 0 }
+	
+	# Appeasement variables
+	set_variable = { name = so_var_fin_appeas_progress value = 0 }
+	set_variable = { name = so_var_fin_appeas_progress_next value = 0 }
+}
+
+so_var_fin_vtf_weekly_pulse_const_progress = {
+	set_variable = { name = so_var_fin_const_progress_next value = 0 }
+	# From Interest Groups
+	every_interest_group = {
+		limit = {
+			leader = {
+				has_ideology = ideology:ideology_svecoman
+			}
+		}
+		ROOT = {
+			set_variable = { name = ig_weight value = prev.ig_clout }
+		}
+		if = {
+			limit = {
+				is_in_government = yes
+			}
+			ROOT = {
+				change_variable = { name = ig_weight multiply = 3}
+			}
+		}
+		ROOT = {
+			change_variable = { name = so_var_fin_svecoman_progress_from_igs add = var:ig_weight }
+		}
+	}
+	every_state = {
+		limit = {
+			owner = c:FIN
+			has_claim_by = c:SWE
+		}
+		ROOT = {
+			change_variable = { name = so_var_fin_svecoman_progress_from_swedish_claims add = 1 }
+		}
+	}
+	change_variable = { name = so_var_fin_svecoman_progress_from_swedish_claims divide = 100 }
+	if = {
+		limit = {
+			has_variable = so_je_fin_vtf_abo_akademi
+		}
+		change_variable = { name = so_var_fin_svecoman_progress_from_abo_akademi add = 0.25 }
+		change_variable = { name = so_var_fin_svecoman_progress_from_igs multiply = 2 }
+	}
+	
+	
+	# Final Compilation
+	change_variable = { name = so_var_fin_const_progress_next add = var:so_var_fin_svecoman_progress_from_igs }
+	change_variable = { name = so_var_fin_const_progress_next add = var:so_var_fin_svecoman_progress_from_abo_akademi }
+	change_variable = { name = so_var_fin_const_progress_next add = var:so_var_fin_svecoman_progress_from_swedish_claims }
+}
+
+so_var_fin_vtf_weekly_pulse_activist_progress = {
+	set_variable = { name = so_var_fin_activist_progress_next value = 0 }
+	# From Interest Groups
+	every_interest_group = {
+		limit = {
+			leader = {
+				has_ideology = ideology:ideology_fennoman
+			}
+		}
+		ROOT = {
+			set_variable = { name = ig_weight value = prev.ig_clout }
+		}
+		if = {
+			limit = {
+				is_in_government = yes
+			}
+			ROOT = {
+				change_variable = { name = ig_weight multiply = 2 }
+			}
+		}
+		if = {
+			limit = {
+				c:FIN = {
+					has_technology = nationalism
+				}
+			}
+			ROOT = {
+				change_variable = { name = ig_weight multiply = 2 }
+			}
+		}
+		ROOT = {
+			change_variable = { name = so_var_fin_fennoman_progress_from_igs add = var:ig_weight }
+		}
+	}
+	if = {
+		limit = {
+			has_variable = so_je_fin_vtf_turun_yliopisto
+		}
+		change_variable = { name = so_var_fin_fennoman_progress_from_turun_yliopisto add = 0.25 }
+		change_variable = { name = so_var_fin_fennoman_progress_from_igs multiply = 2 }
+	}
+	
+	# Final Compilation
+	change_variable = { name = so_var_fin_activist_progress_next add = var:so_var_fin_fennoman_progress_from_igs }
+}
+
+so_var_fin_vtf_weekly_pulse_appeas_progress = {
+	set_variable = { name = so_var_fin_appeas_progress_next value = 0 }
+	# From Interest Groups
+	every_interest_group = {
+		limit = {
+			leader = {
+				has_ideology = ideology:ideology_russoman
+			}
+		}
+		ROOT = {
+			set_variable = { name = ig_weight value = prev.ig_clout }
+		}
+		if = {
+			limit = {
+				is_in_government = yes
+			}
+			ROOT = {
+				change_variable = { name = ig_weight multiply = 3}
+			}
+		}
+		ROOT = {
+			change_variable = { name = so_var_fin_russoman_progress_from_igs add = var:ig_weight }
+		}
+	}
+	if = {
+		limit = {
+			has_variable = so_je_fin_vtf_imperial_college
+		}
+		change_variable = { name = so_var_fin_russoman_progress_from_imperial_college add = 0.25 }
+		change_variable = { name = so_var_fin_russoman_progress_from_igs multiply = 2 }
+	}
+	
+	# Final Compilation
+	change_variable = { name = so_var_fin_appeas_progress_next add = var:so_var_fin_russoman_progress_from_imperial_college }
+	change_variable = { name = so_var_fin_appeas_progress_next add = var:so_var_fin_russoman_progress_from_igs }
+}
+
+so_var_fin_vtf_define_leading_method = { #Defines so_var_fin_vtf_leading_faction_progress
+	if = {
+		limit = {
+			var:so_var_fin_const_progress > var:so_var_fin_activist_progress
+			var:so_var_fin_const_progress > var:so_var_fin_appeas_progress
+		}
+		set_variable = { name = so_var_fin_vtf_leading_faction_progress value = var:so_var_fin_const_progress }
+	}
+	else_if = {
+		limit = {
+			var:so_var_fin_activist_progress > var:so_var_fin_const_progress
+			var:so_var_fin_activist_progress > var:so_var_fin_appeas_progress
+		}
+		set_variable = { name = so_var_fin_vtf_leading_faction_progress value = var:so_var_fin_activist_progress }
+	}
+	else_if = {
+		limit = {
+			var:so_var_fin_appeas_progress > var:so_var_fin_activist_progress
+			var:so_var_fin_appeas_progress > var:so_var_fin_const_progress
+		}
+		set_variable = { name = so_var_fin_vtf_leading_faction_progress value = var:so_var_fin_appeas_progress }
+	}
+	clamp_variable = { name = so_var_fin_vtf_leading_faction_progress max = 200 min = 0 }
+}
+
+so_je_fin_vtf_method_freeze_progress = {
+	set_variable = so_je_fin_vtf_method_freeze
+	set_variable = { name = so_var_fin_const_progress_next value = 0 }
+	set_variable = { name = so_var_fin_activist_progress_next value = 0 }
+	set_variable = { name = so_var_fin_appeas_progress_next value = 0 }
+}
+
+so_je_fin_vtf_clear_variables = {
+	remove_variable = so_var_fin_const_progress
+	remove_variable = so_var_fin_const_progress_next
+	remove_variable = so_var_fin_activist_progress
+	remove_variable = so_var_fin_activist_progress_next
+	remove_variable = so_var_fin_appeas_progress
+	remove_variable = so_var_fin_appeas_progress_next
+}

@@ -1,7 +1,7 @@
 ﻿l_english:
 
 
-   # Refer to https://github.com/kennieeh/svea-orientalis/wiki for guidance
+  # Refer to https://github.com/kennieeh/svea-orientalis/wiki for guidance
   
   # MAP:
   STATE_FINLAND_PROPER:0 "Finland Proper"
@@ -137,89 +137,60 @@
    # ----------------------------------------------
    
    # ----------------------------------------------
-   # -------------- Journal Entries --------------
+   # ----------------- Ideologies -----------------
+   # ----------------------------------------------
+   
+   ideology_fennoman: "Fennoman"
+   ideology_fennoman_desc: "Feels strongly for the Finnish people's cause"
+   
+   ideology_svecoman: "Svecoman"
+   ideology_svecoman_desc: "Yearns for the reunification with Sweden"
+   
+   ideology_russoman: "Russoman"
+   ideology_russoman_desc: "Aligned with the Tsar"
+   
+   # ----------------------------------------------
+   # -------------- Journal Entries ---------------
    # ----------------------------------------------
    
    # Vägen till Frihet - Way to Freedom
    
-   so_je_fin_vtf_start:0 "Svea Orientalis: Initiation"
-   so_je_fin_vtf_start_goal:0 "Start the journal entry tree"
+   so_je_fin_vtf_main: "Svea Orientalis: The Way to Freedom"
+   so_je_fin_vtf_main_reason: "The Way to Freedom was always a difficult choice. Shall the Svecomen, who seek to restore the Swedish rule, win? Or the Fennomen, who, fueled by the up and coming nationalist movements seek a Finnish nation for those who speak finnish?"
+   so_je_fin_vtf_svecoman_leading_desc: "The Swedish cause is leading! \n Svecomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_svecoman_progress').GetValue|+]#! | Fennomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_fennoman_progress').GetValue|+]#! | Russomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_russoman_progress').GetValue|+]#!"
+   so_je_fin_vtf_fennoman_leading_desc: "The Finnish cause is leading! \n Svecomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_svecoman_progress').GetValue|+]#! | Fennomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_fennoman_progress').GetValue|+]#! | Russomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_russoman_progress').GetValue|+]#!"
+   so_je_fin_vtf_russoman_leading_desc: "The Russian cause is leading! \n Svecomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_svecoman_progress').GetValue|+]#! | Fennomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_fennoman_progress').GetValue|+]#! | Russomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_russoman_progress').GetValue|+]#!"
+   so_je_fin_vtf_no_leading_desc: "No cause is leading. \n Svecomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_svecoman_progress').GetValue|+]#! | Fennomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_fennoman_progress').GetValue|+]#! | Russomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_russoman_progress').GetValue|+]#!"
    
-   so_je_fin_vtf_1:0 "Svea Orientalis: Resist the Czar"
-   so_je_fin_vtf_1_reason:0 "Is it better to resist actively, or is a passive approach more feasible?"
-    so_je_fin_vtf_1_goal:0 "Every month when active, there is a chance for an event firing. When enough events have been fired, the journal entry is complete, and the player will have to decide."
+   so_je_fin_vtf_main_modifier: "Nationalist turmoil"
    
-   # The debate variable for passive resistance
-   so_var_fin_so_vtf_1_name:0 "Debates on how to resist Russification"
-   so_var_fin_so_vtf_1_desc:0 ""
-   so_var_fin_so_vtf_1_tooltip:0 ""
+   so_je_fin_vtf_tt: "Finland has chosen one of the paths of freedom and succeeded."
    
-   # Modifiers: Resisting
-   so_fin_mod_active_resistance:1 "Actively resisting the Czar"
-   so_fin_mod_passive_resistance:1 "Passively resisting the Czar"
+   so_je_fin_vtf_complete_tt: "On our new path, a whole new world lies ahead of us."
    
-   # path a) = passiv,
-   # path b) = aktivt
+   so_je_fin_vtf_end: "Svea Orientalis: The Method of Freedom"
+   so_je_fin_vtf_end_reason: "We have chosen our path, but we have not chosen the means with which we shall go forth on our path. Choose wisely."
    
-   so_je_fin_vtf_2a:0 "Svea Orientalis: The Path of Passive Resistance"
-   so_je_fin_vtf_2a_reason:0 "We have chosen to resist Russification passively"
+   so_je_fin_vtf_constitutionalists_leading_desc: "The Constitutionalists are leading! \n They prefer passive resistance to the Russification. \n Constitutionalists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_constitutionalist_progress').GetValue|+]#! | Activists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_activists_progress').GetValue|+]#! | Appeasement: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_appeasement_progress').GetValue|+]#!"
+   so_je_fin_vtf_activists_leading_desc: "The Activists are leading! \n They prefer active resistance to the Russification. \n Constitutionalists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_constitutionalist_progress').GetValue|+]#! | Activists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_activists_progress').GetValue|+]#! | Appeasement: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_appeasement_progress').GetValue|+]#!"
+   so_je_fin_vtf_appeasement_leading_desc: "The Appeasement Movement is leading! \n They rather we give in to whatever the [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] wants. \n Constitutionalists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_constitutionalist_progress').GetValue|+]#! | Activists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_activists_progress').GetValue|+]#! | Appeasement: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_appeasement_progress').GetValue|+]#!"
+   so_je_fin_vtf_no_leading_method_desc: "No movement is currently in the lead. \n Constitutionalists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_constitutionalist_progress').GetValue|+]#! | Activists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_activists_progress').GetValue|+]#! | Appeasement: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_appeasement_progress').GetValue|+]#!"
    
-   # The debate variable for passive resistance
-   so_var_fin_so_vtf_2a_name:0 "Passive resistance"
-   so_var_fin_so_vtf_2a_desc:0 ""
-   so_var_fin_so_vtf_2a_tooltip:0 ""
-   
-   so_je_fin_vtf_2b:0 "Svea Orientalis: The Path of Active resistance"
-   so_je_fin_vtf_2b_reason:0 ""
-   
-   # The debate variable for active resistance
-   so_var_fin_so_vtf_2b_name:0 "Active resistance"
-   so_var_fin_so_vtf_2b_desc:0 ""
-   so_var_fin_so_vtf_2b_tooltip:0 ""
-   
-   # Passive resistance: Implementation
-   so_je_fin_vtf_3a:0 "Svea Orientalis: The rise of Finnish nationalism"
-   so_je_fin_vtf_3a_reason:0 ""
-   
-   so_je_fin_vtf_3b:0 "Svea Orientalis: Pursue violence"
-   so_je_fin_vtf_3b_reason:0 ""
-   
-   so_je_fin_vtf_4a:0 "Svea Orientalis: Russian passive resistance"
-   so_je_fin_vtf_4a_reason:0 ""
-   
-   so_je_fin_vtf_4b:0 "Svea Orientalis: Bullets shall fly"
-   so_je_fin_vtf_4b_reason:0 ""
-   
-   # Svensk inblandning - Swedish Interference
-   
-   so_je_fin_si_1:0 "Sweden supports the Svecoman Movement"
-   so_je_fin_si_1_reason:0 ""
-   so_fin_mod_svecoman_1:1 "Svecomans Supported"
-   
-   so_je_fin_si_2:0 "Sweden supports the Fennoman Movement"
-   so_je_fin_si_2_reason:0 ""
-   so_fin_mod_fennoman_1:1 "Fennoman Supported"
-   
-   # FIN:JE1 - nå självständighet
-   je_so_reunion_fin_independence:0 "Independence"
-   je_so_reunion_fin_independence_reason:0 "We must break free from the Czar"
-   
-   # FIN:JE2 - återförenas med SWE
-   je_so_reunion_fin_reunion:0 "Reunite with Sweden"
-   je_so_reunion_fin_reunion_reason:0 "Our brethren in the West have waited since that fateful night 1809 for our return"
    
    # --------------------------------------
    # --------------  Events -------------- 
    # --------------------------------------
    
-    # 10-19: Triggered by SWE
-    # 20-29: Triggered by SI_1
-    # 30-39: Triggered by SI_2
+    # 10-29: Triggered by SWE
+    # 30-39: VtF-progression: Eskalering
+    # 40-59: Förryskningen
+    # 60-79: Svekomaner och Fennomaner
+    # 80-99: VtF-avslutning: Krig eller diplomati
     
     
     # Triggade av SWE:s handlingar
     
-    # 10: 
+    # 10-19: 
     so_reunion_fin.10:0 "Placeholder"
     so_reunion_fin.10.t:0 "Placeholder title"
     so_reunion_fin.10.d:0 "Placeholder desc"
@@ -255,7 +226,7 @@
     so_reunion_fin.14.a:0 "Placeholder option"
     so_reunion_fin.14.b:0 "Placeholder option"
     
-    # Triggade av SI_1: Svekomanerna. Vad händer i ett FIN där svekomanerna får stöd av SWE?
+    # 20-29: 
     
     so_reunion_fin.20:0 "Placeholder"
     so_reunion_fin.20.t:0 "Placeholder title"
@@ -292,21 +263,23 @@
     so_reunion_fin.24.a:0 "Placeholder option"
     so_reunion_fin.24.b:0 "Placeholder option"
     
-    # Triggade av SI_1: Fennomanerna. Vad händer i ett FIN där fennomanerna får stöd av SWE?
+    # 30-39: VtF-progression: Eskalering
     
-    so_reunion_fin.30:0 "Placeholder"
-    so_reunion_fin.30.t:0 "Placeholder title"
-    so_reunion_fin.30.d:0 "Placeholder desc"
+    so_reunion_fin.30:0 "The Svecoman Movement Grows"
+    so_reunion_fin.30.t:0 "The Svecoman Movement Grows"
+    so_reunion_fin.30.d:0 "The Svecoman Movement have gained considerable momentum. What shall we do about it?"
     so_reunion_fin.30.f:0 "Placeholder flav"
-    so_reunion_fin.30.a:0 "Placeholder option"
-    so_reunion_fin.30.b:0 "Placeholder option"
+    so_reunion_fin.30.a:0 "Nothing. This is great, keep it going!"
+    so_reunion_fin.30.b:0 "Crack down on them."
+    so_reunion_fin.30.c:0 "Crack down harder!"
 
-    so_reunion_fin.31:0 "Placeholder"
-    so_reunion_fin.31.t:0 "Placeholder title"
-    so_reunion_fin.31.d:0 "Placeholder desc"
+    so_reunion_fin.31:0 "The Svecoman Movement Grows"
+    so_reunion_fin.31.t:0 "The Svecoman Movement Grows"
+    so_reunion_fin.31.d:0 "The Svecoman Movement have gained considerable momentum. What shall we do about it?"
     so_reunion_fin.31.f:0 "Placeholder flav"
-    so_reunion_fin.31.a:0 "Placeholder option"
-    so_reunion_fin.31.b:0 "Placeholder option"
+    so_reunion_fin.31.a:0 "Nothing. This is great, keep it going!"
+    so_reunion_fin.31.b:0 "Crack down on them."
+    so_reunion_fin.31.c:0 "Crack down harder!"
 
     so_reunion_fin.32:0 "Placeholder"
     so_reunion_fin.32.t:0 "Placeholder title"
@@ -329,24 +302,34 @@
     so_reunion_fin.34.a:0 "Placeholder option"
     so_reunion_fin.34.b:0 "Placeholder option"
     
-    # Triggas genom VtF.
     
-    # Beslutet - aktivt eller passivt motstånd?
-    so_reunion_fin.40:0 "Decision time"
-    so_reunion_fin.40.t:0 "Decision time"
-    so_reunion_fin.40.d:0 "While the debate has raged on for quite some time on the topic of how to handle the threat of Russification, we must finally choose whether to resist passively or actively."
-    so_reunion_fin.40.f:0 "Russification was the name for a series of intentional policies adopted by the Russian Empire in order to integrate Finland in the Russian ways."
-    so_reunion_fin.40.a:0 "Resist passively"
-    so_reunion_fin.40.b:0 "Resist actively"
+    # 40-49: Förryskningen
+    so_reunion_fin.40: "Decision time"
+    so_reunion_fin.40.t: "Decision time"
+    so_reunion_fin.40.d: "While the debate has raged on for quite some time on the topic of how to handle the threat of Russification, we must finally choose whether to resist passively or actively."
+    so_reunion_fin.40.f: "Russification was the name for a series of intentional policies adopted by the Russian Empire in order to integrate Finland in the Russian ways."
+    so_reunion_fin.40.a: "Resist passively"
+    so_reunion_fin.40.b: "Resist actively"
 
-    so_reunion_fin.41:0 "Forced conscription"
-    so_reunion_fin.41.t:0 "Forced conscription"
-    so_reunion_fin.41.d:0 "One strategy of Russification was to force Finnish men to be conscripted into the Russian imperial army. We can resist the attempts in various ways."
-    so_reunion_fin.41.f:0 "Placeholder flav"
-    so_reunion_fin.41.a:0 "Simply... don't show up?"
-    so_reunion_fin.41.b:0 "For every man they conscript, we must find another to our own forces!"
-    so_fin_mod_ev41_passive_resistance:1 "It's a no-show"
-    so_fin_mod_ev41_active_resistance:1 "One for you, one for me"
+    so_reunion_fin.41: "Forced conscription"
+    so_reunion_fin.41.t: "Forced conscription"
+    so_reunion_fin.41.d: "One strategy of Russification was to force Finnish men to be conscripted into the Russian imperial army. We can resist the attempts in various ways. Today they have come to [SCOPE.sState('ev41_state_scope').GetName] to ask for our able-bodied men to sign up."
+    so_reunion_fin.41.f: "Finnish people were not keen to serve for the Tsar and the various imperial wars undertaken by Russia. Some decided to hide in the woods when a recruitment officer showed up, other tried to resist more actively"
+    so_reunion_fin.41.a: "What if we all hide in the woods?"
+    so_reunion_fin.41.b: "Our patience is running out. Take an active stance against the recruitment officer!"
+    so_reunion_fin.41.c: "The Tsar, our dear leader, would want nothing else than a few able-bodied men. Is that so much to ask for?"
+    so_fin_mod_ev41_passive_resistance: "It's a no-show"
+    so_fin_mod_ev41_passive_resistance_desc: "Refusing to simply show up anywhere"
+    so_fin_mod_ev41_passive_resistance_building: "We train in the woods"
+    so_fin_mod_ev41_passive_resistance_building_desc: "Conscription center is relocated to the forest, safe from Imperial control"
+    so_fin_mod_ev41_active_resistance: "Actively resisting conscription"
+    so_fin_mod_ev41_active_resistance_desc: "Defying the imperial army, our men choose to serve us"
+    so_fin_mod_ev41_active_resistance_building: "Actively resisting conscription"
+    so_fin_mod_ev41_active_resistance_building_desc: "WDefying the imperial army, our men choose to serve us"
+    so_fin_mod_ev41_no_resistance: "A life in the Imperial Army"
+    so_fin_mod_ev41_no_resistance_desc: "A life in the Imperial Army"
+    so_fin_mod_ev41_no_resistance_rus: "Finnish conscripts"
+    so_fin_mod_ev41_no_resistance_rus_desc: "Finnish conscripts"
 
     so_reunion_fin.42:0 "Legislative restrictions"
     so_reunion_fin.42.t:0 "Legislative restrictions"
@@ -367,12 +350,12 @@
     so_fin_mod_ev43_passive_resistance:1 "Intellectual resistance"
     so_fin_mod_ev43_active_resistance:1 "Aggressive resistance"
 
-    so_reunion_fin.44:0 "Placeholder"
-    so_reunion_fin.44.t:0 "Placeholder title 44"
-    so_reunion_fin.44.d:0 "Placeholder desc"
-    so_reunion_fin.44.f:0 "Placeholder flav"
-    so_reunion_fin.44.a:0 "Placeholder option"
-    so_reunion_fin.44.b:0 "Placeholder option"
+    so_reunion_fin.44:0 "Assassination!"
+    so_reunion_fin.44.t:0 "Assassination!"
+    so_reunion_fin.44.d:0 "The Russian politician, [SCOPE.sCharacter('so_rus_assassinated_politician').GetFullName], has been shot dead! Rumour has it that [SCOPE.sCharacter('so_fin_assassin').GetFullName] was the assassin!"
+    so_reunion_fin.44.f:0 "Parts of the population had always felt that the russification could not be resisted through passive means alone. In an attempt to challenge the status quo, radicals took it upon themselves to resist through violence."
+    so_reunion_fin.44.a:0 "He was acting alone! Denounce the terrorist."
+    so_reunion_fin.44.b:0 "Take full responsibility. We want our freedom!"
 
     so_reunion_fin.45:0 "Placeholder"
     so_reunion_fin.45.t:0 "Placeholder title 45"
@@ -409,7 +392,7 @@
     so_reunion_fin.49.a:0 "Placeholder option"
     so_reunion_fin.49.b:0 "Placeholder option"
     
-    # Triggas genom VtF 2a - passivt motstånd
+    # 
     
     so_reunion_fin.50:0 "Passive Escalations"
     so_reunion_fin.50.t:0 "Passive Escalations"
@@ -481,14 +464,22 @@
     so_reunion_fin.59.a:0 "Placeholder option"
     so_reunion_fin.59.b:0 "Placeholder option"
     
-    # Triggas genom VtF 3a - passivt motstånd
+    # 60-69: Svekomaner
     
-    so_reunion_fin.60:0 "Placeholder"
-    so_reunion_fin.60.t:0 "Placeholder title"
-    so_reunion_fin.60.d:0 "Placeholder desc"
-    so_reunion_fin.60.f:0 "Placeholder flav"
-    so_reunion_fin.60.a:0 "Placeholder option"
-    so_reunion_fin.60.b:0 "Placeholder option"
+    # 60: Ett aboensiskt universitet
+    so_reunion_fin.60:0 "A University in Turku?"
+    so_reunion_fin.60.t:0 "A University in Turku?"
+    so_reunion_fin.60.d:0 "Several groups have come forward, some with considerable private capital, to propose that the city of [SCOPE.sState('ev60_state_scope').GetCityHubName] is in need of a proper university. Which group should get the permission to found a university?"
+    so_reunion_fin.60.f:0 "While the universities of Åbo Akademi University and Turku University were eventually founded in 1918 and 1920 respectively, it might not be completely implausible that private capital would have seen the foundation of a university in the city far earlier."
+    so_reunion_fin.60.a:0 "The old Swedish Royal Academy of Åbo was moved to Helsinki. It is obvious that the city needs to continue its tradition of Swedish Academiae!"
+    so_reunion_fin.60.b:0 "No no, we have an opportunity to further the cause of higher education for the Finnish. A gift from the free people to free research!"
+    so_reunion_fin.60.c:0 "Hold on. Surely, we do not wish to upset the [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] with some pesky local college! We must construct the [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]'s Imperial Military Science Academy."
+    so_je_fin_vtf_abo_akademi: "Åbo Akademi"
+    so_je_fin_vtf_abo_akademi_desc: "A Swedish University in Åbo - devoted to the natural sciences, humanities and political science"
+    so_je_fin_vtf_turun_yliopisto: "Turun Suomalainen Yliopisto"
+    so_je_fin_vtf_turun_yliopisto_desc: "A Finnish University in Turku - with a focus on the humanities and the natural sciences."
+    so_je_fin_vtf_imperial_college: "The Imperial Military Science Academy"
+    so_je_fin_vtf_imperial_college_desc: "How do make big gun more big? How to make horse go wroom-wroom?"
 
     so_reunion_fin.61:0 "Placeholder"
     so_reunion_fin.61.t:0 "Placeholder title"
@@ -553,7 +544,7 @@
     so_reunion_fin.69.a:0 "Placeholder option"
     so_reunion_fin.69.b:0 "Placeholder option"
     
-    # Triggas genom VtF 2b - aktivt motstånd.
+    # 70-79: Fennomaner
     
     so_reunion_fin.70:0 "Placeholder"
     so_reunion_fin.70.t:0 "Placeholder title"
@@ -625,21 +616,36 @@
     so_reunion_fin.79.a:0 "Placeholder option"
     so_reunion_fin.79.b:0 "Placeholder option"
     
-    # Triggas genom VtF 3b - aktivt motstånd.
+    # 80-99: Krig eller diplomati
     
-    so_reunion_fin.80:0 "Placeholder"
-    so_reunion_fin.80.t:0 "Placeholder title"
-    so_reunion_fin.80.d:0 "Placeholder desc"
+    # 80 = Valet av riktning
+    so_reunion_fin.80:0 "The Time Has Come"
+    so_reunion_fin.80.t:0 "The Time Has Come"
+    so_reunion_fin.80.d:0 "You must choose the path forward"
     so_reunion_fin.80.f:0 "Placeholder flav"
-    so_reunion_fin.80.a:0 "Placeholder option"
-    so_reunion_fin.80.b:0 "Placeholder option"
+    so_reunion_fin.80.a:0 "We shall undo the 1809 peace terms and reunite with our Swedish brethren, one way or another!"
+    so_reunion_fin.80.b:0 "It is time to forge our own path. Independence, whether through blood or by ink, shall be our goal."
+    so_je_fin_vtf_goal_sweden_tt: "A reunion with Sweden can come through various ways. Rest assured, the people support us!"
+    so_je_fin_vtf_goal_sweden_fennoman_tt: "A reunion with Sweden can come through various ways. However, the Fennoman movement has the upper hand and will become disgruntled."
+    
+    so_je_fin_vtf_fennoman_ig_unrest: "Fennoman unrest"
+    so_je_fin_vtf_fennoman_ig_unrest_desc: ""
+    so_je_fin_vtf_fennoman_unrest: "Fennoman unrest"
+    so_je_fin_vtf_fennoman_unrest_desc: ""
 
-    so_reunion_fin.81:0 "Placeholder"
-    so_reunion_fin.81.t:0 "Placeholder title"
-    so_reunion_fin.81.d:0 "The Russian politician, [SCOPE.sCharacter('so_rus_assassinated_politician').GetFullName], has been shot dead! Rumour has it that [SCOPE.sCharacter('so_fin_assassin').GetFullName] was the assassin!"
+    # 81 = Valet av metod
+    so_reunion_fin.81:0 "The Method"
+    so_reunion_fin.81.t:0 "The Method"
+    so_reunion_fin.81.d:0 "Error"
+    so_reunion_fin.81.d_1:0 "We have chosen reunification with Sweden. But how shall it be achieved?"
+    so_reunion_fin.81.d_2:0 "We have chosen independence. But how shall it be achieved?"
     so_reunion_fin.81.f:0 "Placeholder flav"
-    so_reunion_fin.81.a:0 "He was acting alone! Denounce the terrorist."
-    so_reunion_fin.81.b:0 "Take full responsibility. We want our freedom!"
+    so_reunion_fin.81.f_1:0 "Placeholder flav reunion"
+    so_reunion_fin.81.f_2:0 "Placeholder flav independence"
+    so_reunion_fin.81.a:0 "Diplomacy for reunion"
+    so_reunion_fin.81.b:0 "War for reunion"
+    so_reunion_fin.81.c:0 "Diplomacy for independence"
+    so_reunion_fin.81.d:0 "War for independence"
 
     so_reunion_fin.82:0 "Placeholder"
     so_reunion_fin.82.t:0 "Placeholder title"
