@@ -11,12 +11,13 @@ While agreements made by Northern Europe's foremost powers were drafted, nobody 
 The Svecoman movement mainly rose as a reaction to the Fennoman movement. The Fennoman nationalist movement's main point was the legacy use of Swedish as the administrative language while those speaking Swedish only represented 15 percent of the population.
 
 ## Features
-- New Finnish states in accordance with the provinces of 1831-1921 (excl. Åland which is kept separately because of playability reasons)
+- New Finnish states in accordance with the provinces of 1831-1921 (excl. Åland which is kept separately because of playability reasons).
 
 ## Work In Progress
-- A Journal Entry system with events for the different paths, either towards freedom or towards reunion with Sweden
-- Ideologies based on the Fennoman and Svecoman movements
+- A Journal Entry system with events for the different paths, either towards freedom or towards reunion with Sweden.
+- Ideologies based on the Fennoman and Svecoman movements.
 
 ## To Do
-- Add Sweden's and Russia's respective journal entries along with interacting events to make Finland's journal entry less 'isolated'
-- Add more flavour events independent of the journal entries to Fennoscandia, reflecting the various historic occurances
+- Add Sweden's and Russia's respective journal entries along with interacting events to make Finland's journal entry less 'isolated'.
+- Add more flavour events independent of the journal entries to Fennoscandia, reflecting the various historic occurances.
+- Add journal entries for "after the fact" of either Finnish independence or for Sweden post-reunion.
