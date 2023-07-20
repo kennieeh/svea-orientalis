@@ -3,7 +3,7 @@
 Svea Orientalis - A Victoria 3 Mod
 
 ## Svea Orientalis - Eastern Sweden
-![Svea Orientalis](images/svea_orientalis_dark.png)
+![Svea Orientalis](images/shield_icon.png)
 The year is 1836. After the catastrofic peace terms of the Finnish War of 1808-09, the Swedish Crown was forced to part with its eastern part. Much to the Tsar's delight, a forested peninsula dotted with thousands of seas was transferred under his control.
 
 While agreements made by Northern Europe's foremost powers were drafted, nobody bothered to ask the people living in these lands. While not always treated in the most delicate fashion by the Swedish monarchs, there were a significant portion of the population still longing for the Swedish time. The Svecoman movement was a pro-Swedish nationalist movement based upon Finland's long history of being a part of Sweden.
