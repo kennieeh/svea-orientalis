@@ -3,7 +3,7 @@
 Svea Orientalis - A Victoria 3 Mod
 
 ## Svea Orientalis - Eastern Sweden
-![Svea Orientalis](images/shield_icon.png)
+![Svea Orientalis](images/shield_icon_nocrown.png)
 
 The year is 1836. After the catastrofic peace terms of the Finnish War of 1808-09, the Swedish Crown was forced to part with its eastern part. Much to the Tsar's delight, a forested peninsula dotted with thousands of seas was transferred under his control.
 
