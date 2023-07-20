@@ -24,6 +24,7 @@
 			add_ruling_interest_group = yes
 		}
 		
-		add_journal_entry = { type = so_je_fin_vtf_main }
+		add_journal_entry = { type = so_je_fin_vtf_language }
+		add_journal_entry = { type = so_je_fin_vtf_method }
 	}
 }

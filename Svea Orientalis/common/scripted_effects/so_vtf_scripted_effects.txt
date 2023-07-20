@@ -202,27 +202,33 @@ so_je_fin_vtf_clear_variables = {
 	remove_variable = so_var_fin_vtf_define_leading_faction
 }
 
-so_var_fin_vtf_variables = {
+so_var_fin_vtf_method_variables = {
 	# Constitutionalists
 	set_variable = { name = so_var_fin_const_progress value = 10 }
+	set_variable = { name = so_var_fin_const_progress_from_igs value = 0 }
 	set_variable = { name = so_var_fin_const_progress_next value = 0 }
 	
 	# Activist variables
 	set_variable = { name = so_var_fin_activist_progress value = 10 }
+	set_variable = { name = so_var_fin_activist_progress_from_igs value = 0 }
 	set_variable = { name = so_var_fin_activist_progress_next value = 0 }
 	
 	# Appeasement variables
 	set_variable = { name = so_var_fin_appeas_progress value = 0 }
+	set_variable = { name = so_var_fin_appeas_progress_from_igs value = 0 }
 	set_variable = { name = so_var_fin_appeas_progress_next value = 0 }
 }
 
 so_var_fin_vtf_weekly_pulse_const_progress = {
+	set_variable = { name = so_var_fin_const_progress_from_igs value = 0 }
 	set_variable = { name = so_var_fin_const_progress_next value = 0 }
 	# From Interest Groups
 	every_interest_group = {
 		limit = {
-			leader = {
-				has_ideology = ideology:ideology_svecoman
+			OR = {
+				is_interest_group_type = ig_devout
+				is_interest_group_type = ig_rural_folk
+				is_interest_group_type = ig_landowners
 			}
 		}
 		ROOT = {
@@ -237,41 +243,23 @@ so_var_fin_vtf_weekly_pulse_const_progress = {
 			}
 		}
 		ROOT = {
-			change_variable = { name = so_var_fin_svecoman_progress_from_igs add = var:ig_weight }
+			change_variable = { name = so_var_fin_const_progress_from_igs add = var:ig_weight }
 		}
 	}
-	every_state = {
-		limit = {
-			owner = c:FIN
-			has_claim_by = c:SWE
-		}
-		ROOT = {
-			change_variable = { name = so_var_fin_svecoman_progress_from_swedish_claims add = 1 }
-		}
-	}
-	change_variable = { name = so_var_fin_svecoman_progress_from_swedish_claims divide = 100 }
-	if = {
-		limit = {
-			has_variable = so_je_fin_vtf_abo_akademi
-		}
-		change_variable = { name = so_var_fin_svecoman_progress_from_abo_akademi add = 0.25 }
-		change_variable = { name = so_var_fin_svecoman_progress_from_igs multiply = 2 }
-	}
-	
 	
 	# Final Compilation
-	change_variable = { name = so_var_fin_const_progress_next add = var:so_var_fin_svecoman_progress_from_igs }
-	change_variable = { name = so_var_fin_const_progress_next add = var:so_var_fin_svecoman_progress_from_abo_akademi }
-	change_variable = { name = so_var_fin_const_progress_next add = var:so_var_fin_svecoman_progress_from_swedish_claims }
+	change_variable = { name = so_var_fin_const_progress_next add = var:so_var_fin_const_progress_from_igs }
 }
 
 so_var_fin_vtf_weekly_pulse_activist_progress = {
+	set_variable = { name = so_var_fin_activist_progress_from_igs value = 0 }
 	set_variable = { name = so_var_fin_activist_progress_next value = 0 }
 	# From Interest Groups
 	every_interest_group = {
 		limit = {
-			leader = {
-				has_ideology = ideology:ideology_fennoman
+			OR = {
+				is_interest_group_type = ig_armed_forces
+				is_interest_group_type = ig_trade_unions
 			}
 		}
 		ROOT = {
@@ -282,42 +270,28 @@ so_var_fin_vtf_weekly_pulse_activist_progress = {
 				is_in_government = yes
 			}
 			ROOT = {
-				change_variable = { name = ig_weight multiply = 2 }
-			}
-		}
-		if = {
-			limit = {
-				c:FIN = {
-					has_technology = nationalism
-				}
-			}
-			ROOT = {
-				change_variable = { name = ig_weight multiply = 2 }
+				change_variable = { name = ig_weight multiply = 3 }
 			}
 		}
 		ROOT = {
-			change_variable = { name = so_var_fin_fennoman_progress_from_igs add = var:ig_weight }
+			change_variable = { name = so_var_fin_activist_progress_from_igs add = var:ig_weight }
 		}
-	}
-	if = {
-		limit = {
-			has_variable = so_je_fin_vtf_turun_yliopisto
-		}
-		change_variable = { name = so_var_fin_fennoman_progress_from_turun_yliopisto add = 0.25 }
-		change_variable = { name = so_var_fin_fennoman_progress_from_igs multiply = 2 }
 	}
 	
 	# Final Compilation
-	change_variable = { name = so_var_fin_activist_progress_next add = var:so_var_fin_fennoman_progress_from_igs }
+	change_variable = { name = so_var_fin_activist_progress_next add = var:so_var_fin_activist_progress_from_igs }
 }
 
 so_var_fin_vtf_weekly_pulse_appeas_progress = {
+	set_variable = { name = so_var_fin_appeas_progress_from_igs value = 0 }
 	set_variable = { name = so_var_fin_appeas_progress_next value = 0 }
 	# From Interest Groups
 	every_interest_group = {
 		limit = {
-			leader = {
-				has_ideology = ideology:ideology_russoman
+			OR = {
+				is_interest_group_type = ig_industrialists
+				is_interest_group_type = ig_intelligentsia
+				is_interest_group_type = ig_petty_bourgeoisie
 			}
 		}
 		ROOT = {
@@ -332,20 +306,12 @@ so_var_fin_vtf_weekly_pulse_appeas_progress = {
 			}
 		}
 		ROOT = {
-			change_variable = { name = so_var_fin_russoman_progress_from_igs add = var:ig_weight }
+			change_variable = { name = so_var_fin_appeas_progress_from_igs add = var:ig_weight }
 		}
-	}
-	if = {
-		limit = {
-			has_variable = so_je_fin_vtf_imperial_college
-		}
-		change_variable = { name = so_var_fin_russoman_progress_from_imperial_college add = 0.25 }
-		change_variable = { name = so_var_fin_russoman_progress_from_igs multiply = 2 }
 	}
 	
 	# Final Compilation
-	change_variable = { name = so_var_fin_appeas_progress_next add = var:so_var_fin_russoman_progress_from_imperial_college }
-	change_variable = { name = so_var_fin_appeas_progress_next add = var:so_var_fin_russoman_progress_from_igs }
+	change_variable = { name = so_var_fin_appeas_progress_next add = var:so_var_fin_appeas_progress_from_igs }
 }
 
 so_var_fin_vtf_define_leading_method = { #Defines so_var_fin_vtf_leading_faction_progress
@@ -354,23 +320,23 @@ so_var_fin_vtf_define_leading_method = { #Defines so_var_fin_vtf_leading_faction
 			var:so_var_fin_const_progress > var:so_var_fin_activist_progress
 			var:so_var_fin_const_progress > var:so_var_fin_appeas_progress
 		}
-		set_variable = { name = so_var_fin_vtf_leading_faction_progress value = var:so_var_fin_const_progress }
+		set_variable = { name = so_var_fin_vtf_leading_method_progress value = var:so_var_fin_const_progress }
 	}
 	else_if = {
 		limit = {
 			var:so_var_fin_activist_progress > var:so_var_fin_const_progress
 			var:so_var_fin_activist_progress > var:so_var_fin_appeas_progress
 		}
-		set_variable = { name = so_var_fin_vtf_leading_faction_progress value = var:so_var_fin_activist_progress }
+		set_variable = { name = so_var_fin_vtf_leading_method_progress value = var:so_var_fin_activist_progress }
 	}
 	else_if = {
 		limit = {
 			var:so_var_fin_appeas_progress > var:so_var_fin_activist_progress
 			var:so_var_fin_appeas_progress > var:so_var_fin_const_progress
 		}
-		set_variable = { name = so_var_fin_vtf_leading_faction_progress value = var:so_var_fin_appeas_progress }
+		set_variable = { name = so_var_fin_vtf_leading_method_progress value = var:so_var_fin_appeas_progress }
 	}
-	clamp_variable = { name = so_var_fin_vtf_leading_faction_progress max = 200 min = 0 }
+	clamp_variable = { name = so_var_fin_vtf_leading_method_progress max = 3600 min = 0 }
 }
 
 so_je_fin_vtf_method_freeze_progress = {
@@ -380,7 +346,7 @@ so_je_fin_vtf_method_freeze_progress = {
 	set_variable = { name = so_var_fin_appeas_progress_next value = 0 }
 }
 
-so_je_fin_vtf_clear_variables = {
+so_je_fin_vtf_clear_method_variables = {
 	remove_variable = so_var_fin_const_progress
 	remove_variable = so_var_fin_const_progress_next
 	remove_variable = so_var_fin_activist_progress

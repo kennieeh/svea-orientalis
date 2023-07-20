@@ -155,26 +155,27 @@
    
    # Vägen till Frihet - Way to Freedom
    
-   so_je_fin_vtf_main: "Svea Orientalis: The Way to Freedom"
-   so_je_fin_vtf_main_reason: "The Way to Freedom was always a difficult choice. Shall the Svecomen, who seek to restore the Swedish rule, win? Or the Fennomen, who, fueled by the up and coming nationalist movements seek a Finnish nation for those who speak finnish?"
+   so_je_fin_vtf_language: "Svea Orientalis: The Language Strife"
+   so_je_fin_vtf_language_reason: "The Finnish Language Strife was a major internal conflict based around the statuses of the Finnish and Swedish languages in Finland."
+   so_je_fin_vtf_language_goal: "One of the language causes has won."
    so_je_fin_vtf_svecoman_leading_desc: "The Swedish cause is leading! \n Svecomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_svecoman_progress').GetValue|+]#! | Fennomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_fennoman_progress').GetValue|+]#! | Russomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_russoman_progress').GetValue|+]#!"
    so_je_fin_vtf_fennoman_leading_desc: "The Finnish cause is leading! \n Svecomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_svecoman_progress').GetValue|+]#! | Fennomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_fennoman_progress').GetValue|+]#! | Russomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_russoman_progress').GetValue|+]#!"
    so_je_fin_vtf_russoman_leading_desc: "The Russian cause is leading! \n Svecomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_svecoman_progress').GetValue|+]#! | Fennomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_fennoman_progress').GetValue|+]#! | Russomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_russoman_progress').GetValue|+]#!"
    so_je_fin_vtf_no_leading_desc: "No cause is leading. \n Svecomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_svecoman_progress').GetValue|+]#! | Fennomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_fennoman_progress').GetValue|+]#! | Russomen: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_russoman_progress').GetValue|+]#!"
    
-   so_je_fin_vtf_main_modifier: "Nationalist turmoil"
+   so_je_fin_vtf_language_modifier: "Language strife"
    
-   so_je_fin_vtf_tt: "Finland has chosen one of the paths of freedom and succeeded."
+   so_je_fin_vtf_tt: "We have chosen a way forward."
    
    so_je_fin_vtf_complete_tt: "On our new path, a whole new world lies ahead of us."
    
-   so_je_fin_vtf_end: "Svea Orientalis: The Method of Freedom"
-   so_je_fin_vtf_end_reason: "We have chosen our path, but we have not chosen the means with which we shall go forth on our path. Choose wisely."
+   so_je_fin_vtf_method: "Svea Orientalis: Russification"
+   so_je_fin_vtf_method_reason: "How shall we resist the Russification efforts?"
    
-   so_je_fin_vtf_constitutionalists_leading_desc: "The Constitutionalists are leading! \n They prefer passive resistance to the Russification. \n Constitutionalists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_constitutionalist_progress').GetValue|+]#! | Activists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_activists_progress').GetValue|+]#! | Appeasement: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_appeasement_progress').GetValue|+]#!"
-   so_je_fin_vtf_activists_leading_desc: "The Activists are leading! \n They prefer active resistance to the Russification. \n Constitutionalists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_constitutionalist_progress').GetValue|+]#! | Activists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_activists_progress').GetValue|+]#! | Appeasement: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_appeasement_progress').GetValue|+]#!"
-   so_je_fin_vtf_appeasement_leading_desc: "The Appeasement Movement is leading! \n They rather we give in to whatever the [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] wants. \n Constitutionalists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_constitutionalist_progress').GetValue|+]#! | Activists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_activists_progress').GetValue|+]#! | Appeasement: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_appeasement_progress').GetValue|+]#!"
-   so_je_fin_vtf_no_leading_method_desc: "No movement is currently in the lead. \n Constitutionalists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_constitutionalist_progress').GetValue|+]#! | Activists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_activists_progress').GetValue|+]#! | Appeasement: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_appeasement_progress').GetValue|+]#!"
+   so_je_fin_vtf_constitutionalists_leading_desc: "The Constitutionalists are leading! \n They prefer passive resistance to the Russification. \n Constitutionalists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_const_progress').GetValue|+]#! | Activists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_activist_progress').GetValue|+]#! | Appeasement: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_appeas_progress').GetValue|+]#!"
+   so_je_fin_vtf_activists_leading_desc: "The Activists are leading! \n They prefer active resistance to the Russification. \n Constitutionalists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_const_progress').GetValue|+]#! | Activists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_activist_progress').GetValue|+]#! | Appeasement: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_appeas_progress').GetValue|+]#!"
+   so_je_fin_vtf_appeasement_leading_desc: "The Appeasement Movement is leading! \n They rather we give in to whatever the [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] wants. \n Constitutionalists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_const_progress').GetValue|+]#! | Activists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_activist_progress').GetValue|+]#! | Appeasement: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_appeas_progress').GetValue|+]#!"
+   so_je_fin_vtf_no_leading_method_desc: "No movement is currently in the lead. \n Constitutionalists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_const_progress').GetValue|+]#! | Activists: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_activist_progress').GetValue|+]#! | Appeasement: #variable [ROOT.GetCountry.MakeScope.Var('so_var_fin_appeas_progress').GetValue|+]#!"
    
    
    # --------------------------------------
@@ -273,9 +274,9 @@
     so_reunion_fin.30.b:0 "Crack down on them."
     so_reunion_fin.30.c:0 "Crack down harder!"
 
-    so_reunion_fin.31:0 "The Svecoman Movement Grows"
-    so_reunion_fin.31.t:0 "The Svecoman Movement Grows"
-    so_reunion_fin.31.d:0 "The Svecoman Movement have gained considerable momentum. What shall we do about it?"
+    so_reunion_fin.31:0 "The Fennoman Movement Grows"
+    so_reunion_fin.31.t:0 "The Fennoman Movement Grows"
+    so_reunion_fin.31.d:0 "The Fennoman Movement have gained considerable momentum. What shall we do about it?"
     so_reunion_fin.31.f:0 "Placeholder flav"
     so_reunion_fin.31.a:0 "Nothing. This is great, keep it going!"
     so_reunion_fin.31.b:0 "Crack down on them."

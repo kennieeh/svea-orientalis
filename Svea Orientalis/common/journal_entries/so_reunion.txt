@@ -116,8 +116,8 @@ so_je_swe_so_2 = { # Debate on Peace or War
 # ------------o-o-o-o-o-o-o-o-o-o-----------
 # ----------------------------------------------
 
-so_je_fin_vtf_main = { # Rework based on 1.3.5 France's Divided Monarchists' JE
-	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+so_je_fin_vtf_language = { # Rework based on 1.3.5 France's Divided Monarchists' JE
+	icon = "gfx/interface/icons/event_icons/so_shield_icon.dds"
 	
 	immediate = {
 		set_variable = { name = so_var_fin_vtf_leading_faction_progress value = 0 }
@@ -180,7 +180,7 @@ so_je_fin_vtf_main = { # Rework based on 1.3.5 France's Divided Monarchists' JE
 	}
 	
 	modifiers_while_active = {
-		so_je_fin_vtf_main_modifier
+		so_je_fin_vtf_language_modifier
 	}
 	
 	on_weekly_pulse = {
@@ -217,7 +217,6 @@ so_je_fin_vtf_main = { # Rework based on 1.3.5 France's Divided Monarchists' JE
 		400 = 0
 		30 = so_reunion_fin.30
 		30 = so_reunion_fin.31
-		30 = so_reunion_fin.41
 		3 = so_reunion_fin.60
 		}
 	}
@@ -253,8 +252,8 @@ so_je_fin_vtf_main = { # Rework based on 1.3.5 France's Divided Monarchists' JE
 	should_be_pinned_by_default = yes
 }
 
-so_je_fin_vtf_end = { # How does it end?
-	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+so_je_fin_vtf_method = { # How does it end?
+	icon = "gfx/interface/icons/event_icons/so_shield_icon.dds"
 	
 	status_desc = {
 		first_valid = {
@@ -295,7 +294,8 @@ so_je_fin_vtf_end = { # How does it end?
 	}
 	
 	immediate = {
-		
+		set_variable = { name = so_var_fin_vtf_leading_method_progress value = 0 }
+		so_var_fin_vtf_method_variables = yes
 	}
 	
 	complete = {
@@ -334,15 +334,20 @@ so_je_fin_vtf_end = { # How does it end?
 	on_monthly_pulse = {
 		effect = {
 			if = {
+				limit = {
+					NOT = {
+						has_variable = so_je_fin_vtf_method_freeze
+					}
+				}
 				change_variable = { name = so_var_fin_const_progress add = var:so_var_fin_const_progress_next }
 				change_variable = { name = so_var_fin_activist_progress add = var:so_var_fin_activist_progress_next }
 				change_variable = { name = so_var_fin_appeas_progress add = var:so_var_fin_appeas_progress_next }
-				so_var_fin_vtf_define_leading_method = yes
 			}
+			so_var_fin_vtf_define_leading_method = yes
 		}
 		random_events = {
 		400 = 0
-		3 = so_reunion_fin.40
+		30 = so_reunion_fin.41
 		}
 	}
 	
@@ -353,16 +358,16 @@ so_je_fin_vtf_end = { # How does it end?
 	}
 	
 	fail = {
-		ROOT = {
+		c:RUS = {
 			has_diplomatic_pact = {
-				who = c:RUS
+				who = ROOT
 				type = puppet
 			}
 		}
 	}
 	
 	current_value = {
-		value = root.var:so_var_fin_vtf_leading_faction_progress
+		value = root.var:so_var_fin_vtf_leading_method_progress
 	}
 
 	goal_add_value = {
