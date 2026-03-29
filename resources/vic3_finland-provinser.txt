@@ -124,16 +124,16 @@
 För att skapa ett Egentliga Finland (för att kunna göra Åbo till huvudstad vid behov)
 
 ## Egentliga Finland
-- x278F84 (Loimaa)
-- x22CBD6 (Pori = port)
+- x278F84 (Loimaa = wood)
+- x22CBD6 (Pori = mine)
 - x33CFEC (Nådendal)
 - x86C729 (Kankaanpää)
 - xBD3A16 (Salo = farm)
 - xC168B6 (Raumo/Nystad)
-- xD2FDBF (Åbo = city)
+- xD2FDBF (Åbo = city, port)
 - xE041E0 (Åboland)
-- xE98BC6 (Ikaalinen = mine)
-- xB462A9 (Huittinen = wood)
+- xE98BC6
+- xB462A9 (Huittinen)
 
 ## Birkaland
 - x61C0E0 (Hämeenlinna = wood)
@@ -142,7 +142,7 @@ För att skapa ett Egentliga Finland (för att kunna göra Åbo till huvudstad v
 - x79D379
 - xF09EDC
 - xB45BFF
-- xE7FDE4 (Orivesi)
+- xE7FDE4 (Orivesi = farm)
 - x5033CF
 - xCBE76E (Lahtis = mine)
 - x9106DB

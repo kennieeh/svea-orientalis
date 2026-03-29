@@ -1,0 +1,11 @@
+﻿movement_constitutionalist = {
+
+}
+
+movement_appeasement = {
+
+}
+
+movement_activist = {
+
+}

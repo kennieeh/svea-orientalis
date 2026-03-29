@@ -112,8 +112,6 @@
    so_reunion_swe.24.f:0 "TBD"
    # 
    so_reunion_swe.24.a:0 "A"
-   # 
-   so_reunion_swe.21.b:0 "B"
    
    # Triggered by SO_2 (20-39)
    so_reunion_swe.25:0 "Event.25"
@@ -634,9 +632,7 @@
     # 81 = Valet av metod
     so_reunion_fin.81:0 "The Method"
     so_reunion_fin.81.t:0 "The Method"
-    so_reunion_fin.81.d:0 "Error"
-    so_reunion_fin.81.d_1:0 "We have chosen reunification with Sweden. But how shall it be achieved?"
-    so_reunion_fin.81.d_2:0 "We have chosen independence. But how shall it be achieved?"
+    so_reunion_fin.81.d:0 "We have chosen independence. But how shall it be achieved?"
     so_reunion_fin.81.f:0 "Placeholder flav"
     so_reunion_fin.81.f_1:0 "Placeholder flav reunion"
     so_reunion_fin.81.f_2:0 "Placeholder flav independence"

@@ -1,0 +1,34 @@
+﻿ ### Russification in Finland
+
+ so_fin_constitutionalist_progress_bar = {
+	name = "constitutionalist_progress_bar"
+	desc = "constitutionalist_progress_bar_desc"
+
+	double_sided_gold = yes
+
+	start_value = 0
+	min_value = 0
+	max_value = 100
+}
+
+ so_fin_appeasement_progress_bar = {
+	name = "appeasement_progress_bar"
+	desc = "appeasement_progress_bar_desc"
+
+	default_green = yes
+
+	start_value = 0
+	min_value = 0
+	max_value = 100
+}
+
+ so_fin_activist_progress_bar = {
+	name = "activist_progress_bar"
+	desc = "activist_progress_bar_desc"
+
+	double_sided_bad = yes
+
+	start_value = 0
+	min_value = 0
+	max_value = 100
+}
