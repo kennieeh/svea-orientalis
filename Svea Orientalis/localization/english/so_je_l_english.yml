@@ -5,10 +5,7 @@
   
   # MAP:
   STATE_FINLAND_PROPER:0 "Finland Proper"
-  STATE_TAVAST:0 "Tavastia"
-  STATE_MICHELS:0 "S:t Michels"
-  STATE_KUOPIO:0 "Kuopio"
-  STATE_OULU:0 "Oulu"
+  STATE_PIRKANMAA:0 "Pirkanmaa"
     
    # ----------------------------------------------
    # ------------x-x-x-x-x-x-x-x-x-x-----------

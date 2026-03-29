@@ -1,0 +1,160 @@
+# Ursprungliga (v. 1.12.*)
+
+## Kuopio 
+- x0D3DF3
+- x154428
+- x2401AE
+- x3C48A2
+- x40C040
+- x467F2F
+- x4753CB
+- x51CC44 (Iisalmi = mine)
+- x523560
+- x5D1467
+- x7753B6
+- x78FDD6
+- x7B45A5
+- x825979
+- x8C31CF
+- x8DCF76 (Mikkeli = city)
+- x932418
+- x969608
+- xA04180
+- xA789AE
+- xB81268 (Savonlinna = farm)
+- xBC487D
+- xC5A424
+- xCC8E28
+- xD105A8
+- xD26819
+- xD516FA
+- xE761B2
+- xED8DC6 (Kuopio = wood)
+- xF571CB
+- xFF4B4C
+- xFFBD54
+
+## Uusimaa
+- x07C636
+- x0BA694 (Vichtis)
+- x22CBD6 (Pori = farm)
+- x278F84 (Loimaa)
+- x33CFEC (Nådendal)
+- x3D47C3
+- x4A6463
+- x5033CF
+- x61C0E0 (Hämeenlinna = wood)
+- x76CE44 (Sjundeå/Kyrkslätt)
+- x79D379
+- x85F5A0
+- x86C729 (Kankaanpää)
+- x9106DB
+- xAFE141 (Tampere = mine)
+- xB45BFF
+- xB462A9
+- xBD3A16 (Salo/Somero)
+- xC168B6 (Raumo/Nystad)
+- xC67B36
+- xCBE76E
+- xCC9AA7 (Helsingfors = city)
+- xD2FDBF (Åbo = port)
+- xD9DA78 (Hangö)
+- xE041E0 (Åboland)
+- xE0C0E0 (Ekenäs)
+- xE7FDE4 (Orivesi)
+- xE98BC6 (Ikaalinen)
+- xF09EDC
+- xF6F046
+
+## West Karelia
+- x0A00AC
+- x1E964A
+- x208001
+- x315CDB
+- x3CFB81 (Sortavala = farm)
+- x3EFDA0 (Hamina = port)
+- x43E91D
+- x63EE78
+- x65EF3B
+- x664F54
+- x74C1F3
+- x85EBD4
+- x934610 (Lappeenranta = wood)
+- xAB4A30 (Viipuri = city)
+- xAD3FF9 (Pitkäranta = mine)
+- xBB0055
+- xBC376C
+- xD093D4
+- xFC48AF
+
+## Åland
+- x459052 (Mariehamn = port; Strandgård = farm)
+- xE04161 (Bomarsund = city)
+
+## Ostrobothnia
+- x08E342
+- x1C3DCF
+- x214180
+- x238A38
+- x24FC8C
+- x34A9F8
+- x37CE53
+- x398433
+- x3DBB6E (Kuortane = wood)
+- x47E04D
+- x69F3E6 (Kristinestad)
+- x7C55E0
+- x9402DB
+- x993955 (Kannus = mine)
+- x9C363D
+- x9DB817
+- xC4EB7D (Ilmajoki = farm)
+- xD38306
+- xE01B70
+- xED5B1B (Vasa = city)
+- xED84C3
+- xEF788A
+- xF2C73E
+- xF3D220
+- xF89B5A
+- xFBFA4C (Jakobstad = port)
+- xFEA699
+
+# Modifierade
+För att skapa ett Egentliga Finland (för att kunna göra Åbo till huvudstad vid behov)
+
+## Egentliga Finland
+- x278F84 (Loimaa)
+- x22CBD6 (Pori = port)
+- x33CFEC (Nådendal)
+- x86C729 (Kankaanpää)
+- xBD3A16 (Salo = farm)
+- xC168B6 (Raumo/Nystad)
+- xD2FDBF (Åbo = city)
+- xE041E0 (Åboland)
+- xE98BC6 (Ikaalinen = mine)
+- xB462A9 (Huittinen = wood)
+
+## Birkaland
+- x61C0E0 (Hämeenlinna = wood)
+- xAFE141 (Tampere = city)
+- xC67B36
+- x79D379
+- xF09EDC
+- xB45BFF
+- xE7FDE4 (Orivesi)
+- x5033CF
+- xCBE76E (Lahtis = mine)
+- x9106DB
+- x3D47C3
+
+## Nyland
+- x07C636 (Sibbo = farm)
+- x0BA694 (Vichtis)
+- x4A6463 (Lovisa)
+- x76CE44 (Sjundeå/Kyrkslätt = port)
+- x85F5A0 (Borgå = wood)
+- xCC9AA7 (Helsingfors = city)
+- xD9DA78 (Hangö)
+- xE0C0E0 (Ekenäs)
+- xF6F046 (Lojo = mine)

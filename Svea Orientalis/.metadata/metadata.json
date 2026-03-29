@@ -1,9 +1,9 @@
 {
   "name" : "Svea Orientalis",
-  "id" : "",
-  "version" : "",
-  "supported_game_version" : "",
-  "short_description" : "",
+  "id" : "com.github.kennieeh.svea-orientalis",
+  "version" : "0.1.0",
+  "supported_game_version" : "1.12.*",
+  "short_description" : "A mod expanding content for Finland",
   "tags" : [],
   "relationships" : [],
   "game_custom_data" : {
